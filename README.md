@@ -1,10 +1,7 @@
 # MVC-repo
 Repo for MVC (v2)
 
-![github icon]({{ asset('img/github.jpg') }})
-![github icon](public/img/github.png)
-
-<img src="{{ asset('img/github.jpg') }}" alt="github icon" class="img">
+![github icon](public/img/github.png) {.git-img}
 
 Klona repot
 -----------

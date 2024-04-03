@@ -65,11 +65,14 @@ h1 {
     width: 100%;
 }
 
+.git-img {
+    width: 50%;
+}
+
 p {
     font-size: 1.1em;
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.5;
-    /* text-align: justify; */
 }
 
 .lucky-color {
