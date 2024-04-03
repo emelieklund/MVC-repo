@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Spectral&display=swap');
+
+// Fonts
+$text-font: 'Montserrat', sans-serif;
+$head-font: 'Montserrat', sans-serif;
+$title-font: 'Great Vibes', cursive;
+$nav-font: 'Spectral', serif;
+$quote-font: 'Montserrat', sans-serif;
+
+// Colors
+
+$title-color: #998C8D;
+$nav-color: #FEFEFE;
+$font-color: #3e393a;
+$quote-color: #59393E;
+
+$button-color: #8b998ed3;
+$hover-color: #5d6760;
+
+// Backgrounds
+$footer-background: #59393E;
+$body-background: #F3F6F5;
+$main-background: #f8f8f8;
+$review-background: #f1f1f1;
+
+$header-image: url("../../../assets/img/header.jpg");
+$mobile-header-image: url("../../../assets/img/header-mobile.jpg");
+
+$main-shadow: rgba(0, 0, 0, 0.19) 0 10px 20px, rgba(0, 0, 0, 0.23) 0 6px 6px;
+
+// Colors
+$border-color: #998c8d85;
+$link-color: rgb(34, 102, 165);
+
+$placement-title: 20px;
+$placement-nav: 0;
+$placement-quote: 2%;
+$placement-button: 10%;
+$placement-logo: 10px;
+
+$place-logo-mobile: 10px 0 0 10px;
+$place-title-mobile: 15% 0 0 -20px;
+$place-quote-mobile: 40% 0 0 20px;
+$place-button-mobile: 85% 0 0 5%;

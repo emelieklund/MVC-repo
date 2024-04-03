@@ -1,0 +1,23 @@
+/* Footer */
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    background-color: $footer-background;
+    color: #fff;
+    padding: 4rem 6rem;
+
+    a {
+        color: #fff;
+    }
+
+    .social {
+        font-size: 2rem;
+        width: 220px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin-left: auto;
+        margin-right: auto;
+    }    
+}

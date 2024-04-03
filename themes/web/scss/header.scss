@@ -1,0 +1,92 @@
+/* Header */
+
+.header, .footer {
+    flex: 0 0 auto;
+}
+
+.header, .site-header {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.header {
+    height: 720px;
+    background-image: $header-image;
+    background-size: 100%;
+    background-repeat: no-repeat;
+
+    h1 {
+        font-family: $title-font;
+        font-size: 5em;
+        width: 360px;
+        color: $title-color;
+    }
+}
+
+/* Small header for about and highlight views */
+
+.small-header {
+    height: 70px;
+    background-color: $title-color;
+
+    h3 {
+        padding: 1em 3em 3em;
+        color: #fff;
+        font-family: $title-font;
+        font-size: 1.5em;
+    }
+}
+
+/* Title */
+
+.logo {
+    margin-left: $placement-logo;
+    margin-top: 10px;
+
+    img {
+        width: 80px;
+    }
+}
+
+.title {
+    width: 200px;
+    margin-left: $placement-title;
+    margin-top: 50px;
+    padding: 2em 3em 3em;
+    position: absolute;
+}
+
+.title * {
+    color: $font-color;
+}
+
+.contact-button {
+    position: absolute;
+    display: block;
+    margin-top: 34%;
+    margin-left: $placement-button;
+    border-radius: 40px;
+    background-color: $button-color;
+    width: 180px;
+    height: 70px;
+    font-family: $text-font;
+    font-size: 1.2em;
+    color: #313131;
+    cursor: pointer;
+}
+
+.contact-button:hover {
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    background-color: $hover-color;
+}
+
+.quote {
+    position: absolute;
+    font-family: $quote-font;
+    font-size: 1.5em;
+    font-style: italic;
+    margin-top: 15%;
+    margin-left: $placement-quote;
+    color: $quote-color;
+}

@@ -1,0 +1,33 @@
+/* Footer */
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: $footer-background;
+    color: #fff;
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+    border-top: 1px solid #f8f8f8;
+
+    a {
+        color: #FEFEFE;
+    }
+
+    .social {
+        font-size: 2rem;
+        width: 220px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin: auto;
+    }
+
+    .copyright {
+        width: 50%;
+        margin: auto;
+        padding-top: 50px;
+        text-align: center;
+        border-top: 1px solid #f8f8f8;
+    }
+}

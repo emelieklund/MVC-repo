@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+
+{% block title %}About{% endblock %}
+
+{% block body %}
+    <h1>About MVC (v2)</h1>
+    <div class="two-col-layout">
+        <aside class="aside">
+            <p><a href="https://github.com/dbwebb-se/mvc" target="_blank">Kursens Github-repo</a></p>
+            <p><a href="https://github.com/dbwebb-se/mvc" target="_blank">Mitt Github-repo</a></p>
+        </aside>
+        <main class="main">
+            <p><i>"Kursen Objektorienterade webbteknologier, a.k.a. mvc, fokuserar på objektorienterade programmeringstekniker i programmeringsspråket PHP. Klassiska objektorienterade konstruktioner hanteras tillsammans med objektorienterad programmering i webbaserat ramverk tillsammans med databaser samt enhetstestning." - </i><a href="https://dbwebb.se/kurser/mvc-v2/">dbwebb.se</a></p>
+        </main>
+    </div>
+
+    <img src="{{ asset('img/php.png') }}" alt="Image of an elephant with PHP text" class="img">
+{% endblock %}

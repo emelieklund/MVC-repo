@@ -1,0 +1,21 @@
+/* Nav */
+
+.nav {
+    background-color: $footer-background;
+    height: 40px;
+    color: $nav-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 20px;
+
+    a {
+        font-size: 1.2rem;
+        font-family: $nav-font;
+        text-decoration: none;
+    }
+
+    a:hover {
+        border-bottom: 2px solid #FEE985;
+    }    
+}

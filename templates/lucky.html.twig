@@ -1,0 +1,11 @@
+{# templates/lucky.html.twig #}
+
+{% extends "base.html.twig" %}
+
+{% block title %}Magic color{% endblock %}
+
+{% block body %}
+    <h1>Magic color</h1>
+    <p>This is the current magic color code: #{{ number }}</p>
+    <div class="lucky-color" style="background-color:#{{ number }}"></div>
+{% endblock %}

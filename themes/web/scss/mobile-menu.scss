@@ -1,0 +1,156 @@
+/* Mobile menu */
+
+.slide {
+    overflow-y: hidden !important;
+    transition: height 0.5s ease-in !important;
+}
+
+.nav ul {
+    display: flex;
+    justify-content: flex-end;
+    padding: 1em 0;
+    list-style: none;
+}
+
+.nav ul li {
+    padding: 0 1em;
+}
+
+.nav a, .nav-toggle {
+    color: $nav-color;
+}
+
+.nav-toggle {
+    display: none;
+}
+
+@media (max-width: 767px) {
+    .main {
+        width: 100%;
+        padding-bottom: 20px;
+    }
+
+    .main-div {
+        width: 100%;
+    }
+
+    .header {
+        flex-direction: column;
+        height: 470px;
+        background-image: $mobile-header-image;
+
+        h1 {
+            font-size: 2.2em;
+            width: 170px;
+        }
+    }
+
+    .title {
+        width: 100px;
+        margin: $place-title-mobile;
+    }
+
+    .nav {
+        height: auto;
+        background-color: rgba(0, 0, 0, 0.746);
+    }
+
+    .nav ul {
+        flex-direction: column;
+        padding-bottom: 1em;
+    }
+
+    .nav ul li {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .nav ul li a {
+        display: block;
+        padding: 0.5em 0;
+    }
+
+    .js .nav-toggle {
+        position: fixed;
+        color: $quote-color;
+        display: block;
+        float: right;
+        right: 0;
+        width: 2em;
+        margin: 0.15em 0;
+        font-size: 1.5rem;
+        line-height: 2em;
+        text-align: center;
+        cursor: pointer;
+    }
+
+    .logo {
+        margin: $place-logo-mobile;
+
+        img {
+            width: 60px;
+        }
+    }
+
+    .quote {
+        margin: $place-quote-mobile;
+        width: 150px;
+        font-size: 1em;
+    }
+
+    .contact-button {
+        margin: $place-button-mobile;
+        color: #313131;
+    }
+
+    .grid {
+        display: flex;
+        flex-direction: column;
+
+        .me-div {
+            order: 1;
+            width: 100%;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        .review-div {
+            order: 2;
+            border-left: 0;
+        }
+    }
+
+    .highlight {
+        flex-direction: column;
+
+        iframe {
+            width: 100%;
+        }
+
+        p {
+            width: 100%;
+            margin-left: 0;
+        }
+    }
+
+    .about {
+        width: 80%;
+
+        table {
+            width: 100%;
+        }
+
+        img {
+            width: 40%;
+        }
+    }
+
+    .footer {
+        .copyright {
+            width: 80%;
+        }
+    }
+}

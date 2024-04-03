@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Spectral&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+// Fonts
+$text-font: 'Raleway', sans-serif;
+$head-font: 'Raleway', sans-serif;
+$title-font: 'DM Serif Display', serif;
+$nav-font: 'Spectral', serif;
+$quote-font: 'DM Serif Display', serif;
+
+// Colors
+
+$font-color: #e8e8e8;
+$title-color: #A2AF8F;
+$nav-color: #FEFEFE;
+$quote-color: #637052;
+
+$button-color: #ab90b0da;
+$hover-color: #766379;
+
+// Backgrounds
+$footer-background: #222729;
+$body-background: #222729;
+$main-background: #222729;
+$review-background: #1f2324;
+
+$header-image: url("../../../assets/img/header-dark.jpg");
+$mobile-header-image: url("../../../assets/img/header-dark-mobile.jpg");
+
+$main-shadow: #5f5455 0 10px 20px, rgba(0, 0, 0, 0.23) 0 6px 6px;
+
+// Colors
+$border-color: #998c8d85;
+$link-color: rgb(180, 202, 180);
+
+$placement-title: 50%;
+$placement-nav: -100;
+$placement-quote: 50%;
+$placement-button: 80%;
+$placement-logo: 93%;
+
+$place-logo-mobile: 10px 0 0 10px;
+$place-title-mobile: 15px 0 0 30%;
+$place-quote-mobile: 35% 0 0 60%;
+$place-button-mobile: 85% 0 0 5%;

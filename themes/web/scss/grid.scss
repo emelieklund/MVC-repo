@@ -1,0 +1,48 @@
+/* Grid */
+
+.grid {
+    display: grid;
+    padding: 1em 2em 2em;
+}
+
+.landingpage {
+    gap: 1rem 2rem;
+}
+
+.me-div {
+    grid-column: 1/2;
+    width: 280px;
+    height: 100%;
+    padding: 15px;
+}
+
+.main-div {
+    grid-column: 2/4;
+    width: 90%;
+    height: auto;
+    padding: 25px;
+    color: $font-color;
+    font-family: $text-font;
+    text-align: justify;
+}
+
+.review-div {
+    grid-column: 4/6;
+    padding: 25px 10px;
+    width: 320px;
+    border-left: 1px solid $border-color;
+}
+
+.review {
+    width: 300px;
+    height: auto;
+    padding: 25px 10px 10px;
+    box-shadow: $main-shadow;
+    margin-bottom: 30px;
+    border-bottom-right-radius: 30px;
+    background-color: $review-background;
+
+    img {
+        width: 80px;
+    }
+}

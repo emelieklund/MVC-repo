@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="{{ asset('img/glider.svg') }}">
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+            {% block importmap %}{{ importmap('app') }}{% endblock %}
+        {% endblock %}
+    </head>
+    <body>
+        <header class="site-header">
+            <img src="{{ asset('img/header.jpg') }}" alt="header" class="img">
+            <span class="site-title">My Symfony Site</span>
+            <nav class="nav">
+                <a href="{{ path('me') }}">Me</a>
+                <a href="{{ path('about_course') }}">About</a>
+                <a href="{{ path('report') }}">Report</a>
+                <a href="{{ path('lucky_color') }}">Lucky</a>
+            </nav>
+        </header>
+
+        <main class="main">
+            {% block body %}
+                <img src="{{ asset('img/header.jpg') }}" alt="header">
+            {% endblock %}
+        </main>
+
+        <footer>
+            <p>Emelie Eklund | Blekinge Tekniska Högskola</p>
+        </footer>
+    </body>
+</html>

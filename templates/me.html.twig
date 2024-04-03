@@ -1,0 +1,22 @@
+{% extends "base.html.twig" %}
+
+{% block title %}About me{% endblock %}
+
+{% block body %}
+    <h1>About me</h1>
+    <p>
+        Hej och välkommen till min me-sida! Mitt namn är Emelie Eklund och jag är en livsglad 28-åring bosatt på Eriksberg i Göteborg. Förra året läste jag kurspaketet Webbutveckling och programmering och nu läser jag programmet Webbprogrammering, distans. Jag trivs hur bra som helst och ser verkligen fram emot den här kursen!
+    </p>
+    <p>
+        Jag valde spåret programmering/webb då jag gillar att arbeta i olika system samt att skapa saker, men också för att jag strävar efter en framtid med mycket frihet.
+    </p>
+    <p>
+        När jag inte studerar så hittar man mig antingen på mitt jobb på Volvo Cars, på gymmet, ute på en promenad eller i soffan franmför en spännande serie. Ett annat stort intresse för mig är att resa.
+    </p>
+    <p>
+        Vi hörs och syns!
+    </p>
+
+    <img src="{{ asset('img/me.jpg') }}" alt="Image of me" class="img">
+
+{% endblock %}

@@ -1,0 +1,49 @@
+/* Header */
+
+.header, .footer {
+    flex: 0 0 auto;
+}
+
+.header, .site-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.header {
+    height: auto;
+    background-image: $header-image;
+    background-size: 100% 100%;
+
+    h1 {
+        margin-left: $placement;
+        font-family: $title-font;
+        font-size: 6.5em;
+        width: 380px;
+        color: $title-color;
+    }
+}
+
+/* Title */
+
+.title {
+    padding: 2em 3em 3em;
+}
+
+.title * {
+    color: $font-color;
+}
+
+.top-div {
+    background-color: $footer-background;
+    height: 40px;
+    width: 100%;
+    color: $nav-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+}
+
+.arrow-div {
+    position: fixed;
+}
