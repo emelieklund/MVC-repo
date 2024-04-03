@@ -12,3 +12,5 @@ Använd webbplatsen
 ------------------
 
 För att använda webbplatsen, gå till mappen dbwebb-kurser/mvc/me/report i terminalen. Starta applikationen genom att skriva 'php -S localhost:8888 -t public'. Gå till localhost:8888 i webbläsaren.
+
+Test
