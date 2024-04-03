@@ -1,5 +1,4 @@
 # MVC-repo
 Repo for MVC (v2)
 
-<img src="{{ asset('img/github.jpg') }}" alt="github icon" class="img">
-![logo-2582757_1280]
+<img src="public/img/github.png" alt="github icon" class="img">
