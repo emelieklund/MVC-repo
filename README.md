@@ -1,7 +1,7 @@
 # MVC-repo
 Repo for MVC (v2)
 
-![github icon](public/img/github.png) {.git-img}
+![github icon](public/img/github.png) {width:50%} {.git-img}
 
 Klona repot
 -----------
