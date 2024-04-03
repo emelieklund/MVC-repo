@@ -1,6 +1,9 @@
 # MVC-repo
 Repo for MVC (v2)
 
+![github icon]({{ asset('img/github.jpg') }})
+![github icon](public/img/github.png)
+
 <img src="{{ asset('img/github.jpg') }}" alt="github icon" class="img">
 
 Klona repot
@@ -12,5 +15,3 @@ Använd webbplatsen
 ------------------
 
 För att använda webbplatsen, gå till mappen dbwebb-kurser/mvc/me/report i terminalen. Starta applikationen genom att skriva 'php -S localhost:8888 -t public'. Gå till localhost:8888 i webbläsaren.
-
-Test
