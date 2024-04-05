@@ -11,7 +11,7 @@ class LuckyControllerTwig extends AbstractController
     #[Route("/lucky", name: "lucky_color")]
     public function number(): Response
     {
-        $number = random_int(100, 999999);
+        $number = random_int(100000, 999999);
 
         $data = [
             'number' => $number

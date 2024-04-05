@@ -7,7 +7,13 @@
 
     <section>
     <a id="kmom01"><h2>Kmom01</h2></a>
-        <p>Redovisningstext</p>
+        <p>Jag är bekant med objektorientering från ooPython-kursen då jag läste det kurspaketet förra året, men det är ju ett tag sedan nu. Mycket känner jag igen men vissa saker behöver jag nog repetera. Och sen är det ju ett annat språk nu också så det skiljer sig ju lite på så vis.</p>
+        <p>I en PHP-klass kan man använda en konstruktor för att instansiera/sätta upp klassen, men det är inget krav då det också går att göra i efterhand. Variabler inom en klass benämns som medlemsvariabler eller properties. Dessa går att ha som public och nås då även utifrån klassen, men det är att föredra att ha dem som private, då man oftast inte vill att de ska gå att ändra på utifrån. Anger man en property som protected kan man nå den ifrån en klass som ärver från originalklassen. När man refererar till en property inom en klass, så används $this–>variable. Funktioner i klasser kallas metoder. För att skapa ett objekt av klassen skriver man $object = new Class();</p>
+        <p>Det är många olika delar av kodbasen vi använder nu, med controllers och templates osv, så det är en del att hålla ordning på men det går nog fort att lära sig att hantera det. Jag tror att när man väl kommer in i det så kommer det att kännas väldigt strukturerat och trevligt.</p>
+        <p>I ”PHP The Right Way” valde jag att fokusera lite extra på länken om Symfony Coding Standards (https://symfony.com/doc/current/contributing/code/standards.html) då det kändes relevant just nu. Mycket av det som stod där känns ganska universalt för de programmeringsspråk jag hittills har bekantat mig med, men en sak som kändes annorlunda med Symfony är följande punkt:</p>
+        <li>Add a comma after each array item in a multi-line array, even after the last one;</li>
+        <p>Det känns som att man oftast hoppar över kommatecknet efter sista. En annan punkt handlade om att man ska definiera en klass per fil, med undantaget private helper classes som inte ska användas utifrån. I artikeln skummade jag även igenom stycken som handlade om databaser. Det såg lite annorlunda ut från det vi har gjort tidigare så det ser jag fram emot att lära mig mer om.</p>
+        <p>Min TIL för kmom01 är hur man definierar klasser i PHP.</p>
     </section>
 
     <section>
