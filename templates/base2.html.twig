@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="{{ asset('img/glider.svg') }}">
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+            {% block importmap %}{{ importmap('app') }}{% endblock %}
+        {% endblock %}
+    </head>
+    <body>
+        <nav class="nav2">
+            <a href="{{ path('me') }}">Me</a>
+            <a href="{{ path('about_course') }}">About</a>
+            <a href="{{ path('report') }}">Report</a>
+            <a href="{{ path('lucky_color') }}">Lucky</a>
+            <a href="{{ path('pig_start') }}">Pig game</a>
+            <a href="{{ path('card') }}">Card</a>
+        </nav>
+
+        <nav class="card-nav">
+            <a href="{{ path('deck') }}">Deck</a>
+            <a href="{{ path('shuffle') }}">Shuffle</a>
+            <a href="{{ path('draw') }}">Draw</a>
+            <a href="{{ path('graphic') }}">Graphic deck</a>
+            <a href="{{ path('session') }}">Session</a>
+        </nav>
+
+        <main class="main">
+            {% block body %}
+                <img src="{{ asset('img/header.jpg') }}" alt="header">
+            {% endblock %}
+        </main>
+
+        <footer>
+            <p>Emelie Eklund | Blekinge Tekniska Högskola</p>
+        </footer>
+    </body>
+</html>
