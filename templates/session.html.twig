@@ -1,0 +1,27 @@
+{% extends "base2.html.twig" %}
+
+{% block title %}Session{% endblock %}
+
+{% block body %}
+<h1>Session</h1>
+
+
+{% for key in session_all|keys %}
+    <p>{{ key }}:</p>
+{% endfor %}
+
+<div class="suit-div">
+    {% for card in deck_session %}
+        {% if '♥' in card or '♦' in card %}
+            <p style="color:red">{{ card }}</p>
+        {% else %}
+            <p>{{ card }}</p>
+        {% endif %}
+    {% endfor %}
+</div>
+
+<button class="button"><a href="{{ path('session_delete') }}">Clear session</a></button>
+
+{{ include('flash.html.twig') }}
+
+{% endblock %}
