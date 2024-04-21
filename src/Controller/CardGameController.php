@@ -23,9 +23,7 @@ class CardGameController extends AbstractController
     }
 
     #[Route("/card/deck", name: "deck")]
-    public function deck(
-        SessionInterface $session
-    ): Response
+    public function deck(SessionInterface $session): Response
     {
         $deck = new DeckOfCards();
 
@@ -49,9 +47,7 @@ class CardGameController extends AbstractController
     }
 
     #[Route("/card/deck/shuffle", name: "shuffle")]
-    public function shuffle(
-        SessionInterface $session
-    ): Response
+    public function shuffle(SessionInterface $session): Response
     {
         $deck = new DeckOfCards();
 
@@ -65,13 +61,15 @@ class CardGameController extends AbstractController
     }
 
     #[Route("/card/deck/draw", name: "draw")]
-    public function draw(
-        SessionInterface $session
-    ): Response
+    public function draw(SessionInterface $session): Response
     {
         if ($session->has("deck_session")) {
             $deck = $session->get("deck_session");
         } else {
+            $deck = new DeckOfCards();
+        }
+
+        if ($deck->getNrOfCards() === 0) {
             $deck = new DeckOfCards();
         }
 
@@ -86,15 +84,24 @@ class CardGameController extends AbstractController
     }
 
     #[Route("/card/deck/draw/{num<\d+>}", name: "draw_number")]
-    public function drawNumber(
-        int $num,
-        SessionInterface $session
-        ): Response
+    public function drawNumber(int $num, SessionInterface $session): Response
     {
+        if ($num > 52) {
+            throw new \Exception("There's only 52 cards in a deck!");
+        }
+
         if ($session->has("deck_session")) {
             $deck = $session->get("deck_session");
         } else {
             $deck = new DeckOfCards();
+        }
+
+        if ($deck->getNrOfCards() === 0) {
+            $deck = new DeckOfCards();
+        }
+
+        if ($num > $deck->getNrOfCards()) {
+            $num = $deck->getNrOfCards();
         }
 
         $session->set("deck_session", $deck);
@@ -102,7 +109,6 @@ class CardGameController extends AbstractController
         $data = [
             "number" => $num,
             "drawHand" => $deck->drawNumber($num),
-            "deck" => $deck->getDeckSorted(),
             "cards_left" => $deck->getNrOfCards(),
         ];
 
@@ -110,28 +116,28 @@ class CardGameController extends AbstractController
     }
 
     #[Route("/session", name: "session")]
-    public function session(
-        Request $request,
-        SessionInterface $session
-    ): Response
+    public function session(SessionInterface $session): Response
     {
         $all = $session->all();
 
-        $deck_session = $session->get("deck_session");
+        if ($session->has("deck_session")) {
+            $deck_session = $session->get("deck_session");
+            $deck_session = $deck_session->getDeckSorted();
+        } else {
+            $deck_session = null;
+        }
 
         $data = [
             "session_all" => $all,
             "keys" => array_keys($all),
-            "deck_session" => $deck_session->getDeckSorted(),
+            "deck_session" => $deck_session,
         ];
 
         return $this->render('session.html.twig', $data);
     }
 
     #[Route("/session/delete", name: "session_delete")]
-    public function deleteSession(
-        SessionInterface $session
-    ): Response
+    public function deleteSession(SessionInterface $session): Response
     {
         $this->addFlash(
             'notice',

@@ -1,12 +1,46 @@
 {% extends "base.html.twig" %}
 
-{% block title %}About{% endblock %}
+{% block title %}JSON routes{% endblock %}
 
 {% block body %}
     <h1>JSON routes</h1>
 
-    <ul>
-        <li><p><a href="{{ path('quote') }}">JSON quote</a></p></li>
-    </ul>
-    
+    <div class="api-div">
+        <h2>Quote</h2>
+        <p>This route will randomly show one of three quotes by Albert Einstein.</p>
+        <a href="{{ path('quote') }}"><button class="button">Quote</button></a>
+    </div>
+
+    <div class="api-div">
+        <h2>Card deck (sorted)</h2>
+        <p>Shows card deck sorted by ranks and suits.</p>
+        <a href="{{ path('json_deck') }}"><button class="button">Deck</button></a>
+    </div>
+
+    <div class="api-div">
+        <h2>Card deck (shuffled)</h2>
+        <p>Shows card deck shuffled.</p>
+        <form method="post" action="{{ path('json_shuffle') }}">
+            <input type="submit" name="do_it" value="Shuffle" class="button">
+        </form>
+    </div>
+
+    <div class="api-div">
+        <h2>Draw card</h2>
+        <p>Draw one randomized card from the deck.</p>
+        <form method="post" action="{{ path('json_draw') }}">
+            <input type="submit" name="do_it" value="Draw" class="button">
+        </form>
+    </div>
+
+    <div class="api-div">
+        <h2>Draw card hand</h2>
+        <p>Draw optional number of randomized cards from the deck.</p>
+        <form method="post" action="{{ path('get_nr') }}">
+            <label for="num">Number (1-52):</label>
+            <input type="number" id="num" name="num" min="1" max="52" value="1">
+            <input type="submit" name="do_it" value="Draw hand" class="button">
+        </form>
+    </div>
+
 {% endblock %}
