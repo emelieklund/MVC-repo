@@ -1,0 +1,25 @@
+{% extends "base2.html.twig" %}
+
+{% block title %}Draw{% endblock %}
+
+{% block body %}
+
+{% if (number is same as(1)) %}
+    <h1>Draw {{ number }} card</h1>
+{% else %}
+    <h1>Draw {{ number }} cards</h1>
+{% endif %}
+
+<div class="suit-div">
+    {% for card in drawHand %}
+        {% if '♥' in card or '♦' in card%}
+            <p style="color:red">{{ card }}</p>
+        {% else %}
+            <p>{{ card }}</p>
+        {% endif %}
+    {% endfor %}
+</div>
+
+<p>Number of cards left: {{ cards_left }}</p>
+
+{% endblock %}

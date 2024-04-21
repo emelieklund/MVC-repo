@@ -1,0 +1,19 @@
+{% extends "base2.html.twig" %}
+
+{% block title %}Card deck{% endblock %}
+
+{% block body %}
+
+<h1>Card deck</h1>
+
+<div class="suit-div">
+    {% for card in deck %}
+        {% if '♥' in card or '♦' in card %}
+            <p style="color:red">{{ card }}</p>
+        {% else %}
+            <p>{{ card }}</p>
+        {% endif %}
+    {% endfor %}
+</div>
+
+{% endblock %}

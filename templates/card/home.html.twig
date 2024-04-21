@@ -1,0 +1,47 @@
+{% extends "base2.html.twig" %}
+
+{% block title %}Card Game{% endblock %}
+
+{% block body %}
+
+<h1>Card game</h1>
+
+<p>Förklara strukturen på klasserna. Rita UML-diagram.</p>
+
+<p>Jag har skapat fyra olika klasser: Card, CardGraphic, CardHand och DeckOfCards. </p>
+
+<h2>Card</h2>
+
+<p>Klassen Card har två protected medlemsvariabler, $rank och $suit. Klassen tar emot två argument, som tilldelas $this->rank respektive $this->suit i konstruktorn. Klassen har en metod, getValue(), som returnerar kortets värde.</p>
+
+<h2>CardGraphic</h2>
+
+<p>CardGraphic ärver från Card. Den har en metod, getImageName(), som först gör om värdet på rank/suit (för att matcha png-filerna som används senare) med hjälp av switch/case, och sedan returnerar filnamnet, exklusive filändelsen (.png).
+Klassen används just nu bara som ett test i routen card/graphic där hela kortleken visas upp, men i nästa kmom kanske den kommer till användning mer.</p>
+
+<h2>CardHand</h2>
+
+<p>CardHand har en medlemsvariabel i form av en array ($hand). Den har tre metoder: add(), som lägger till objekt av klassen Card till $hand, getNumberCards(), som returnerar antalet objekt i $hand, och getValues(), som returnerar värdena i $hand.</p>
+
+<h2>DeckOfCards</h2>
+
+<p>DeckOfCards är lite större. Den har tre medlemsvariabler, $rank och $suit, som är arrayer med alla valörer och färger som finns i en kortlek, samt $deck som initieras som en tom array.
+Det finns en konstruktor där själva kortleken, $deck, fylls på med alla valörer och färger med hjälp av två nästlade foreach-loopar.<br>
+Den har sex metoder:<br>
+<ol>
+    <li>getDeckSorted(), som tar fram alla värden på korten i kortleken och lägger dessa i en array som sedan returneras.</li>
+    <li>getDeckShuffled() tar $this->getDeckSorted och blandar om den med shuffle(). En ny array returneras därefter.</li>
+    <li>getGraphicDeck() gör precis samma som föregående metod, fast med GraphicCard istället för Card.</li>
+    <li>draw() slumpar fram ett nummer mellan 0 och 51, och tar sedan fram kortet på den positionen i $this->getDeckSorted.</li>
+    <li>drawNumber() gör samma sak, fast så många gånger som argumentet $number talar om. Varje kort som dras plockas bort från kortleken med hjälp av array_splice().</li>
+    <li>getNumberOfCards() returnerar antalet kort i kortleken.<br></li>
+</ol>
+</p>
+
+<h2>UML-diagram</h2>
+
+<p>Det finns två kompositions-relationer i klasserna, då både CardHand och DeckOfCards använder sig av klasserna Card och CardGraphic. Det finns också ett arv mellan CardGraphic och Card.</p>
+
+<img src="{{ asset('img/uml.drawio.png') }}" alt="uml diagram">
+
+{% endblock %}

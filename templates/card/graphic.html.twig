@@ -1,0 +1,15 @@
+{% extends "base2.html.twig" %}
+
+{% block title %}Card deck{% endblock %}
+
+{% block body %}
+
+<h1>Graphic deck</h1>
+
+<div class="suit-div">
+    {% for card in deck %}
+        <img src="{{ asset('img/cards/'~ card ~'.png') }}" alt="card" class="card-img">
+    {% endfor %}
+</div>
+
+{% endblock %}
