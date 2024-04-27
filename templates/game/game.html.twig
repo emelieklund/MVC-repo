@@ -1,0 +1,22 @@
+{% extends "base-game.html.twig" %}
+
+{% block title %}Card game{% endblock %}
+
+{% block body %}
+
+<h1>Card game</h1>
+
+<p>
+    This card game is called 21, and the plot is that you should be as close to 21 as possible, without exceeding 21. You can choose to stay or to draw one more card.
+    If you get exactly 21, you win. If you exceed 21, you loose and the bank wins. If you choose to stay, then it's the bank's turn. If the bank gets 21, it wins.
+    If it gets the same as you, the bank wins. If both stays under 21, the one that is closest to 21 wins.<br>
+    One important disclaimer is that an Ace is worth 1 OR 14. If you get an Ace, there will be two scores showing. If one of them reaches 21, you/the bank wins.
+    The program will automatically choose the score beneficial for the player, if one chooses to stay under 21 points.
+    If more than one Ace is drawn, only the first one will be counted as 14 in the second score, since two aces worth 14 points make no sense (that means the score is at least 28 and the player looses).
+</p>
+
+<p><a href="{{ path('doc') }}">Documentation</a></p>
+
+<a href="{{ path('init') }}"><button class="button">START PLAYING</button></a>
+
+{% endblock %}

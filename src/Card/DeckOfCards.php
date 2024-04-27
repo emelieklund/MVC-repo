@@ -108,7 +108,6 @@ class DeckOfCards
         $card = $this->graphicDeck[$randNr];
         array_splice($this->graphicDeck, $randNr, 1);
 
-        //return $card->getImageName();
         return $card;
     }
 

@@ -23,9 +23,9 @@ class Game
      *
      * @return void
      */
-    public function saveScorePlayer(SessionInterface $session): void
+    public function saveScorePlayer(SessionInterface $session, $score): void
     {
-        $this->scorePlayer = $session->get("score");
+        $this->scorePlayer = $score;
     }
 
     /**
@@ -35,7 +35,7 @@ class Game
      */
     public function saveScoreBank(SessionInterface $session): void
     {
-        $this->scoreBank = $session->get("score");
+        $this->scoreBank = $session->get("score1");
     }
 
     /**

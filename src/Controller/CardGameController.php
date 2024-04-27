@@ -11,6 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\ErrorHandler\Exception;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -23,7 +24,7 @@ class CardGameController extends AbstractController
     }
 
     #[Route("/card/deck", name: "deck")]
-    public function deck(SessionInterface $session): Response
+    public function deck(): Response
     {
         $deck = new DeckOfCards();
 
@@ -121,16 +122,16 @@ class CardGameController extends AbstractController
         $all = $session->all();
 
         if ($session->has("deck_session")) {
-            $deck_session = $session->get("deck_session");
-            $deck_session = $deck_session->getDeckSorted();
+            $deckSession = $session->get("deck_session");
+            $deckSession = $deckSession->getDeckSorted();
         } else {
-            $deck_session = null;
+            $deckSession = null;
         }
 
         $data = [
             "session_all" => $all,
             "keys" => array_keys($all),
-            "deck_session" => $deck_session,
+            "deck_session" => $deckSession,
         ];
 
         return $this->render('session.html.twig', $data);

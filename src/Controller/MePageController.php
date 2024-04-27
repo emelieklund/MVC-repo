@@ -9,7 +9,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class MePageController extends AbstractController
 {
     #[Route("/", name: "me")]
-    public function me(): Response
+    public function mePage(): Response
     {
         $number = random_int(0, 100);
 

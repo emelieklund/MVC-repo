@@ -1,0 +1,25 @@
+PSEUDO CODE
+
+// Initialize new Game
+// Hand out randomized card from card deck
+// Show card in div
+// Show sum
+
+// IF sum >= 21
+    // Round over
+    // Bank's turn
+// ELSE
+    // Player chooses "Stay" or "New card"
+
+    // IF Stay
+        // Show result
+        // Bank's turn
+        // Draw randomized card
+        // Bank chooses to stay or draw another card
+    // ELSE IF New card
+        // Hand out randomized card from card deck
+        // Show card in div
+        // Show sum
+        // Player chooses "Stay" or "New card"
+    // END IF
+// END IF

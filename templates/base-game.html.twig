@@ -14,19 +14,16 @@
         {% endblock %}
     </head>
     <body>
-        <header class="site-header">
-            <img src="{{ asset('img/header.jpg') }}" alt="header" class="img">
-            <span class="site-title">My Symfony Site</span>
-            <nav class="nav">
-                <a href="{{ path('me') }}">Me</a>
-                <a href="{{ path('about_course') }}">About</a>
-                <a href="{{ path('report') }}">Report</a>
-                <a href="{{ path('lucky_color') }}">Lucky</a>
-                <a href="{{ path('card') }}">Card</a>
-                <a href="{{ path('game') }}">Game</a>
-                <a href="{{ path('session') }}">Session</a>
-            </nav>
-        </header>
+        <nav class="nav2">
+            <a href="{{ path('me') }}">Me</a>
+            <a href="{{ path('about_course') }}">About</a>
+            <a href="{{ path('report') }}">Report</a>
+            <a href="{{ path('lucky_color') }}">Lucky</a>
+            <a href="{{ path('pig_start') }}">Pig game</a>
+            <a href="{{ path('card') }}">Card</a>
+            <a href="{{ path('game') }}">Game</a>
+            <a href="{{ path('session') }}">Session</a>
+        </nav>
 
         <main class="main">
             {% block body %}

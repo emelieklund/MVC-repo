@@ -1,0 +1,83 @@
+{% extends "base-game.html.twig" %}
+
+{% block title %}Play{% endblock %}
+
+{% block body %}
+
+<h1>Play</h1>
+
+<h2>{{ turn }}'s turn:</h2>
+
+{% if (turn is same as('Player')) %}
+    {% if (score1 is same as(21) or score2 is same as(21)) %}
+        <p style="color:green; font-size:2.5em">YOU WON</p>
+        <script>
+        setTimeout(function () {
+            window.location.href= '/game/over';
+        },2000);
+        </script>
+    {% elseif (score1 > 21) %}
+        <p style="color:red; font-size:2.5em">YOU LOST</p>
+        <script>
+        setTimeout(function () {
+            window.location.href= '/game/over';
+        },2000);
+        </script>
+    {% else %}
+        <div class="button-div">
+            <a href="{{ path('play') }}"><button class="game-button">NEW CARD</button></a>
+            <a href="{{ path('stay') }}"><button class="game-button">STAY</button></a>
+        </div>
+    {% endif %}
+{% endif %}
+
+{% if (turn is same as('Bank')) %}
+    {% if (score1 is same as(21) or score2 is same as(21)) %}
+        <p style="color:red; font-size:2.5em">BANK WON, YOU LOST...</p>
+        <script>
+            setTimeout(function () {
+                window.location.href= '/game/stay';
+            },2000);
+        </script>
+    {% elseif (score1 > 21) %}
+        <p style="color:green; font-size:2.5em">BANK LOST, YOU WON!</p>
+        <script>
+            setTimeout(function () {
+                window.location.href= '/game/stay';
+            },2000);
+        </script>
+    {% elseif (score1 is same as(score_player) or score2 is same as(score_player)) %}
+        <p style="color:red; font-size:2.5em">BANK WON</p>
+        <script>
+            setTimeout(function () {
+                window.location.href= '/game/stay';
+            },2000);
+        </script>
+    {% elseif (score1 >= 17) %}
+        <script>
+            setTimeout(function () {
+                window.location.href= '/game/stay';
+            },2000);
+        </script>
+    {% else %}
+        <script>
+            setTimeout(function () {
+                window.location.href= '/game/play';
+            },2000);
+        </script>
+    {% endif %}
+{% endif %}
+
+<p>Score: {{ score1 }}</p>
+
+{% if score2 is not same as (0) %}
+    <p>Score 2: {{ score2 }}</p>
+{% endif %}
+
+<div class="container">
+    {% for c in hand %}
+        <img src="{{ asset('img/cards/'~ c ~'.png') }}" alt="card" class="card">
+    {% endfor %}
+</div>
+
+{% endblock %}

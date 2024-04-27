@@ -1,0 +1,22 @@
+{% extends "base-game.html.twig" %}
+
+{% block title %}Play{% endblock %}
+
+{% block body %}
+
+<h1>Game over</h1>
+
+<p>Player: {{ score_player }} points</p>
+<p>Bank: {{ score_bank }} points</p>
+
+{% if (score_player < 21 and score_bank < 21) %}
+    {% if (score_player > score_bank) %}
+        <p style="color:green; font-size:2.5em">YOU WON!</p>
+    {% else %}
+        <p style="color:red; font-size:2.5em">BANK WON, YOU LOST...</p>
+    {% endif %}
+{% endif %}
+
+<a href="{{ path('init') }}"><button class="button">PLAY AGAIN</button></a>
+
+{% endblock %}

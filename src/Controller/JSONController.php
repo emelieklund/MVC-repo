@@ -83,9 +83,7 @@ class JSONController extends AbstractController
 
         $response = new JsonResponse($data);
         $response->setEncodingOptions(
-            $response->getEncodingOptions() ||
-            JSON_PRETTY_PRINT ||
-            JSON_UNESCAPED_UNICODE
+            $response->getEncodingOptions() | JSON_PRETTY_PRINT
         );
 
         return $response;
@@ -109,16 +107,14 @@ class JSONController extends AbstractController
 
         $response = new JsonResponse($data);
         $response->setEncodingOptions(
-            $response->getEncodingOptions() ||
-            JSON_PRETTY_PRINT ||
-            JSON_UNESCAPED_UNICODE
+            $response->getEncodingOptions() | JSON_PRETTY_PRINT
         );
 
         return $response;
     }
 
     #[Route("/api/deck/draw/get_nr}", name: "get_nr", methods: ['POST'])]
-    public function jsonGetNumber(Request $request, SessionInterface $session): Response
+    public function jsonGetNumber(Request $request): Response
     {
         $num = $request->request->get('num');
 
@@ -151,11 +147,28 @@ class JSONController extends AbstractController
 
         $response = new JsonResponse($data);
         $response->setEncodingOptions(
-            $response->getEncodingOptions() ||
-            JSON_PRETTY_PRINT ||
-            JSON_UNESCAPED_UNICODE
+            $response->getEncodingOptions() | JSON_PRETTY_PRINT
         );
 
         return $response;
     }
+
+    #[Route("/api/game}", name: "score")]
+    public function currentScore(SessionInterface $session): Response
+    {
+        $game = $session->get("game");
+
+        $data = [
+            "score_player" => $game->getScorePlayer(),
+            "score_bank" => $game->getScoreBank(),
+        ];
+
+        $response = new JsonResponse($data);
+        $response->setEncodingOptions(
+            $response->getEncodingOptions() | JSON_PRETTY_PRINT
+        );
+
+        return $response;
+    }
+
 }

@@ -20,7 +20,7 @@
     {% endfor %}
 </div>
 
-<button class="button"><a href="{{ path('session_delete') }}">Clear session</a></button>
+<a href="{{ path('session_delete') }}"><button class="button">Clear session</button></a>
 
 {{ include('flash.html.twig') }}
 
