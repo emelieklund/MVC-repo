@@ -9,9 +9,11 @@ class Card
 {
     /**
      * @var string $rank     Card rank
-     * @var string $suit     Card suit
      */
     protected $rank;
+    /**
+     * @var string $suit     Card suit
+     */
     protected $suit;
 
     /**
