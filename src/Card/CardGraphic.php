@@ -8,6 +8,10 @@ namespace App\Card;
 class CardGraphic extends Card
 {
     /**
+     * @var int $num
+     */
+    protected $num = 0;
+    /**
      * Constructor to create a GraphicCard.
      *
      * @param string $rank The rank of the card.
@@ -56,5 +60,27 @@ class CardGraphic extends Card
         }
 
         return $this->rank . '_of_' . $this->suit;
+    }
+
+    /**
+     * Converts rank/suit and presents value of graphic card.
+     *
+     * @return int
+     */
+    public function getRankAsNumber(): int
+    {
+        if (str_starts_with($this->getImageName(), 'k')) {
+            $this->num = 13;
+        } elseif (str_starts_with($this->getImageName(), 'q')) {
+            $this->num = 12;
+        } elseif (str_starts_with($this->getImageName(), 'j')) {
+            $this->num = 11;
+        } elseif (str_starts_with($this->getImageName(), 'a')) {
+            $this->num = 1;
+        } else {
+            $this->num = intval($this->rank);
+        }
+
+        return $this->num;
     }
 }
