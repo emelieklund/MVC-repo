@@ -87,19 +87,4 @@ class CardHand
         }
         return $sum;
     }
-
-    /**
-     * Handles ace situation
-     *
-     * @return void
-     */
-    public function ifAce(): void
-    {
-        $hand = $this->handGraphic;
-        foreach ($hand->getGraphicValues() as $card) {
-            if (str_starts_with($card, 'ace')) {
-                
-            }
-        }
-    }
 }

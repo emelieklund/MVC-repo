@@ -42,4 +42,13 @@ class DiceHand
         }
         return $values;
     }
+
+    public function sum(): int
+    {
+        $sum = 0;
+        foreach ($this->hand as $die) {
+            $sum += $die->getValue();
+        }
+        return $sum;
+    }
 }
