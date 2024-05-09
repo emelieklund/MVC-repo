@@ -12,7 +12,7 @@ class CardTest extends TestCase
     /**
      * Construct object and verify that the object has the expected properties.
      */
-    public function testCreateCard()
+    public function testCreateCard(): void
     {
         $card = new Card("A", "♥");
         $this->assertInstanceOf("\App\Card\Card", $card);

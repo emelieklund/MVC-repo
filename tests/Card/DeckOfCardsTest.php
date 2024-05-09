@@ -12,7 +12,7 @@ class DeckOfCardsTest extends TestCase
     /**
      * Tests first and last value of getDeckSorted().
      */
-    public function testGetDeckSorted()
+    public function testGetDeckSorted(): void
     {
         $deck = new DeckOfCards();
 
@@ -25,7 +25,7 @@ class DeckOfCardsTest extends TestCase
     /**
      * Tests if shuffled deck contains 52 items.
      */
-    public function testGetDeckShuffled()
+    public function testGetDeckShuffled(): void
     {
         $deck = new DeckOfCards();
 
@@ -37,7 +37,7 @@ class DeckOfCardsTest extends TestCase
     /**
      * Tests if first value of getGraphicDeck() if ace_of_spades.
      */
-    public function testGetGraphicDeck()
+    public function testGetGraphicDeck(): void
     {
         $deck = new DeckOfCards();
         $firstCard = $deck->getGraphicDeck()[0];
@@ -48,7 +48,7 @@ class DeckOfCardsTest extends TestCase
     /**
      * Tests if draw() returns string.
      */
-    public function testDrawReturnString()
+    public function testDrawReturnString(): void
     {
         $deck = new DeckOfCards();
         $card = $deck->draw();
@@ -59,7 +59,7 @@ class DeckOfCardsTest extends TestCase
     /**
      * Tests if drawGraphic() returns object of class CardGraphic.
      */
-    public function testDrawGraphicReturnType()
+    public function testDrawGraphicReturnType(): void
     {
         $deck = new DeckOfCards();
         $cardGraphic = $deck->drawGraphic();
@@ -70,7 +70,7 @@ class DeckOfCardsTest extends TestCase
     /**
      * Tests if deck contains 42 items after drawNumber(10).
      */
-    public function testDrawNumberAndGetNrOfCards()
+    public function testDrawNumberAndGetNrOfCards(): void
     {
         $deck = new DeckOfCards();
 

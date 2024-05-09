@@ -1,0 +1,27 @@
+{% extends "base-game.html.twig" %}
+
+{% block title %}Library{% endblock %}
+
+{% block body %}
+    <h1>Library</h1>
+    <a href="{{ path('library_add') }}"><p>Add book to library</p></a>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>ISBN</th>
+            <th>Author</th>
+            <th></th>
+        </tr>
+        {% for book in library %}
+                <tr>
+                    <td>{{ book.getId|e }}</td>
+                    <td><a href="{{ path('library_view_one', {id: book.getId, title: book.getTitle, isbn: book.getIsbn, author: book.getAuthor, image: book.getImage}) }}">{{ book.getTitle|e }}</a></td>
+                    <td>{{ book.getIsbn|e }}</td>
+                    <td>{{ book.getAuthor|e }}</td>
+                    <td><img src="{{ asset('img/books/'~ book.getImage ~'.jpeg') }}" alt="Book cover" class="book"></td>
+                </tr>
+            </a>
+        {% endfor %}
+    </table>
+{% endblock %}

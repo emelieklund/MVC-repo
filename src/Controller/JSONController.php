@@ -7,6 +7,10 @@ use App\Card\DeckOfCards;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
+use App\Entity\Library;
+use App\Repository\LibraryRepository;
+use Doctrine\Persistence\ManagerRegistry;
+
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
@@ -171,4 +175,31 @@ class JSONController extends AbstractController
         return $response;
     }
 
+    #[Route("/api/library/books}", name: "library")]
+    public function library(LibraryRepository $libraryRepository): Response
+    {
+        $library = $libraryRepository->findAll();
+
+        $response = $this->json($library);
+        $response->setEncodingOptions(
+            $response->getEncodingOptions() | JSON_PRETTY_PRINT
+        );
+        return $response;
+    }
+
+    #[Route("/api/library/book/{isbn}", name: "library_one_book")]
+    public function libraryOneBook(
+        string $isbn,
+        LibraryRepository $libraryRepository,
+        ManagerRegistry $doctrine
+    ): Response {
+        $entityManager = $doctrine->getManager();
+        $book = $libraryRepository->findIdByIsbn($isbn);
+
+        $response = $this->json($book);
+        $response->setEncodingOptions(
+            $response->getEncodingOptions() | JSON_PRETTY_PRINT
+        );
+        return $response;
+    }
 }

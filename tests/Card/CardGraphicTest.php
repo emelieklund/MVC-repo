@@ -12,7 +12,7 @@ class CardGraphicTest extends TestCase
     /**
      * Tests if returned value is of type str.
      */
-    public function testIfNameReturnedAsStr()
+    public function testIfNameReturnedAsStr(): void
     {
         $graphicCard = new CardGraphic("K", "♠");
 
@@ -22,7 +22,7 @@ class CardGraphicTest extends TestCase
     /**
      * Tests if returned value is of type int.
      */
-    public function testIfRankReturnedAsInt()
+    public function testIfRankReturnedAsInt(): void
     {
         $suit = ['♠', '♥', '♣', '♦'];
         $rank = ["2", "A", "J", "Q", "K"];

@@ -3,7 +3,6 @@
 namespace App\Card;
 
 use PHPUnit\Framework\TestCase;
-use Symfony\Component\HttpFoundation\Session\Session;
 
 /**
  * Test cases for class Game.
@@ -13,12 +12,11 @@ class GameTest extends TestCase
     /**
      * Test getScorePlayer() after saveScorePlayer().
      */
-    public function testGetScorePlayer()
+    public function testGetScorePlayer(): void
     {
         $game = new Game();
-        $session = new Session();
 
-        $game->saveScorePlayer($session, 10);
+        $game->saveScorePlayer(10);
 
         $scorePlayer = $game->getScorePlayer();
 
@@ -28,7 +26,7 @@ class GameTest extends TestCase
     /**
      * Test if getScoreBank() returns empty value when saveScoreBank() isn't set.
      */
-    public function testGetScoreBankEmpty()
+    public function testGetScoreBankEmpty(): void
     {
         $game = new Game();
 

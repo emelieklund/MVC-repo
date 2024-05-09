@@ -49,4 +49,16 @@
         <a href="{{ path('score') }}"><button class="button">Score</button></a>
     </div>
 
+    <div class="api-div">
+        <h2>Show library</h2>
+        <p>Show all books in library.</p>
+        <a href="{{ path('library') }}"><button class="button">Library</button></a>
+    </div>
+
+    <div class="api-div">
+        <h2>The Iliad</h2>
+        <p>Show The Iliad by Homer.</p>
+        <a href="{{ path('library_one_book', {isbn: 9780140447941}) }}"><button class="button">Library</button></a>
+    </div>
+
 {% endblock %}

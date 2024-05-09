@@ -1,0 +1,19 @@
+{% extends "base-game.html.twig" %}
+
+{% block title %}Library{% endblock %}
+
+{% block body %}
+    <h1>{{ title }}</h1>
+
+    <div class="view-one">
+        <img src="{{ asset('img/books/'~ image ~'.jpeg') }}" alt="Book cover" width="300px">
+
+        <div class="book-details">
+            <p>Author: {{ author }}</p>
+            <p>ISBN: {{ isbn }}</p>
+            <a href="{{ path('library_update', {id: id, title: title, isbn: isbn, author: author, image: image}) }}"><p>Update details</p></a>
+            <a href="{{ path('book_delete_by_id', {id: id}) }}"><p>Delete book</p></a>
+        </div>
+    </div>
+
+{% endblock %}

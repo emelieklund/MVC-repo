@@ -12,7 +12,7 @@ class CardHandTest extends TestCase
     /**
      * Adds three cards and tests if getNumberOfCards() returns 3.
      */
-    public function testNumberOfCards()
+    public function testNumberOfCards(): void
     {
         $card1 = new Card("K", "♠");
         $card2 = new Card("Q", "♥");
@@ -29,7 +29,7 @@ class CardHandTest extends TestCase
     /**
      * Adds Card to CardHand and tests if method getValues() returns value of type string.
      */
-    public function testGetValuesReturnTypeString()
+    public function testGetValuesReturnTypeString(): void
     {
         $card = new Card("K", "♠");
         $cardHand = new CardHand();
@@ -42,7 +42,7 @@ class CardHandTest extends TestCase
     /**
      * Adds two cards and tests getGraphicValue() method of first card and getSum() of both cards.
      */
-    public function testGetValuesAndGetSumOfGraphicCardHand()
+    public function testGetValuesAndGetSumOfGraphicCardHand(): void
     {
         $card1 = new CardGraphic("K", "♠");
         $card2 = new CardGraphic("Q", "♥");
