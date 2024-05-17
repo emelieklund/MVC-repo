@@ -69,7 +69,6 @@ class JSONController extends AbstractController
         LibraryRepository $libraryRepository,
         ManagerRegistry $doctrine
     ): Response {
-        $entityManager = $doctrine->getManager();
         $book = $libraryRepository->findIdByIsbn($isbn);
 
         $response = $this->json($book);

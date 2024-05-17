@@ -34,7 +34,6 @@ class LibraryController extends AbstractController
 
     #[Route('/library/one/{id}/{title}/{isbn}/{author}/{image}', name: 'library_view_one')]
     public function viewOne(
-        LibraryRepository $libraryRepository,
         int $id,
         string $title,
         string $isbn,
@@ -69,7 +68,6 @@ class LibraryController extends AbstractController
     public function postToLibrary(
         Request $request,
         ManagerRegistry $doctrine,
-        LibraryRepository $libraryRepository
     ): Response {
         $entityManager = $doctrine->getManager();
 
@@ -93,7 +91,6 @@ class LibraryController extends AbstractController
 
     #[Route('/library/update/{id}/{title}/{isbn}/{author}/{image}', name: 'library_update')]
     public function updateLibrary(
-        LibraryRepository $libraryRepository,
         int $id,
         string $title,
         string $isbn,
@@ -115,7 +112,6 @@ class LibraryController extends AbstractController
     public function postUpdateLibrary(
         Request $request,
         ManagerRegistry $doctrine,
-        LibraryRepository $libraryRepository
     ): Response {
         $entityManager = $doctrine->getManager();
 
