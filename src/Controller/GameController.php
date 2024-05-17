@@ -100,9 +100,9 @@ class GameController extends AbstractController
         if ($session->get("whose_turn") === "Player") {
             $game->nextPlayer($session);
             if ($session->get("score2") !== 0 && $session->get("score2") < 21) {
-                $game->saveScorePlayer($session, $session->get("score2"));
+                $game->saveScorePlayer($session->get("score2"));
             } else {
-                $game->saveScorePlayer($session, $session->get("score1"));
+                $game->saveScorePlayer($session->get("score1"));
             }
             $scorePlayer = $game->getScorePlayer();
             $session->set("score_player", $scorePlayer);

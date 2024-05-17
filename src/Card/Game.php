@@ -23,7 +23,7 @@ class Game
      *
      * @return void
      */
-    public function saveScorePlayer(SessionInterface $session, $score): void
+    public function saveScorePlayer($score): void
     {
         $this->scorePlayer = $score;
     }
