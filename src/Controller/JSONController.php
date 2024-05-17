@@ -66,8 +66,7 @@ class JSONController extends AbstractController
     #[Route("/api/library/book/{isbn}", name: "library_one_book")]
     public function libraryOneBook(
         string $isbn,
-        LibraryRepository $libraryRepository,
-        ManagerRegistry $doctrine
+        LibraryRepository $libraryRepository
     ): Response {
         $book = $libraryRepository->findIdByIsbn($isbn);
 
