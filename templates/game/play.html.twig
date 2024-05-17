@@ -13,14 +13,14 @@
         <p style="color:green; font-size:2.5em">YOU WON</p>
         <script>
         setTimeout(function () {
-            window.location.href= 'http://www.student.bth.se/~emek22/dbwebb-kurser/mvc/me/report/public/game/over';
+            window.location.href= 'http://localhost:8888/game/over';
         },2000);
         </script>
     {% elseif (score1 > 21) %}
         <p style="color:red; font-size:2.5em">YOU LOST</p>
         <script>
         setTimeout(function () {
-            window.location.href= 'http://www.student.bth.se/~emek22/dbwebb-kurser/mvc/me/report/public/game/over';
+            window.location.href= 'http://localhost:8888/game/over';
         },2000);
         </script>
     {% else %}
@@ -36,33 +36,33 @@
         <p style="color:red; font-size:2.5em">BANK WON, YOU LOST...</p>
         <script>
             setTimeout(function () {
-                window.location.href= 'http://www.student.bth.se/~emek22/dbwebb-kurser/mvc/me/report/public/game/stay';
+                window.location.href= 'http://localhost:8888/game/stay';
             },2000);
         </script>
     {% elseif (score1 > 21) %}
         <p style="color:green; font-size:2.5em">BANK LOST, YOU WON!</p>
         <script>
             setTimeout(function () {
-                window.location.href= 'http://www.student.bth.se/~emek22/dbwebb-kurser/mvc/me/report/public/game/stay';
+                window.location.href= 'http://localhost:8888/game/stay';
             },2000);
         </script>
     {% elseif (score1 is same as(score_player) or score2 is same as(score_player)) %}
         <p style="color:red; font-size:2.5em">BANK WON</p>
         <script>
             setTimeout(function () {
-                window.location.href= 'http://www.student.bth.se/~emek22/dbwebb-kurser/mvc/me/report/public/game/stay';
+                window.location.href= 'http://localhost:8888/game/stay';
             },2000);
         </script>
     {% elseif (score1 >= 17) %}
         <script>
             setTimeout(function () {
-                window.location.href= 'http://www.student.bth.se/~emek22/dbwebb-kurser/mvc/me/report/public/game/stay';
+                window.location.href= 'http://localhost:8888/game/stay';
             },2000);
         </script>
     {% else %}
         <script>
             setTimeout(function () {
-                window.location.href= 'http://www.student.bth.se/~emek22/dbwebb-kurser/mvc/me/report/public/game/play';
+                window.location.href= 'http://localhost:8888/game/play';
             },2000);
         </script>
     {% endif %}

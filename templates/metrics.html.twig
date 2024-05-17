@@ -1,0 +1,112 @@
+{% extends "base-game.html.twig" %}
+
+{% block title %}Metrics{% endblock %}
+
+{% block body %}
+    <h1>Kodkvalitetsrapport</h1>
+
+    <h2>Introduktion</h2>
+    <h3>Code style</h3>
+    <p>Code style handlar om hur man skriver sin kod rent "grammatiskt", t ex mellanrum, blank lines och hur man använder return i en metod.
+        Några konkreta exempel är att man ska ha mellanrum före och efter binary operators så som '==' och '&&', och att man ska ha blank line
+        före en return i en metod.
+    </p>
+
+    <h3>Coverage</h3>
+    <p>Coverage visar hur väl koden är testad. Här vill man ha ett så högt värde som möjligt, för att eliminera risker som otestad kod kan medföra.</p>
+
+    <h3>Complexity</h3>
+    <p>När det kommer till complexity vill man ha ett lågt värde, då det innebär att koden är mindre komplex och således lättare att underhålla och utveckla.</p>
+
+    <h3>Cohesion</h3>
+    <p>Cohesion innebär att metoder som interagerar tillsammans ska existera i samma klass, medan metoder som inte hör dit bör placeras i en annan klass.
+        Ett lågt värde är att eftersträva här då det indikerar på hög cohesion.
+    </p>
+
+    <h3>Coupling</h3>
+    <p>
+        Afferent coupling (AC) är ett mått på hur många klasser som påverkas eller är beroende av den givna klassen (utgående).
+        Efferent coupling (EC) mäter istället hur många klasser den givna klassen använder sig av (inkommande).
+        Detta kan vara viktigt att ha i åtanke när man ska ändra på en klass. Dvs, kommer min ändring att påverka någon annan klass också?
+    </p>
+
+    <h3>CRAP</h3>
+    <p>Om en klass har stor komplexitet bör den också ha fler testfall.</p>
+
+    <h2>PHP Metrics</h2>
+    <p>I rapporten från PHP Metrics framgår det att det finns 10 violations i min kod. <i>Average cyclomatic complexity</i> ligger på 3.76 och
+        <i>average bugs</i> på 0.14. <i>Average LCOM</i> har ett värde på 1.86.
+    </p>
+
+    <img src="{{ asset('img/metrics/metrics_overview_before.png') }}" alt="PHP Metrics overview" class="metrics_img">
+
+    <img src="{{ asset('img/metrics/avg_lcom_before.png') }}" alt="PHP Metrics LCOM" class="metrics_img_small">
+
+    <p>
+        Det finns fem class violations, samtliga i controller-klasser.
+        I JSONController får jag en varning om "Blob / God object", och förslaget för att åtgärda det är att dela upp koden i flera klasser.
+        Detta faller nog in bra under complexity.
+        Samma varning får jag i ProductController. I GameController, DiceGameController och LibraryController får jag varningen <i>Probably bugged</i>,
+        följt av förslaget att enhetstesta de klasserna. Här misstänker jag att det är coverage som är lite lågt.
+    </p>
+
+    <img src="{{ asset('img/metrics/metrics_violations_before.png') }}" alt="PHP Metrics violations" class="metrics_img">
+
+    <p>
+        Klassen CardGraphic får ganska höga värden på komplexitet, och framför allt metoden getImageName().
+    </p>
+
+    <img src="{{ asset('img/metrics/complex_before.png') }}" alt="PHP Metrics complexity" class="metrics_img">
+
+    <h2>Scrutinizer</h2>
+    <p>På Scrutnizer fick jag ett värde på 9.92. Coverage-värdet ligger på 19 %.</p>
+
+    <img src="{{ asset('img/metrics/rating_before.png') }}" alt="Scrutinizer rating before changes" class="metrics_img_small">
+
+    <p>Det finns fem filer med issues, varav tre är mina egna.</p>
+
+    <img src="{{ asset('img/metrics/scrutinizer_issues.png') }}" alt="Scrutinizer rating before changes" class="metrics_img">
+
+    <p>I JSONController och LibraryController klagar Scrutinizer på att det finns "unused code". Bilden nedanför visar rapporten från JSONController.</p>
+
+    <img src="{{ asset('img/metrics/unused_code.png') }}" alt="Scrutinizer unused code" class="metrics_img">
+
+    <p>
+        Under fliken Hot Spots har samtliga klasser betyget A, och alla metoder utom två. Dessa två metoder är getImageName() och play(), och har betyget B.
+        play() har ett ganska högt CRAP-värde, medan getImageName sticker iväg lite på complexity.
+    </p>
+
+    <img src="{{ asset('img/metrics/play_before.png') }}" alt="Scrutinizer unused code" class="metrics_img">
+
+    <img src="{{ asset('img/metrics/getImageName_before.png') }}" alt="Scrutinizer unused code" class="metrics_img">
+
+    <a href="https://scrutinizer-ci.com/g/emelieklund/MVC-repo/?branch=main"><img src="https://scrutinizer-ci.com/g/emelieklund/MVC-repo/badges/quality-score.png?b=main" alt="Scrutinizer Code Quality" /></a>
+
+    <a href="https://scrutinizer-ci.com/g/emelieklund/MVC-repo/?branch=main"><img src="https://scrutinizer-ci.com/g/emelieklund/MVC-repo/badges/coverage.png?b=main" alt="Code Coverage" /></a>
+
+    <a href="https://scrutinizer-ci.com/g/emelieklund/MVC-repo/build-status/main"><img src="https://scrutinizer-ci.com/g/emelieklund/MVC-repo/badges/build.png?b=main" alt="Build Status" /></a>
+    <h2>Förbättringar</h2>
+    <p>Följande förbättringar har jag tänkt att genomföra:</p>
+
+    <ol>
+        <li>
+            Dela upp koden i JSONController. Här kommer jag att skapa en JSONDeckController, och lägga koden som har med kortleken att göra där.
+            Detta för att minska storleken på JSONController och därmed också komplexiteten.
+        </li>
+        <li>
+            Skriva om koden i CardGraphic, framför allt metoden getImageName() som innehåller många switch/case. Kanske även metoden getRankAsNumber(),
+            då den består av en lite större if/else. Förhoppningen är att komplexiteten minskar och att jag får betyget A i Scrutinizer på getImageName().
+        </li>
+        <li>
+            Ta bort oanvänd kod i JSONController och LibraryController.
+        </li>
+        <li>
+            Ta bort kod som är från övningar.
+        </li>
+    </ol>
+
+    <p>Jag kommer inte ge mig på att enhetstesta mina kontroller-klasser.</p>
+
+    <h2>Diskussion</h2>
+    <p>Text</p>
+{% endblock %}

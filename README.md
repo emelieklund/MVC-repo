@@ -19,3 +19,7 @@ För att använda webbplatsen, gå till mappen dbwebb-kurser/mvc/me/report i ter
 Routen /api visar vilka JSON-routes som finns på webbplatsen. Just nu finns bara en: /api/quote, som slumpar fram ett av tre citat varje gång sidan laddas om. Citaten kommer ifrån Albert Einstein. Tillsammans med citatet visas även dagens datum samt tidpunkt.
 
 [![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/emelieklund/MVC-repo/badges/quality-score.png?b=main)](https://scrutinizer-ci.com/g/emelieklund/MVC-repo/?branch=main)
+
+[![Code Coverage](https://scrutinizer-ci.com/g/emelieklund/MVC-repo/badges/coverage.png?b=main)](https://scrutinizer-ci.com/g/emelieklund/MVC-repo/?branch=main)
+
+[![Build Status](https://scrutinizer-ci.com/g/emelieklund/MVC-repo/badges/build.png?b=main)](https://scrutinizer-ci.com/g/emelieklund/MVC-repo/build-status/main)

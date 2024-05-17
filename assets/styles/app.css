@@ -30,11 +30,24 @@ footer {
 
 h1 {
     border-bottom: 4px double #ccc;
+    padding-bottom: 7px;
     text-align: center;
 }
 
+h2 {
+    border-bottom: 1px solid #DEE3E7;
+    padding-bottom: 5px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 24px;
+}
+
+h3 {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+
 .nav {
-    width: 35%;
+    width: 45%;
     height: 40px;
     background-color: #0000002e;
     position: fixed;
@@ -383,4 +396,14 @@ background-color: #C3D8CA;
 
 .book-details {
     margin-left: 25px;
+}
+
+.metrics_img {
+    width: 100%;
+    border: 1px solid #DEE3E7;
+}
+
+.metrics_img_small {
+    width: 45%;
+    border: 1px solid #DEE3E7;
 }
