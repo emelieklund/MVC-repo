@@ -246,56 +246,6 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-CardGameController.html#method_deleteSession"
         },                {
-            "fqsen": "\\App\\Controller\\DiceGameController",
-            "name": "DiceGameController",
-            "summary": "",
-            "url": "classes/App-Controller-DiceGameController.html"
-        },                {
-            "fqsen": "\\App\\Controller\\DiceGameController\u003A\u003Ahome\u0028\u0029",
-            "name": "home",
-            "summary": "",
-            "url": "classes/App-Controller-DiceGameController.html#method_home"
-        },                {
-            "fqsen": "\\App\\Controller\\DiceGameController\u003A\u003AtestRollDice\u0028\u0029",
-            "name": "testRollDice",
-            "summary": "",
-            "url": "classes/App-Controller-DiceGameController.html#method_testRollDice"
-        },                {
-            "fqsen": "\\App\\Controller\\DiceGameController\u003A\u003AtestRollDices\u0028\u0029",
-            "name": "testRollDices",
-            "summary": "",
-            "url": "classes/App-Controller-DiceGameController.html#method_testRollDices"
-        },                {
-            "fqsen": "\\App\\Controller\\DiceGameController\u003A\u003AtestDiceHand\u0028\u0029",
-            "name": "testDiceHand",
-            "summary": "",
-            "url": "classes/App-Controller-DiceGameController.html#method_testDiceHand"
-        },                {
-            "fqsen": "\\App\\Controller\\DiceGameController\u003A\u003Ainit\u0028\u0029",
-            "name": "init",
-            "summary": "",
-            "url": "classes/App-Controller-DiceGameController.html#method_init"
-        },                {
-            "fqsen": "\\App\\Controller\\DiceGameController\u003A\u003AinitCallback\u0028\u0029",
-            "name": "initCallback",
-            "summary": "",
-            "url": "classes/App-Controller-DiceGameController.html#method_initCallback"
-        },                {
-            "fqsen": "\\App\\Controller\\DiceGameController\u003A\u003Aplay\u0028\u0029",
-            "name": "play",
-            "summary": "",
-            "url": "classes/App-Controller-DiceGameController.html#method_play"
-        },                {
-            "fqsen": "\\App\\Controller\\DiceGameController\u003A\u003Aroll\u0028\u0029",
-            "name": "roll",
-            "summary": "",
-            "url": "classes/App-Controller-DiceGameController.html#method_roll"
-        },                {
-            "fqsen": "\\App\\Controller\\DiceGameController\u003A\u003Asave\u0028\u0029",
-            "name": "save",
-            "summary": "",
-            "url": "classes/App-Controller-DiceGameController.html#method_save"
-        },                {
             "fqsen": "\\App\\Controller\\GameController",
             "name": "GameController",
             "summary": "",
@@ -346,35 +296,95 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-JSONController.html#method_jsonQuote"
         },                {
-            "fqsen": "\\App\\Controller\\JSONController\u003A\u003AjsonDeck\u0028\u0029",
+            "fqsen": "\\App\\Controller\\JSONController\u003A\u003Alibrary\u0028\u0029",
+            "name": "library",
+            "summary": "",
+            "url": "classes/App-Controller-JSONController.html#method_library"
+        },                {
+            "fqsen": "\\App\\Controller\\JSONController\u003A\u003AlibraryOneBook\u0028\u0029",
+            "name": "libraryOneBook",
+            "summary": "",
+            "url": "classes/App-Controller-JSONController.html#method_libraryOneBook"
+        },                {
+            "fqsen": "\\App\\Controller\\JSONDeckController",
+            "name": "JSONDeckController",
+            "summary": "",
+            "url": "classes/App-Controller-JSONDeckController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\JSONDeckController\u003A\u003AjsonDeck\u0028\u0029",
             "name": "jsonDeck",
             "summary": "",
-            "url": "classes/App-Controller-JSONController.html#method_jsonDeck"
+            "url": "classes/App-Controller-JSONDeckController.html#method_jsonDeck"
         },                {
-            "fqsen": "\\App\\Controller\\JSONController\u003A\u003AjsonShuffle\u0028\u0029",
+            "fqsen": "\\App\\Controller\\JSONDeckController\u003A\u003AjsonShuffle\u0028\u0029",
             "name": "jsonShuffle",
             "summary": "",
-            "url": "classes/App-Controller-JSONController.html#method_jsonShuffle"
+            "url": "classes/App-Controller-JSONDeckController.html#method_jsonShuffle"
         },                {
-            "fqsen": "\\App\\Controller\\JSONController\u003A\u003AjsonDraw\u0028\u0029",
+            "fqsen": "\\App\\Controller\\JSONDeckController\u003A\u003AjsonDraw\u0028\u0029",
             "name": "jsonDraw",
             "summary": "",
-            "url": "classes/App-Controller-JSONController.html#method_jsonDraw"
+            "url": "classes/App-Controller-JSONDeckController.html#method_jsonDraw"
         },                {
-            "fqsen": "\\App\\Controller\\JSONController\u003A\u003AjsonGetNumber\u0028\u0029",
+            "fqsen": "\\App\\Controller\\JSONDeckController\u003A\u003AjsonGetNumber\u0028\u0029",
             "name": "jsonGetNumber",
             "summary": "",
-            "url": "classes/App-Controller-JSONController.html#method_jsonGetNumber"
+            "url": "classes/App-Controller-JSONDeckController.html#method_jsonGetNumber"
         },                {
-            "fqsen": "\\App\\Controller\\JSONController\u003A\u003AjsonDrawNumber\u0028\u0029",
+            "fqsen": "\\App\\Controller\\JSONDeckController\u003A\u003AjsonDrawNumber\u0028\u0029",
             "name": "jsonDrawNumber",
             "summary": "",
-            "url": "classes/App-Controller-JSONController.html#method_jsonDrawNumber"
+            "url": "classes/App-Controller-JSONDeckController.html#method_jsonDrawNumber"
         },                {
-            "fqsen": "\\App\\Controller\\JSONController\u003A\u003AcurrentScore\u0028\u0029",
+            "fqsen": "\\App\\Controller\\JSONDeckController\u003A\u003AcurrentScore\u0028\u0029",
             "name": "currentScore",
             "summary": "",
-            "url": "classes/App-Controller-JSONController.html#method_currentScore"
+            "url": "classes/App-Controller-JSONDeckController.html#method_currentScore"
+        },                {
+            "fqsen": "\\App\\Controller\\LibraryController",
+            "name": "LibraryController",
+            "summary": "",
+            "url": "classes/App-Controller-LibraryController.html"
+        },                {
+            "fqsen": "\\App\\Controller\\LibraryController\u003A\u003Aindex\u0028\u0029",
+            "name": "index",
+            "summary": "",
+            "url": "classes/App-Controller-LibraryController.html#method_index"
+        },                {
+            "fqsen": "\\App\\Controller\\LibraryController\u003A\u003AviewAllLibrary\u0028\u0029",
+            "name": "viewAllLibrary",
+            "summary": "",
+            "url": "classes/App-Controller-LibraryController.html#method_viewAllLibrary"
+        },                {
+            "fqsen": "\\App\\Controller\\LibraryController\u003A\u003AviewOne\u0028\u0029",
+            "name": "viewOne",
+            "summary": "",
+            "url": "classes/App-Controller-LibraryController.html#method_viewOne"
+        },                {
+            "fqsen": "\\App\\Controller\\LibraryController\u003A\u003AaddToLibrary\u0028\u0029",
+            "name": "addToLibrary",
+            "summary": "",
+            "url": "classes/App-Controller-LibraryController.html#method_addToLibrary"
+        },                {
+            "fqsen": "\\App\\Controller\\LibraryController\u003A\u003ApostToLibrary\u0028\u0029",
+            "name": "postToLibrary",
+            "summary": "",
+            "url": "classes/App-Controller-LibraryController.html#method_postToLibrary"
+        },                {
+            "fqsen": "\\App\\Controller\\LibraryController\u003A\u003AupdateLibrary\u0028\u0029",
+            "name": "updateLibrary",
+            "summary": "",
+            "url": "classes/App-Controller-LibraryController.html#method_updateLibrary"
+        },                {
+            "fqsen": "\\App\\Controller\\LibraryController\u003A\u003ApostUpdateLibrary\u0028\u0029",
+            "name": "postUpdateLibrary",
+            "summary": "",
+            "url": "classes/App-Controller-LibraryController.html#method_postUpdateLibrary"
+        },                {
+            "fqsen": "\\App\\Controller\\LibraryController\u003A\u003AdeleteBookById\u0028\u0029",
+            "name": "deleteBookById",
+            "summary": "",
+            "url": "classes/App-Controller-LibraryController.html#method_deleteBookById"
         },                {
             "fqsen": "\\App\\Controller\\LuckyControllerTwig",
             "name": "LuckyControllerTwig",
@@ -406,100 +416,105 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-MePageController.html#method_report"
         },                {
-            "fqsen": "\\App\\Dice\\Dice",
-            "name": "Dice",
+            "fqsen": "\\App\\Controller\\MePageController\u003A\u003Ametrics\u0028\u0029",
+            "name": "metrics",
             "summary": "",
-            "url": "classes/App-Dice-Dice.html"
+            "url": "classes/App-Controller-MePageController.html#method_metrics"
         },                {
-            "fqsen": "\\App\\Dice\\Dice\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
+            "fqsen": "\\App\\Entity\\Library",
+            "name": "Library",
             "summary": "",
-            "url": "classes/App-Dice-Dice.html#method___construct"
+            "url": "classes/App-Entity-Library.html"
         },                {
-            "fqsen": "\\App\\Dice\\Dice\u003A\u003Aroll\u0028\u0029",
-            "name": "roll",
+            "fqsen": "\\App\\Entity\\Library\u003A\u003AgetId\u0028\u0029",
+            "name": "getId",
             "summary": "",
-            "url": "classes/App-Dice-Dice.html#method_roll"
+            "url": "classes/App-Entity-Library.html#method_getId"
         },                {
-            "fqsen": "\\App\\Dice\\Dice\u003A\u003AgetValue\u0028\u0029",
-            "name": "getValue",
+            "fqsen": "\\App\\Entity\\Library\u003A\u003AgetTitle\u0028\u0029",
+            "name": "getTitle",
             "summary": "",
-            "url": "classes/App-Dice-Dice.html#method_getValue"
+            "url": "classes/App-Entity-Library.html#method_getTitle"
         },                {
-            "fqsen": "\\App\\Dice\\Dice\u003A\u003AgetAsString\u0028\u0029",
-            "name": "getAsString",
+            "fqsen": "\\App\\Entity\\Library\u003A\u003AsetTitle\u0028\u0029",
+            "name": "setTitle",
             "summary": "",
-            "url": "classes/App-Dice-Dice.html#method_getAsString"
+            "url": "classes/App-Entity-Library.html#method_setTitle"
         },                {
-            "fqsen": "\\App\\Dice\\Dice\u003A\u003A\u0024value",
-            "name": "value",
+            "fqsen": "\\App\\Entity\\Library\u003A\u003AgetIsbn\u0028\u0029",
+            "name": "getIsbn",
             "summary": "",
-            "url": "classes/App-Dice-Dice.html#property_value"
+            "url": "classes/App-Entity-Library.html#method_getIsbn"
         },                {
-            "fqsen": "\\App\\Dice\\DiceGraphic",
-            "name": "DiceGraphic",
+            "fqsen": "\\App\\Entity\\Library\u003A\u003AsetIsbn\u0028\u0029",
+            "name": "setIsbn",
             "summary": "",
-            "url": "classes/App-Dice-DiceGraphic.html"
+            "url": "classes/App-Entity-Library.html#method_setIsbn"
         },                {
-            "fqsen": "\\App\\Dice\\DiceGraphic\u003A\u003A__construct\u0028\u0029",
-            "name": "__construct",
+            "fqsen": "\\App\\Entity\\Library\u003A\u003AgetAuthor\u0028\u0029",
+            "name": "getAuthor",
             "summary": "",
-            "url": "classes/App-Dice-DiceGraphic.html#method___construct"
+            "url": "classes/App-Entity-Library.html#method_getAuthor"
         },                {
-            "fqsen": "\\App\\Dice\\DiceGraphic\u003A\u003AgetAsString\u0028\u0029",
-            "name": "getAsString",
+            "fqsen": "\\App\\Entity\\Library\u003A\u003AsetAuthor\u0028\u0029",
+            "name": "setAuthor",
             "summary": "",
-            "url": "classes/App-Dice-DiceGraphic.html#method_getAsString"
+            "url": "classes/App-Entity-Library.html#method_setAuthor"
         },                {
-            "fqsen": "\\App\\Dice\\DiceGraphic\u003A\u003A\u0024representation",
-            "name": "representation",
+            "fqsen": "\\App\\Entity\\Library\u003A\u003AgetImage\u0028\u0029",
+            "name": "getImage",
             "summary": "",
-            "url": "classes/App-Dice-DiceGraphic.html#property_representation"
+            "url": "classes/App-Entity-Library.html#method_getImage"
         },                {
-            "fqsen": "\\App\\Dice\\DiceHand",
-            "name": "DiceHand",
+            "fqsen": "\\App\\Entity\\Library\u003A\u003AsetImage\u0028\u0029",
+            "name": "setImage",
             "summary": "",
-            "url": "classes/App-Dice-DiceHand.html"
+            "url": "classes/App-Entity-Library.html#method_setImage"
         },                {
-            "fqsen": "\\App\\Dice\\DiceHand\u003A\u003Aadd\u0028\u0029",
-            "name": "add",
+            "fqsen": "\\App\\Entity\\Library\u003A\u003A\u0024id",
+            "name": "id",
             "summary": "",
-            "url": "classes/App-Dice-DiceHand.html#method_add"
+            "url": "classes/App-Entity-Library.html#property_id"
         },                {
-            "fqsen": "\\App\\Dice\\DiceHand\u003A\u003Aroll\u0028\u0029",
-            "name": "roll",
+            "fqsen": "\\App\\Entity\\Library\u003A\u003A\u0024title",
+            "name": "title",
             "summary": "",
-            "url": "classes/App-Dice-DiceHand.html#method_roll"
+            "url": "classes/App-Entity-Library.html#property_title"
         },                {
-            "fqsen": "\\App\\Dice\\DiceHand\u003A\u003AgetNumberDices\u0028\u0029",
-            "name": "getNumberDices",
+            "fqsen": "\\App\\Entity\\Library\u003A\u003A\u0024isbn",
+            "name": "isbn",
             "summary": "",
-            "url": "classes/App-Dice-DiceHand.html#method_getNumberDices"
+            "url": "classes/App-Entity-Library.html#property_isbn"
         },                {
-            "fqsen": "\\App\\Dice\\DiceHand\u003A\u003AgetValues\u0028\u0029",
-            "name": "getValues",
+            "fqsen": "\\App\\Entity\\Library\u003A\u003A\u0024author",
+            "name": "author",
             "summary": "",
-            "url": "classes/App-Dice-DiceHand.html#method_getValues"
+            "url": "classes/App-Entity-Library.html#property_author"
         },                {
-            "fqsen": "\\App\\Dice\\DiceHand\u003A\u003AgetString\u0028\u0029",
-            "name": "getString",
+            "fqsen": "\\App\\Entity\\Library\u003A\u003A\u0024image",
+            "name": "image",
             "summary": "",
-            "url": "classes/App-Dice-DiceHand.html#method_getString"
-        },                {
-            "fqsen": "\\App\\Dice\\DiceHand\u003A\u003Asum\u0028\u0029",
-            "name": "sum",
-            "summary": "",
-            "url": "classes/App-Dice-DiceHand.html#method_sum"
-        },                {
-            "fqsen": "\\App\\Dice\\DiceHand\u003A\u003A\u0024hand",
-            "name": "hand",
-            "summary": "",
-            "url": "classes/App-Dice-DiceHand.html#property_hand"
+            "url": "classes/App-Entity-Library.html#property_image"
         },                {
             "fqsen": "\\App\\Kernel",
             "name": "Kernel",
             "summary": "",
             "url": "classes/App-Kernel.html"
+        },                {
+            "fqsen": "\\App\\Repository\\LibraryRepository",
+            "name": "LibraryRepository",
+            "summary": "",
+            "url": "classes/App-Repository-LibraryRepository.html"
+        },                {
+            "fqsen": "\\App\\Repository\\LibraryRepository\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "",
+            "url": "classes/App-Repository-LibraryRepository.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Repository\\LibraryRepository\u003A\u003AfindIdByIsbn\u0028\u0029",
+            "name": "findIdByIsbn",
+            "summary": "Find\u0020book\u0020ID\u0020based\u0020on\u0020given\u0020ISBN.",
+            "url": "classes/App-Repository-LibraryRepository.html#method_findIdByIsbn"
         },                {
             "fqsen": "\\",
             "name": "\\",
@@ -516,14 +531,19 @@ Search.appendIndex(
             "summary": "",
             "url": "namespaces/app-controller.html"
         },                {
-            "fqsen": "\\App\\Dice",
-            "name": "Dice",
+            "fqsen": "\\App\\Entity",
+            "name": "Entity",
             "summary": "",
-            "url": "namespaces/app-dice.html"
+            "url": "namespaces/app-entity.html"
         },                {
             "fqsen": "\\App",
             "name": "App",
             "summary": "",
             "url": "namespaces/app.html"
+        },                {
+            "fqsen": "\\App\\Repository",
+            "name": "Repository",
+            "summary": "",
+            "url": "namespaces/app-repository.html"
         }            ]
 );

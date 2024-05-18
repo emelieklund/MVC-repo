@@ -31,7 +31,7 @@
     </p>
 
     <h3>CRAP</h3>
-    <p>Om en klass har stor komplexitet bör den också ha fler testfall.</p>
+    <p>Ett värde som visar komplexitet relativt antal testfall. Om en klass har stor komplexitet bör den också ha fler testfall. På CRAP Score vill man ha ett lågt värde.</p>
 
     <h2>PHP Metrics</h2>
     <p>I rapporten från PHP Metrics framgår det att det finns 10 violations i min kod. <i>Average cyclomatic complexity</i> ligger på 3.76 och
@@ -59,13 +59,19 @@
     <img src="{{ asset('img/metrics/complex_before.png') }}" alt="PHP Metrics complexity" class="metrics_img">
 
     <h2>Scrutinizer</h2>
+    <a href="https://scrutinizer-ci.com/g/emelieklund/MVC-repo/?branch=main"><img src="https://scrutinizer-ci.com/g/emelieklund/MVC-repo/badges/quality-score.png?b=main" alt="Scrutinizer Code Quality" /></a>
+
+    <a href="https://scrutinizer-ci.com/g/emelieklund/MVC-repo/?branch=main"><img src="https://scrutinizer-ci.com/g/emelieklund/MVC-repo/badges/coverage.png?b=main" alt="Code Coverage" /></a>
+
+    <a href="https://scrutinizer-ci.com/g/emelieklund/MVC-repo/build-status/main"><img src="https://scrutinizer-ci.com/g/emelieklund/MVC-repo/badges/build.png?b=main" alt="Build Status" /></a>
+
     <p>På Scrutnizer fick jag ett värde på 9.92. Coverage-värdet ligger på 19 %.</p>
 
     <img src="{{ asset('img/metrics/rating_before.png') }}" alt="Scrutinizer rating before changes" class="metrics_img_small">
 
     <p>Det finns fem filer med issues, varav tre är mina egna.</p>
 
-    <img src="{{ asset('img/metrics/scrutinizer_issues.png') }}" alt="Scrutinizer rating before changes" class="metrics_img">
+    <img src="{{ asset('img/metrics/scrutinizer_issues.png') }}" alt="Scrutinizer issues" class="metrics_img">
 
     <p>I JSONController och LibraryController klagar Scrutinizer på att det finns "unused code". Bilden nedanför visar rapporten från JSONController.</p>
 
@@ -73,18 +79,12 @@
 
     <p>
         Under fliken Hot Spots har samtliga klasser betyget A, och alla metoder utom två. Dessa två metoder är getImageName() och play(), och har betyget B.
-        play() har ett ganska högt CRAP-värde, medan getImageName sticker iväg lite på complexity.
+        play() har ett ganska högt CRAP-värde, medan getImageName() sticker iväg lite på complexity.
     </p>
 
-    <img src="{{ asset('img/metrics/play_before.png') }}" alt="Scrutinizer unused code" class="metrics_img">
+    <img src="{{ asset('img/metrics/play_before.png') }}" alt="Scrutinizer play() method" class="metrics_img">
 
-    <img src="{{ asset('img/metrics/getImageName_before.png') }}" alt="Scrutinizer unused code" class="metrics_img">
-
-    <a href="https://scrutinizer-ci.com/g/emelieklund/MVC-repo/?branch=main"><img src="https://scrutinizer-ci.com/g/emelieklund/MVC-repo/badges/quality-score.png?b=main" alt="Scrutinizer Code Quality" /></a>
-
-    <a href="https://scrutinizer-ci.com/g/emelieklund/MVC-repo/?branch=main"><img src="https://scrutinizer-ci.com/g/emelieklund/MVC-repo/badges/coverage.png?b=main" alt="Code Coverage" /></a>
-
-    <a href="https://scrutinizer-ci.com/g/emelieklund/MVC-repo/build-status/main"><img src="https://scrutinizer-ci.com/g/emelieklund/MVC-repo/badges/build.png?b=main" alt="Build Status" /></a>
+    <img src="{{ asset('img/metrics/getImageName_before.png') }}" alt="Scrutinizer getImageName() method" class="metrics_img">
 
     <h2>Förbättringar</h2>
     <p>Följande förbättringar har jag tänkt att genomföra:</p>
@@ -108,10 +108,54 @@
 
     <p>Jag kommer inte ge mig på att enhetstesta mina kontroller-klasser.</p>
 
+    <h2>Resultat</h2>
+
+    <h3>PHP Metrics</h3>
+    <p>I PHP Metrics gick violations från 10 till 2. <i>Average cyclomatic complexity</i> gick från 3.76 till 3.53 och <i>average bugs</i> från 0.14 till 0.13.</p>
+
+    <img src="{{ asset('img/metrics/metrics_overview_after.png') }}" alt="PHP Metrics overview" class="metrics_img">
+
+    <p>Average LCOM gick från 1.86 till 1.73.</p>
+
+    <img src="{{ asset('img/metrics/avg_lcom_after.png') }}" alt="PHP Metrics LCOM" class="metrics_img_small">
+
+    <p>CardGraphic, som jag skrev om koden i, minskade i komplexitet. WMC gick från 15 till 9, Class cycl. från 13 till 7 och Max method cycl. från 9 till 5.</p>
 
     <img src="{{ asset('img/metrics/complex_after.png') }}" alt="PHP Metrics complexity" class="metrics_img">
 
+    <h3>Scrutinizer</h3>
+    <a href="https://scrutinizer-ci.com/g/emelieklund/MVC-repo/?branch=main"><img src="https://scrutinizer-ci.com/g/emelieklund/MVC-repo/badges/quality-score.png?b=main" alt="Scrutinizer Code Quality" /></a>
+
+    <a href="https://scrutinizer-ci.com/g/emelieklund/MVC-repo/?branch=main"><img src="https://scrutinizer-ci.com/g/emelieklund/MVC-repo/badges/coverage.png?b=main" alt="Code Coverage" /></a>
+
+    <a href="https://scrutinizer-ci.com/g/emelieklund/MVC-repo/build-status/main"><img src="https://scrutinizer-ci.com/g/emelieklund/MVC-repo/badges/build.png?b=main" alt="Build Status" /></a>
+
+    <p>I Scrutinizer ökade betyget från 9.92 till 9.95 och kodtäckningen från 19 % till 21 %. Jag har inte längre några issues i mina egna filer.</p>
+
+    <img src="{{ asset('img/metrics/rating_after.png') }}" alt="Scrutinizer rating before changes" class="metrics_img_small">
+
+    <p>Metoden getImageName() har nu betyget A och har minskat värdena på både Conditions, Paths, Lines och CRAP Score.</p>
+
+    <img src="{{ asset('img/metrics/getImageName_after.png') }}" alt="Scrutinizer getImageName()" class="metrics_img">
 
     <h2>Diskussion</h2>
-    <p>Text</p>
+    <p>
+        Att jobba med verktyg som mäter ens kodkvalitet tror jag kan hjälpa till enormt mycket när man utvecklar. Det underlättar nog framför allt mycket
+        när man jobbar i ett team, då man får hjälp med att hålla sig till en och samma kodstandard. En bra idé är nog att starta upp dessa verktyg
+        precis i början av ett projekt, och gå in och kolla och fixa till med jämna mellanrum så att man inte behöver rätta till allting i slutet.
+        Med tiden kommer man ju också lära sig vad verktygen brukar klaga på, så att man har det i åtanke när man skriver koden.
+    </p>
+    <p>
+        Förutom alla trevliga fördelar med applikationer så som PHP Metrics och Scrutinizer, så kan jag tänka mig att en nackdel skulle kunna vara att man
+        ofta stirrar sig blind på alla mätvärden och lägger ner onödigt mycket tid på att försöka rätta till dem. Koden kanske egentligen inte
+        är speciellt dålig, och man får ju inte glömma att ens egen bedömning och kompetens är mer dynamisk än ett digitalt mätverktyg som utgår ifrån en statisk mall.
+    </p>
+    <p>
+        Jag tänker att man med tiden hittar sina egna sätt att jobba mot Clean Code. Man kanske hittar andra hjälpmedel och även sätter upp
+        regler för sig själv. Det är ju dels viktigt att skriva tydlig och väldokumenterad kod för att andra ska kunna jobba med den och tolka den,
+        men också för att man själv ska kunna gå tillbaka dagar, veckor eller år senare och förstå vad man har gjort. Därför tror jag att det viktigaste
+        är att använda beskrivande namn på variabler, metoder och klasser, och också att dokumentera väl.
+    </p>
+
+    <p style="border-top:1px solid #DEE3E7"><i>Emelie Eklund</i></p>
 {% endblock %}

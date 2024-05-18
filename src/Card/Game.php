@@ -23,7 +23,7 @@ class Game
      *
      * @return void
      */
-    public function saveScorePlayer($score): void
+    public function saveScorePlayer(int $score): void
     {
         $this->scorePlayer = $score;
     }

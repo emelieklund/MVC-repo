@@ -16,9 +16,11 @@ class GameTest extends TestCase
     {
         $game = new Game();
 
+        $game->saveScorePlayer(10);
+
         $scorePlayer = $game->getScorePlayer();
 
-        $this->assertEmpty($scorePlayer);
+        $this->assertEquals(10, $scorePlayer);
     }
 
     /**
