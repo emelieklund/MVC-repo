@@ -1,0 +1,35 @@
+{% extends "base-ps.html.twig" %}
+
+{% block title %}Poker squares{% endblock %}
+
+{% block body %}
+
+
+<div class="game_div">
+
+    <div class="ps_div">
+        {% for item in game_board %}
+            {% if item[1] is not same as("null") %}
+                <a href="{{ path('place_card', {id: item[0], card: card}) }}">
+                    <div class="ps_div_card">
+                        <img src="{{ asset('img/cards/'~ item[1] ~'.png') }}" alt="card" width="60px">
+                    </div>
+                </a>
+            {% else %}
+                <a href="{{ path('place_card', {id: item[0], card: card}) }}">
+                    <div class="ps_div_card">
+                    </div>
+                </a>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+    <div class="current-card">
+        <img src="{{ asset('img/cards/'~ card ~'.png') }}" alt="card" class="card">
+    </div>
+
+    <button class="button-36">Start over</button>
+
+</div>
+
+{% endblock %}
