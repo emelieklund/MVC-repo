@@ -13,20 +13,9 @@
             {% block importmap %}{{ importmap('app') }}{% endblock %}
         {% endblock %}
     </head>
-    <body>
-        <nav class="nav2">
-            <a href="{{ path('me') }}">Me</a>
-            <a href="{{ path('about_course') }}">About</a>
-            <a href="{{ path('report') }}">Report</a>
-            <a href="{{ path('lucky_color') }}">Lucky</a>
-            <a href="{{ path('card') }}">Card</a>
-            <a href="{{ path('game') }}">Game</a>
-            <a href="{{ path('poker_squares') }}">Poker squares</a>
-            <a href="{{ path('session') }}">Session</a>
-            <a href="{{ path('metrics') }}">Metrics</a>
-        </nav>
+    <body class="ps-body">
 
-        <nav class="card-nav">
+        <nav class="ps-nav">
             <a href="{{ path('poker_squares') }}">Play</a>
             <a href="{{ path('about_ps') }}">About game</a>
             <a href="{{ path('about_ps') }}">High scores</a>

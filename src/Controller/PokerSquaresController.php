@@ -7,6 +7,7 @@ use App\Card\CardHand;
 use App\Card\CardGraphic;
 use App\Card\DeckOfCards;
 use App\Card\GameBoard;
+use App\Card\PokerSquare;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
@@ -17,7 +18,7 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class PokerSquaresController extends AbstractController
 {
-    #[Route("/poker", name: "poker_squares")]
+    #[Route("/proj", name: "poker_squares")]
     public function game(SessionInterface $session): Response
     {
         $session->clear();
@@ -28,7 +29,7 @@ class PokerSquaresController extends AbstractController
         return $this->redirectToRoute('poker_play');
     }
 
-    #[Route("/poker/play", name: "poker_play")]
+    #[Route("/proj/play", name: "poker_play")]
     public function play(SessionInterface $session): Response
     {
         // Initialize card deck
@@ -38,7 +39,25 @@ class PokerSquaresController extends AbstractController
             $deck = new DeckOfCards();
         }
 
+        if ($session->has("counter")) {
+            $counter = $session->get("counter");
+        } else {
+            $counter = 0;
+        }
+
+        //echo $counter;
+
         $gameBoard = $session->get("game_board");
+
+        $columns = $gameBoard->columns();
+        $column1 = $columns[0]; // första kolumnen, bestående av 5 arrayer
+
+        if ($gameBoard->ifFull($column1)) {
+            $pokerSquare = new PokerSquare($column1);
+            //$pokerSquare->onePair($column1);
+            //$pokerSquare->flush($column1);
+            $pokerSquare->straight($column1);
+        }
 
         // Draw card from deck
         $card = $deck->drawGraphic();
@@ -49,22 +68,31 @@ class PokerSquaresController extends AbstractController
 
         $data = [
             "card" => $card->getImageName(),
-            "holders" => $gameBoard->getHolders(),
+            "holders" => $gameBoard->getHolderIds(),
             "holder_cards" => $gameBoard->getHolderCards(),
-            "game_board" => $gameBoard->getBoth(),
+            "game_board" => $gameBoard->getIdAndCard(),
         ];
 
         return $this->render('poker-squares/play.html.twig', $data);
     }
 
-    #[Route("/poker/place/{id}/{card}", name: "place_card")]
+    #[Route("/proj/place/{id}/{card}", name: "place_card")]
     public function placeCard(int $id, string $card, SessionInterface $session): Response
     {
+        // Counter that keeps track on what round it is
+        if ($session->has("counter")) {
+            $counter = $session->get("counter");
+        } else {
+            $counter = 0;
+        }
+
+        $counter += 1;
+
+        $session->set("counter", $counter);
+
         $gameBoard = $session->get("game_board");
 
-        $getOne = $gameBoard->getHolders();
-
-        foreach ($gameBoard->getItems() as $holder) {
+        foreach ($gameBoard->getObjects() as $holder) {
             if ($holder->getHolderId() === $id) {
                 $holder->setHolderCard($card);
             }
@@ -82,7 +110,7 @@ class PokerSquaresController extends AbstractController
         return $this->redirectToRoute('poker_play');
     }
 
-    #[Route("/poker/session", name: "poker_session")]
+    #[Route("/proj/session", name: "poker_session")]
     public function session(SessionInterface $session): Response
     {
         $all = $session->all();
@@ -92,14 +120,14 @@ class PokerSquaresController extends AbstractController
         $data = [
             "session_all" => $all,
             "keys" => array_keys($all),
-            "game_board" => $gameBoard->getHolders(),
+            "game_board" => $gameBoard->getHolderIds(),
             "cards" => $gameBoard->getHolderCards(),
         ];
 
         return $this->render('poker-squares/poker_session.html.twig', $data);
     }
 
-    #[Route("/poker/about", name: "about_ps")]
+    #[Route("/proj/about", name: "about_ps")]
     public function aboutPokerSquare(): Response
     {
         return $this->render('poker-squares/poker_squares.html.twig');

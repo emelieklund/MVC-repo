@@ -7,11 +7,11 @@ namespace App\Card;
  */
 class GameBoard
 {
-    protected $gameBoard = [];
+    private $gameBoard = [];
 
     public function __construct()
     {
-        for ($i = 0; $i < 25; $i++) {
+        for ($i = 1; $i <= 25; $i++) {
             $cardHolder = new CardHolder($i);
             $this->gameBoard[] = $cardHolder;
         }
@@ -22,14 +22,14 @@ class GameBoard
      *
      * @return array
      */
-    public function getItems(): array
+    public function getObjects(): array
     {
-        $items = [];
+        $objects = [];
         foreach ($this->gameBoard as $holder) {
-            $items[] = $holder;
+            $objects[] = $holder;
         }
 
-        return $items;
+        return $objects;
     }
 
     /**
@@ -37,14 +37,14 @@ class GameBoard
      *
      * @return array<int>
      */
-    public function getHolders(): array
+    public function getHolderIds(): array
     {
-        $holders = [];
+        $holderIds = [];
         foreach ($this->gameBoard as $holder) {
-            $holders[] = $holder->getHolderId();
+            $holderIds[] = $holder->getHolderId();
         }
 
-        return $holders;
+        return $holderIds;
     }
 
     /**
@@ -67,13 +67,69 @@ class GameBoard
      *
      * @return array
      */
-    public function getBoth(): array
+    public function getIdAndCard(): array
     {
-        $both = [];
+        $idAndCard = [];
         foreach ($this->gameBoard as $holder) {
-            $both[] = [$holder->getHolderId(), $holder->getHolderCard()];
+            $idAndCard[] = [$holder->getHolderId(), $holder->getHolderCard()];
         }
 
-        return $both;
+        return $idAndCard;
+    }
+
+    /**
+     * Get column 1
+     *
+     * @return array
+     */
+    public function columns(): array
+    {
+        $column1 = [];
+        $column2 = [];
+        $column3 = [];
+        $column4 = [];
+        $column5 = [];
+        $allColumns = [];
+
+        foreach ($this->gameBoard as $holder) {
+            if ($holder->getHolderId() % 5 === 1 ) {
+                $column1[] = [$holder->getHolderId(), $holder->getHolderCard()];
+            }
+            if ($holder->getHolderId() % 5 === 2 ) {
+                $column2[] = [$holder->getHolderId(), $holder->getHolderCard()];
+            }
+            if ($holder->getHolderId() % 5 === 3 ) {
+                $column3[] = [$holder->getHolderId(), $holder->getHolderCard()];
+            }
+            if ($holder->getHolderId() % 5 === 4 ) {
+                $column4[] = [$holder->getHolderId(), $holder->getHolderCard()];
+            }
+            if ($holder->getHolderId() % 5 === 0 ) {
+                $column5[] = [$holder->getHolderId(), $holder->getHolderCard()];
+            }
+        }
+        $allColumns[] = $column1;
+        $allColumns[] = $column2;
+        $allColumns[] = $column3;
+        $allColumns[] = $column4;
+        $allColumns[] = $column5;
+
+        return $allColumns;
+    }
+
+    /**
+     * Returns true if column/row is full
+     *
+     * @return bool
+     */
+    public function ifFull(array $colOrRow): bool
+    {
+        foreach ($colOrRow as $holder) {
+            if ($holder[1] === "null") {
+                return false;
+            }
+        }
+
+        return true;
     }
 }

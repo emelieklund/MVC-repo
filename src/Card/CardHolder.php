@@ -7,9 +7,9 @@ namespace App\Card;
  */
 class CardHolder
 {
-    protected $holderId;
+    private $holderId;
 
-    protected $holderCard = "null";
+    private $holderCard = "null";
 
     public function __construct($holderId)
     {
@@ -36,8 +36,6 @@ class CardHolder
         $this->holderCard = $card;
     }
 
-    // getter method for card name (null if not set yet)
-
     /**
      * Get holder card
      *
@@ -47,6 +45,4 @@ class CardHolder
     {
         return $this->holderCard;
     }
-
-    // method that returns card value
 }

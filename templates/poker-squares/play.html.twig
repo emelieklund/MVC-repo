@@ -4,17 +4,14 @@
 
 {% block body %}
 
-
 <div class="game_div">
 
     <div class="ps_div">
         {% for item in game_board %}
             {% if item[1] is not same as("null") %}
-                <a href="{{ path('place_card', {id: item[0], card: card}) }}">
-                    <div class="ps_div_card">
-                        <img src="{{ asset('img/cards/'~ item[1] ~'.png') }}" alt="card" width="60px">
-                    </div>
-                </a>
+                <div class="ps_div_card">
+                    <img src="{{ asset('img/cards/'~ item[1] ~'.png') }}" alt="card" width="67px">
+                </div>
             {% else %}
                 <a href="{{ path('place_card', {id: item[0], card: card}) }}">
                     <div class="ps_div_card">
