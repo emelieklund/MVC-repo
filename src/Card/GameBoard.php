@@ -78,9 +78,9 @@ class GameBoard
     }
 
     /**
-     * Get column 1
+     * Get all columns
      *
-     * @return array
+     * @return array<array>
      */
     public function columns(): array
     {
@@ -92,29 +92,63 @@ class GameBoard
         $allColumns = [];
 
         foreach ($this->gameBoard as $holder) {
-            if ($holder->getHolderId() % 5 === 1 ) {
+            if ($holder->getHolderId() % 5 === 1) {
                 $column1[] = [$holder->getHolderId(), $holder->getHolderCard()];
             }
-            if ($holder->getHolderId() % 5 === 2 ) {
+            if ($holder->getHolderId() % 5 === 2) {
                 $column2[] = [$holder->getHolderId(), $holder->getHolderCard()];
             }
-            if ($holder->getHolderId() % 5 === 3 ) {
+            if ($holder->getHolderId() % 5 === 3) {
                 $column3[] = [$holder->getHolderId(), $holder->getHolderCard()];
             }
-            if ($holder->getHolderId() % 5 === 4 ) {
+            if ($holder->getHolderId() % 5 === 4) {
                 $column4[] = [$holder->getHolderId(), $holder->getHolderCard()];
             }
-            if ($holder->getHolderId() % 5 === 0 ) {
+            if ($holder->getHolderId() % 5 === 0) {
                 $column5[] = [$holder->getHolderId(), $holder->getHolderCard()];
             }
         }
-        $allColumns[] = $column1;
-        $allColumns[] = $column2;
-        $allColumns[] = $column3;
-        $allColumns[] = $column4;
-        $allColumns[] = $column5;
+
+        array_push($allColumns, $column1, $column2, $column3, $column4, $column5);
 
         return $allColumns;
+    }
+
+    /**
+     * Get all rows
+     *
+     * @return array<array>
+     */
+    public function rows(): array
+    {
+        $row1 = [];
+        $row2 = [];
+        $row3 = [];
+        $row4 = [];
+        $row5 = [];
+        $allRows = [];
+
+        foreach ($this->gameBoard as $holder) {
+            if ($holder->getHolderId() < 6) {
+                $row1[] = [$holder->getHolderId(), $holder->getHolderCard()];
+            }
+            if ($holder->getHolderId() >= 6 && $holder->getHolderId() < 11) {
+                $row2[] = [$holder->getHolderId(), $holder->getHolderCard()];
+            }
+            if ($holder->getHolderId() >= 11 && $holder->getHolderId() < 16) {
+                $row3[] = [$holder->getHolderId(), $holder->getHolderCard()];
+            }
+            if ($holder->getHolderId() >= 16 && $holder->getHolderId() < 21) {
+                $row4[] = [$holder->getHolderId(), $holder->getHolderCard()];
+            }
+            if ($holder->getHolderId() >= 21) {
+                $row5[] = [$holder->getHolderId(), $holder->getHolderCard()];
+            }
+        }
+
+        array_push($allRows, $row1, $row2, $row3, $row4, $row5);
+
+        return $allRows;
     }
 
     /**

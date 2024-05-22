@@ -26,6 +26,9 @@ class PokerSquaresController extends AbstractController
         $gameBoard = new GameBoard();
         $session->set("game_board", $gameBoard);
 
+        $counter = 0;
+        $session->set("counter", $counter);
+
         return $this->redirectToRoute('poker_play');
     }
 
@@ -45,19 +48,30 @@ class PokerSquaresController extends AbstractController
             $counter = 0;
         }
 
-        //echo $counter;
+        $allColPoints = [];
+        $allRowPoints = [];
 
         $gameBoard = $session->get("game_board");
 
-        $columns = $gameBoard->columns();
-        $column1 = $columns[0]; // första kolumnen, bestående av 5 arrayer
+        foreach ($gameBoard->columns() as $col) {
+            $pokerSquare = new PokerSquare($col);
 
-        if ($gameBoard->ifFull($column1)) {
-            $pokerSquare = new PokerSquare($column1);
-            //$pokerSquare->onePair($column1);
-            //$pokerSquare->flush($column1);
-            $pokerSquare->straight($column1);
+            if ($gameBoard->ifFull($col)) {
+                $pokerSquare->setPoints();
+            }
+            array_push($allColPoints, $pokerSquare->getPoints());
         }
+
+        foreach ($gameBoard->rows() as $row) {
+            $pokerSquare = new PokerSquare($row);
+
+            if ($gameBoard->ifFull($row)) {
+                $pokerSquare->setPoints();
+            }
+            array_push($allRowPoints, $pokerSquare->getPoints());
+        }
+
+        $sum = array_sum($allColPoints) + array_sum($allRowPoints);
 
         // Draw card from deck
         $card = $deck->drawGraphic();
@@ -71,6 +85,10 @@ class PokerSquaresController extends AbstractController
             "holders" => $gameBoard->getHolderIds(),
             "holder_cards" => $gameBoard->getHolderCards(),
             "game_board" => $gameBoard->getIdAndCard(),
+            "all_col_points" => $allColPoints,
+            "all_row_points" => $allRowPoints,
+            "sum" => $sum,
+            "counter" => $session->get("counter"),
         ];
 
         return $this->render('poker-squares/play.html.twig', $data);
@@ -100,36 +118,18 @@ class PokerSquaresController extends AbstractController
 
         $session->set("game_board", $gameBoard);
 
-        // $data = [
-        //     "id" => $id,
-        //     "card" => $card,
-        // ];
-
-        //return $this->render('poker-squares/test.html.twig', $data);
-
         return $this->redirectToRoute('poker_play');
-    }
-
-    #[Route("/proj/session", name: "poker_session")]
-    public function session(SessionInterface $session): Response
-    {
-        $all = $session->all();
-
-        $gameBoard = $session->get("game_board");
-
-        $data = [
-            "session_all" => $all,
-            "keys" => array_keys($all),
-            "game_board" => $gameBoard->getHolderIds(),
-            "cards" => $gameBoard->getHolderCards(),
-        ];
-
-        return $this->render('poker-squares/poker_session.html.twig', $data);
     }
 
     #[Route("/proj/about", name: "about_ps")]
     public function aboutPokerSquare(): Response
     {
-        return $this->render('poker-squares/poker_squares.html.twig');
+        return $this->render('poker-squares/about.html.twig');
+    }
+
+    #[Route("/proj/about/database", name: "about_database")]
+    public function aboutDatabase(): Response
+    {
+        return $this->render('poker-squares/about_database.html.twig');
     }
 }

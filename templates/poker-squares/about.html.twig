@@ -1,0 +1,58 @@
+{% extends "base-ps.html.twig" %}
+
+{% block title %}Poker squares{% endblock %}
+
+{% block body %}
+
+<h1>About Poker Squares</h1>
+
+<p>About game</p>
+
+<h3>Point system</h3>
+<table class="poker-table">
+    <tr>
+        <th>Poker hand</th>
+        <th>Points</th>
+    </tr>
+    <tr>
+        <td>Royal straight flush</td>
+        <td>100</td>
+    </tr>
+    <tr>
+        <td>Straight flush</td>
+        <td>75</td>
+    </tr>
+    <tr>
+        <td>Four of a kind</td>
+        <td>50</td>
+    </tr>
+    <tr>
+        <td>Full house</td>
+        <td>25</td>
+    </tr>
+    <tr>
+        <td>Flush</td>
+        <td>20</td>
+    </tr>
+    <tr>
+        <td>Straight</td>
+        <td>15</td>
+    </tr>
+    <tr>
+        <td>Three of a kind</td>
+        <td>10</td>
+    </tr>
+    <tr>
+        <td>Two pairs</td>
+        <td>5</td>
+    </tr>
+    <tr>
+        <td>One pair</td>
+        <td>2</td>
+    </tr>
+
+</table>
+
+<a href="{{ path('about_database') }}"><p>About database</p></a>
+
+{% endblock %}

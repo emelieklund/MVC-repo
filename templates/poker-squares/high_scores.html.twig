@@ -1,0 +1,22 @@
+{% extends "base-ps.html.twig" %}
+
+{% block title %}High score{% endblock %}
+
+{% block body %}
+<h1>High score</h1>
+
+<table class="poker-table" style="margin: auto">
+    <tr>
+        <th>Name</th>
+        <th>Score</th>
+    </tr>
+    {% for score in high_score %}
+            <tr>
+                <td>{{ score.getName|e }}</td>
+                <td>{{ score.getScore|e }}</td>
+            </tr>
+        </a>
+    {% endfor %}
+</table>
+
+{% endblock %}

@@ -6,6 +6,19 @@
 
 <div class="game_div">
 
+    <div class="row-points">
+        {% for points in all_row_points %}
+            <p>{{ points }}</p>
+        {% endfor %}
+    </div>
+
+    <div class="col-points">
+        {% for points in all_col_points %}
+            <p>{{ points }}</p>
+        {% endfor %}
+    </div>
+
+
     <div class="ps_div">
         {% for item in game_board %}
             {% if item[1] is not same as("null") %}
@@ -14,18 +27,33 @@
                 </div>
             {% else %}
                 <a href="{{ path('place_card', {id: item[0], card: card}) }}">
-                    <div class="ps_div_card">
-                    </div>
+                    <div class="ps_div_card"></div>
                 </a>
             {% endif %}
         {% endfor %}
     </div>
 
-    <div class="current-card">
-        <img src="{{ asset('img/cards/'~ card ~'.png') }}" alt="card" class="card">
-    </div>
+    {% if counter is same as (25) %}
+        <div class="current-card">
+            <p class="sum">GAME OVER</p>
+            <form class="score-form" method="post" action="{{ path('save_score') }}">
+                    <label for="name">Name</label>
+                    <input id="name" type="text" name="name">
+        
+                    <label for="score">Score</label>
+                    <input id="score" type="number" name="score" value="{{ sum }}" readonly>
 
-    <button class="button-36">Start over</button>
+                    <input type="submit" name="doit" value="Add">
+            </form>
+            <button class="button-36" style="bottom:100px"><a href="{{ path('poker_squares') }}">Play again</a></button>
+        </div>
+    {% else %}
+        <div class="current-card">
+            <img src="{{ asset('img/cards/'~ card ~'.png') }}" alt="card" class="card">
+            <p class="sum">Sum: {{ sum }}</p>
+            <button class="button-36"><a href="{{ path('poker_squares') }}">Start over</a></button>
+        </div>
+    {% endif %}
 
 </div>
 
