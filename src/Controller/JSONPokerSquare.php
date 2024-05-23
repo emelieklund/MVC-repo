@@ -7,6 +7,10 @@ use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
 use App\Entity\Highscore;
 use App\Repository\HighscoreRepository;
+
+use App\Entity\User;
+use App\Repository\UserRepository;
+
 use Doctrine\Persistence\ManagerRegistry;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -19,7 +23,7 @@ class JSONPokerSquare extends AbstractController
     #[Route("/proj/api", name: "proj_api")]
     public function pokerRoutes(): Response
     {
-        return $this->render('poker-squares/poker_routes.html.twig');
+        return $this->render('poker-squares/poker_json_routes.html.twig');
     }
 
     #[Route("/proj/api/highscore", name: "json_highscore", format: 'json')]
@@ -58,6 +62,19 @@ class JSONPokerSquare extends AbstractController
         $rows = $gameBoard->rows();
 
         $response = $this->json($rows);
+        $response->setEncodingOptions(
+            $response->getEncodingOptions() | JSON_PRETTY_PRINT
+        );
+
+        return $response;
+    }
+
+    #[Route("/proj/api/users", name: "json_users", format: 'json')]
+    public function jsonUsers(UserRepository $userRepository): Response
+    {
+        $users = $userRepository->findAll();
+
+        $response = $this->json($users);
         $response->setEncodingOptions(
             $response->getEncodingOptions() | JSON_PRETTY_PRINT
         );

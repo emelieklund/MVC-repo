@@ -1,0 +1,27 @@
+{% extends "base-ps.html.twig" %}
+
+{% block title %}Users{% endblock %}
+
+{% block body %}
+
+<h1>Users</h1>
+
+<a href="{{ path('add_user') }}"><p>Add new user</p></a>
+
+<table class="poker-table" style="margin: auto">
+    <tr>
+        <th>User ID</th>
+        <th>Username</th>
+        <th>Account</th>
+    </tr>
+    {% for user in users %}
+            <tr>
+                <td>{{ user.getId|e }}</td>
+                <td>{{ user.getUsername|e }}</td>
+                <td>{{ user.getAccount|e }}</td>
+            </tr>
+        </a>
+    {% endfor %}
+</table>
+
+{% endblock %}

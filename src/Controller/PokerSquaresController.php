@@ -8,6 +8,7 @@ use App\Card\CardGraphic;
 use App\Card\DeckOfCards;
 use App\Card\GameBoard;
 use App\Card\PokerSquare;
+use App\Controller\UserController;
 
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
@@ -26,6 +27,32 @@ class PokerSquaresController extends AbstractController
         $gameBoard = new GameBoard();
         $session->set("game_board", $gameBoard);
 
+        $counter = -1;
+        $session->set("counter", $counter);
+
+        return $this->redirectToRoute('poker_play');
+    }
+
+    #[Route("/proj/bet", name: "poker_bet", methods: ['POST'])]
+    public function postBet(SessionInterface $session, Request $request): Response
+    {
+        $username = $request->request->get('username');
+        $points = $request->request->get('points');
+        $cash = $request->request->get('cash');
+
+        $session->set("username", $username);
+        $session->set("points", $points);
+        $session->set("cash", $cash);
+
+        $counter = 0;
+        $session->set("counter", $counter);
+
+        return $this->redirectToRoute('poker_play');
+    }
+
+    #[Route("/proj/nobet", name: "poker_no_bet")]
+    public function noBet(SessionInterface $session): Response
+    {
         $counter = 0;
         $session->set("counter", $counter);
 
@@ -42,11 +69,7 @@ class PokerSquaresController extends AbstractController
             $deck = new DeckOfCards();
         }
 
-        if ($session->has("counter")) {
-            $counter = $session->get("counter");
-        } else {
-            $counter = 0;
-        }
+        $counter = $session->get("counter");
 
         $allColPoints = [];
         $allRowPoints = [];
@@ -89,6 +112,8 @@ class PokerSquaresController extends AbstractController
             "all_row_points" => $allRowPoints,
             "sum" => $sum,
             "counter" => $session->get("counter"),
+            "username" => $session->get("username"),
+            "cash" => $session->get("cash"),
         ];
 
         return $this->render('poker-squares/play.html.twig', $data);

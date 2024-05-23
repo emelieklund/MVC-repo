@@ -1,0 +1,32 @@
+{% extends "base-ps.html.twig" %}
+
+{% block title %}Poker squares JSON routes{% endblock %}
+
+{% block body %}
+    <h1>Poker squares JSON routes</h1>
+
+    <div class="poker-api">
+        <h2>Highscore</h2>
+        <p>High score list.</p>
+        <a href="{{ path('json_highscore') }}" target="_blank"><button class="button">High score</button></a>
+    </div>
+
+    <div class="poker-api">
+        <h2>Current columns</h2>
+        <p>Shows all current columns with column ID and card (or null if not set yet).</p>
+        <a href="{{ path('json_columns') }}" target="_blank"><button class="button">Columns</button></a>
+    </div>
+
+    <div class="poker-api">
+        <h2>Current rows</h2>
+        <p>Shows all current rows with row ID and card (or null if not set yet).</p>
+        <a href="{{ path('json_rows') }}" target="_blank"><button class="button">Rows</button></a>
+    </div>
+
+    <div class="poker-api">
+        <h2>Users</h2>
+        <p>Shows information about users.</p>
+        <a href="{{ path('json_users') }}" target="_blank"><button class="button">Users</button></a>
+    </div>
+
+{% endblock %}

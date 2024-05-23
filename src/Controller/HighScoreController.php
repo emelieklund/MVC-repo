@@ -7,6 +7,8 @@ use App\Repository\HighscoreRepository;
 use Doctrine\Persistence\ManagerRegistry;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
+
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\Routing\Attribute\Route;
@@ -29,6 +31,7 @@ class HighScoreController extends AbstractController
 
     #[Route('/proj/highscore/save', name: 'save_score', methods: ['POST'])]
     public function saveHighScore(
+        SessionInterface $session,
         Request $request,
         ManagerRegistry $doctrine,
     ): Response {
@@ -44,6 +47,10 @@ class HighScoreController extends AbstractController
         $entityManager->persist($highScore);
 
         $entityManager->flush();
+
+        if ($session->has("username")) {
+            return $this->redirectToRoute('user_bet');
+        }
 
         return $this->redirectToRoute('highscore_view');
     }

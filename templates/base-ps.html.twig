@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
         <link rel="icon" href="{{ asset('img/glider.svg') }}">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
         {% endblock %}
@@ -16,10 +17,11 @@
     <body class="ps-body">
 
         <nav class="ps-nav">
-            <a href="{{ path('poker_play') }}">Play</a>
-            <a href="{{ path('about_ps') }}">About game</a>
-            <a href="{{ path('highscore_view') }}">High scores</a>
-            <a href="{{ path('proj_api') }}">JSON API</a>
+            <a href="{{ path('poker_play') }}"><i class="fa fa-play"></i><span class="invisible-text">Play</span></a>
+            <a href="{{ path('about_ps') }}"><i class="fa fa-info"></i><span class="invisible-text">About</span></a>
+            <a href="{{ path('highscore_view') }}"><i class="fa fa-star"></i><span class="invisible-text">High score</span></a>
+            <a href="{{ path('proj_api') }}"><i class="fa fa-code"></i><span class="invisible-text">JSON API</span></a>
+            <a href="{{ path('users_view') }}"><i class="fa fa-user"></i><span class="invisible-text">Users</span></a>
         </nav>
 
         <main class="main">
@@ -29,7 +31,8 @@
         </main>
 
         <footer>
-            <p>Emelie Eklund | Blekinge Tekniska Högskola</p>
+            <p>POKER SQUARES</p>
+            <p>A project by Emelie Eklund | Blekinge Tekniska Högskola</p>
         </footer>
     </body>
 </html>

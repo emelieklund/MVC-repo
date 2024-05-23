@@ -1,0 +1,21 @@
+{% extends "base-ps.html.twig" %}
+
+{% block title %}Add user{% endblock %}
+
+{% block body %}
+
+<h2>Add user</h2>
+
+<form class="label-left" method="post" action="{{ path('post_user') }}">
+
+        <label for="username">Username</label>
+        <input id="username" type="text" name="username">
+
+        <label for="account">Account</label>
+        <input id="account" type="number" name="account" value=100 readonly>
+
+        <input type="submit" name="doit" value="Add">
+
+</form>
+
+{% endblock %}

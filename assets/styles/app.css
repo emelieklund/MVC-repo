@@ -1,4 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chivo+Mono:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&family=Sedan+SC&display=swap');
 
 body {
     background-color: #fff;
@@ -407,27 +409,61 @@ background-color: #C3D8CA;
 .ps-body {
     background: rgb(103,22,157);
     background: linear-gradient(42deg, rgba(103,22,157,1) 0%, rgb(172, 122, 225) 47%, rgba(70,69,252,1) 100%);
+    h1 {
+        border-bottom: 3px ridge #403164;
+        padding-bottom: 7px;
+        text-align: center;
+        font-family: "Sedan SC", serif;
+    }
+    footer {
+        background-color: #403164;
+        border-top: 3px ridge #30254b;
+        height: 125px;
+        color: #eaeaea;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 25px;
+        p {
+            font-family: "Roboto Slab", serif;
+        }
+    }
 }
 
 .ps-nav {
-    width: 100%;
-    height: 30px;
-    background-color: #0000002e;
+    width: 50%;
+    height: 40px;
+    border: 3px ridge #403164;
+    border-radius: 3px;
+    background-color: #fff;
+    background-image: url("https://www.transparenttextures.com/patterns/bedge-grunge.png");
     position: relative;
-    font-family: "Inter UI","SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
     font-size: 1em;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     right: 0;
     top: 0;
-    margin-bottom: 25px;
+    margin: 10px auto;
+    margin-bottom: 15px;
     a {
         text-decoration: none;
-        color: #000;
+        color: #403164;
+        font-size: 2em;
     }
     a:hover {
         text-decoration: underline;
+        .invisible-text {
+            visibility: visible;
+        }
+    }
+    .invisible-text {
+        visibility: hidden;
+        font-size: 15px;
+        text-decoration: none;
+        position: absolute;
+        z-index: 1;
     }
 }
 
@@ -499,13 +535,20 @@ background-color: #C3D8CA;
 }
 
 .col-points {
-    width: 367px;
+    width: 364px;
     height: 50px;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     position: relative;
     margin-left: 10px;
+    align-items: center;
+    p {
+        font-family: "Roboto Slab", serif;
+        font-size: 1.5em;
+        color: #403164;
+        text-shadow: 1px 1px black;
+    }
 }
 
 .row-points {
@@ -516,11 +559,17 @@ background-color: #C3D8CA;
     justify-content: space-around;
     position: relative;
     margin-top: 50px;
+    p {
+        font-family: "Roboto Slab", serif;
+        font-size: 1.5em;
+        color: #403164;
+        text-shadow: 1px 1px black;
+    }
 }
 
 .sum {
     margin: 50px 0 0 10px;
-    font-family: "Inter UI","SF Pro Display",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Open Sans","Helvetica Neue",sans-serif;
+    font-family: "Roboto Slab", serif;
     font-size: 1.7em;
 }
 
@@ -528,6 +577,14 @@ background-color: #C3D8CA;
     width: 150px;
     margin: 20px 0 0 10px;
     position: absolute;
+
+    button {
+        background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+    }
+
+    input[type=submit] {
+        background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+    }
 }
 
 .poker-table{
@@ -535,15 +592,61 @@ background-color: #C3D8CA;
     padding-top: 12px;
     padding-bottom: 12px;
     text-align: left;
-    border-bottom: 2px solid #1d0629;
-    border-collapse: collapse;
+    border: 2px ridge #403164;
+    background-color: #fff;
+    background-image: url("https://www.transparenttextures.com/patterns/bedge-grunge.png");
 
     th {
-        background-color: #6056f449;
-
+        background-color: #fff;
+        background-image: url("https://www.transparenttextures.com/patterns/bedge-grunge.png");
+        border: 2px ridge #403164;
+        border-collapse: collapse;
     }
 
     tr:hover {
         background-color: #6056f449;
+    }
+}
+
+.poker-api {
+    border: 4px ridge #403164;
+    background-color: #fff;
+    background-image: url("https://www.transparenttextures.com/patterns/bedge-grunge.png");
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    h2 {
+        font-family: "Roboto Slab", serif;
+        border-bottom: 1px solid #403164;
+    }
+    button {
+        background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+    }
+    button:hover {
+        box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
+        transition-duration: .1s;
+    }
+}
+
+.bet-form {
+    width: 250px;
+    height: 430px;
+    /* margin: 20px 0 0 10px; */
+    margin: auto;
+    position: relative;
+    border: 4px ridge #403164;
+    background-color: #fff;
+    background-image: url("https://www.transparenttextures.com/patterns/bedge-grunge.png");
+    padding: 20px;
+
+    button {
+        background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+        position: absolute;
+        margin-top: 20px;
+        width: 80%;
+    }
+
+    input[type=submit] {
+        background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
     }
 }
