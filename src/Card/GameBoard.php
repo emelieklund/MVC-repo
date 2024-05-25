@@ -12,6 +12,10 @@ class GameBoard
      */
     private $gameBoard = [];
 
+    /**
+     * Constructor to create a GameBoard.
+     *
+     */
     public function __construct()
     {
         for ($i = 1; $i <= 25; $i++) {
@@ -94,20 +98,30 @@ class GameBoard
         $column5 = [];
         $allColumns = [];
 
+        // array_push($allColumns, $column1, $column2, $column3, $column4, $column5);
+
+        // $modulo = [1, 2, 3, 4, 0];
+
+        // for ($i = 0; $i < 5; $i++) {
+        //     foreach ($this->gameBoard as $holder) {
+        //         echo $holder->getHolderId();
+
+        //         if ($holder->getHolderId() % 5 === $modulo[$i]) {
+        //             $allColumns[$i] = [$holder->getHolderId(), $holder->getHolderCard()];
+        //         }
+        //     }
+        // }
+
         foreach ($this->gameBoard as $holder) {
             if ($holder->getHolderId() % 5 === 1) {
                 $column1[] = [$holder->getHolderId(), $holder->getHolderCard()];
-            }
-            if ($holder->getHolderId() % 5 === 2) {
+            } elseif ($holder->getHolderId() % 5 === 2) {
                 $column2[] = [$holder->getHolderId(), $holder->getHolderCard()];
-            }
-            if ($holder->getHolderId() % 5 === 3) {
+            } elseif ($holder->getHolderId() % 5 === 3) {
                 $column3[] = [$holder->getHolderId(), $holder->getHolderCard()];
-            }
-            if ($holder->getHolderId() % 5 === 4) {
+            } elseif ($holder->getHolderId() % 5 === 4) {
                 $column4[] = [$holder->getHolderId(), $holder->getHolderCard()];
-            }
-            if ($holder->getHolderId() % 5 === 0) {
+            } elseif ($holder->getHolderId() % 5 === 0) {
                 $column5[] = [$holder->getHolderId(), $holder->getHolderCard()];
             }
         }
@@ -134,17 +148,13 @@ class GameBoard
         foreach ($this->gameBoard as $holder) {
             if ($holder->getHolderId() < 6) {
                 $row1[] = [$holder->getHolderId(), $holder->getHolderCard()];
-            }
-            if ($holder->getHolderId() >= 6 && $holder->getHolderId() < 11) {
+            } elseif ($holder->getHolderId() >= 6 && $holder->getHolderId() < 11) {
                 $row2[] = [$holder->getHolderId(), $holder->getHolderCard()];
-            }
-            if ($holder->getHolderId() >= 11 && $holder->getHolderId() < 16) {
+            } elseif ($holder->getHolderId() >= 11 && $holder->getHolderId() < 16) {
                 $row3[] = [$holder->getHolderId(), $holder->getHolderCard()];
-            }
-            if ($holder->getHolderId() >= 16 && $holder->getHolderId() < 21) {
+            } elseif ($holder->getHolderId() >= 16 && $holder->getHolderId() < 21) {
                 $row4[] = [$holder->getHolderId(), $holder->getHolderCard()];
-            }
-            if ($holder->getHolderId() >= 21) {
+            } elseif ($holder->getHolderId() >= 21) {
                 $row5[] = [$holder->getHolderId(), $holder->getHolderCard()];
             }
         }

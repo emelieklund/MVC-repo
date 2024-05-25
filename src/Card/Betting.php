@@ -60,16 +60,17 @@ class Betting
     }
 
     /**
-     * Calculates loss if player looses
+     * Calculates loss if player looses. If player guessed under 20 points, player will loose 100 % of bet.
      *
      * @return float
      */
     public function playerLooses(): float
     {
         $loss = 1;
-
-        if ($this->pointsGuessed > 20) {
-            $loss = 1 - (0.4 * $this->pointsGuessed / 100);
+        if ($this->pointsGuessed > 240) {
+            $loss = 0.05;
+        } elseif ($this->pointsGuessed > 20) {
+            $loss = 0.4 * $this->pointsGuessed / 100;
         }
 
         return $loss;

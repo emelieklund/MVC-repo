@@ -31,9 +31,7 @@ class UserController extends AbstractController
     }
 
     #[Route('/proj/user/add', name: 'add_user')]
-    public function addUser(
-        UserRepository $userRepository
-    ): Response {
+    public function addUser(): Response {
         return $this->render('poker-squares/add_user.html.twig');
     }
 
@@ -63,8 +61,7 @@ class UserController extends AbstractController
         int $id,
         SessionInterface $session,
         Request $request,
-        ManagerRegistry $doctrine,
-        UserRepository $userRepository
+        ManagerRegistry $doctrine
     ): Response {
         $entityManager = $doctrine->getManager();
 
@@ -83,7 +80,7 @@ class UserController extends AbstractController
         if ($profitOrLoss > 1) {
             $user->setAccount(($profitOrLoss * $bet) - $bet + $account);
         } else {
-            $user->setAccount($account - ($profitOrLoss * $bet) - $bet); //fixa den här
+            $user->setAccount($account - ($profitOrLoss * $bet)); //fixa den här
         }
 
         $entityManager->persist($user);

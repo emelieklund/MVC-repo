@@ -32,7 +32,7 @@ class BettingTest extends TestCase
 
         $betting = new Betting($pointsGuessed, $pointsReceived);
 
-        $this->assertEquals(0.4, $betting->pointChecker());
+        $this->assertEquals(0.6, $betting->pointChecker());
     }
 
 }

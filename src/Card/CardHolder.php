@@ -17,6 +17,11 @@ class CardHolder
      */
     private $holderCard = "null";
 
+    /**
+     * Constructor to create a CardHolder.
+     *
+     * @param int $holderId
+     */
     public function __construct(int $holderId)
     {
         $this->holderId = $holderId;

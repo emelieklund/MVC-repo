@@ -18,7 +18,7 @@
     {% if profit_or_loss > 1 %}
         <p>Your profit: {{ profit_or_loss * bet - bet }}</p>
     {% else %}
-        <p>Your loss: {{ bet - profit_or_loss * bet }}</p>
+        <p>Your loss: {{ profit_or_loss * bet }}</p>
     {% endif %}
 
     <button class="button-36"><a href="{{ path('poker_squares') }}">Play again</a></button>

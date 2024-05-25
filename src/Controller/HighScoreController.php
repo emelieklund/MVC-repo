@@ -59,8 +59,6 @@ class HighScoreController extends AbstractController
     #[Route('/proj/highscore/delete/{id}', name: 'highscore_delete')]
     public function deleteHighScore(
         int $id,
-        SessionInterface $session,
-        Request $request,
         ManagerRegistry $doctrine,
     ): Response {
         $entityManager = $doctrine->getManager();

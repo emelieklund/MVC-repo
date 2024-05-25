@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2024-05-25 06:42:15        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2024-05-25 08:50:33        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -60,24 +60,24 @@
         <div class="bloc bloc-number">
             <div class="label">Test suites</div>
             <div class="number">
-                8            </div>
+                9            </div>
         </div>
     </div>
     <div class="column">
         <div class="bloc bloc-number">
             <div class="label">Assertions</div>
             <div class="number">
-                50            </div>
+                60            </div>
         </div>
     </div>
     <div class="column">
         <div class="bloc bloc-number">
             <div class="label">
                 classes never called by tests
-                <small>(70.37 %)</small>
+                <small>(66.67 %)</small>
             </div>
             <div class="number">
-                19            </div>
+                18            </div>
         </div>
     </div>
 </div>
@@ -133,17 +133,6 @@
                                                                     <td>
                                         <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0.04);">
                                         0.04                                        </span>
-                                    </td>
-                                                            </tr>
-                                                        <tr>
-                                <td><span class="path">App\Card\GameBoard</span></td>
-                                                                    <td>
-                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0.67);">
-                                        23                                        </span>
-                                    </td>
-                                                                    <td>
-                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0.37);">
-                                        0.37                                        </span>
                                     </td>
                                                             </tr>
                                                         <tr>
@@ -241,8 +230,8 @@
                                         3                                        </span>
                                     </td>
                                                                     <td>
-                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0.13);">
-                                        0.13                                        </span>
+                                        <span class="badge"  style="background-color: hsla(203, 82%, 76%, 0.12);">
+                                        0.12                                        </span>
                                     </td>
                                                             </tr>
                                                         <tr>
@@ -415,6 +404,17 @@
                                                                             <br>                                        <span class="badge" title="Cyclomatic complexity of class">
                                             7                                        </span>
                                         <span class="path">App\Card\DeckOfCards</span>
+                                                                    </td>
+                            </tr>
+                                                    <tr>
+                                <td valign="top"><span class="path">App\Card\GameBoardTest</span></td>
+                                <td style="padding-bottom: 1em;">
+                                                                                                                    <span class="badge" title="Cyclomatic complexity of class">
+                                            -                                        </span>
+                                        <span class="path">PHPUnit\Framework\TestCase</span>
+                                                                            <br>                                        <span class="badge" title="Cyclomatic complexity of class">
+                                            23                                        </span>
+                                        <span class="path">App\Card\GameBoard</span>
                                                                     </td>
                             </tr>
                                                     <tr>
@@ -683,7 +683,7 @@
 
 
             
-            var json = {"name":"Execution time","children":[{"name":"App\\Card\\BettingTest","time":0.008516},{"name":"App\\Card\\CardGraphicTest","time":0.002203},{"name":"App\\Card\\CardHandTest","time":0.001141},{"name":"App\\Card\\CardHolderTest","time":0.000755},{"name":"App\\Card\\CardTest","time":0.001992},{"name":"App\\Card\\DeckOfCardsTest","time":0.002869},{"name":"App\\Card\\GameTest","time":0.000882},{"name":"App\\Card\\PokerSquareTest","time":0.00312}]};
+            var json = {"name":"Execution time","children":[{"name":"App\\Card\\BettingTest","time":0.004599},{"name":"App\\Card\\CardGraphicTest","time":0.001458},{"name":"App\\Card\\CardHandTest","time":0.000959},{"name":"App\\Card\\CardHolderTest","time":0.000612},{"name":"App\\Card\\CardTest","time":0.001377},{"name":"App\\Card\\DeckOfCardsTest","time":0.002765},{"name":"App\\Card\\GameBoardTest","time":0.003158},{"name":"App\\Card\\GameTest","time":0.000691},{"name":"App\\Card\\PokerSquareTest","time":0.002637}]};
             root = json;
             var nodes = treemap.nodes(json)
                 .filter(function (d) {
