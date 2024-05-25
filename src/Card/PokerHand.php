@@ -89,21 +89,18 @@ class PokerHand
     {
         $count = 0;
 
+        // Changes value on ace from 1 to 14
         if ($this->ranks === [1, 10, 11, 12, 13]) {
             $this->ranks = [10, 11, 12, 13, 14];
         }
 
         for ($i = 0; $i < 4; $i++) {
-            if ($this->ranks[$i + 1] - $this->ranks[$i] === 1) {
-                $count += 1;
+            if ($this->ranks[$i + 1] - $this->ranks[$i] !== 1) {
+                return false;
             }
         }
 
-        if ($count === 4) {
-            return true;
-        }
-
-        return false;
+        return true;
     }
 
     /**
