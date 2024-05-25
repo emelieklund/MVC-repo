@@ -1,0 +1,28 @@
+{% extends "base-ps.html.twig" %}
+
+{% block title %}Result{% endblock %}
+
+{% block body %}
+
+<div class="result-div">
+
+    {% if profit_or_loss > 1 %}
+        <h2 style="color:green">Congratulations, you won!</h2>
+    {% else %}
+        <h2 style="color:red">You lost, better luck next time!</h2>
+    {% endif %}
+
+    <p>Points guessed: {{ points_guessed }}</p>
+    <p>Score: {{ score }}</p>
+    <p>You betted: {{ bet }}</p>
+    {% if profit_or_loss > 1 %}
+        <p>Your profit: {{ profit_or_loss * bet - bet }}</p>
+    {% else %}
+        <p>Your loss: {{ bet - profit_or_loss * bet }}</p>
+    {% endif %}
+
+    <button class="button-36"><a href="{{ path('poker_squares') }}">Play again</a></button>
+
+</div>
+
+{% endblock %}

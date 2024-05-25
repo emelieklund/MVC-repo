@@ -1,0 +1,20 @@
+<div class="bet-form">
+    <form method="post" action="{{ path('poker_bet') }}">
+        <label for="id">Enter your username:</label>
+        <select name="id">
+            {% for user in users %}
+                <option value={{ user.getId|e }}>{{ user.getId|e }}. {{ user.getUsername|e }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="points">Enter minimum points you think you will catch:</label>
+        <input id="points" type="number" name="points">
+
+        <label for="bet">Enter how much money you want to bet:</label>
+        <input id="bet" type="number" name="bet">
+
+        <input type="submit" name="doit" value="Submit and begin">
+    </form>
+
+    <button class="button-36"><a href="{{ path('poker_no_bet') }}">Skip betting</a></button>
+</div>

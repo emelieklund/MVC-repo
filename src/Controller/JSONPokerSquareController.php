@@ -18,7 +18,7 @@ use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-class JSONPokerSquare extends AbstractController
+class JSONPokerSquareController extends AbstractController
 {
     #[Route("/proj/api", name: "proj_api")]
     public function pokerRoutes(): Response

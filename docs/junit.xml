@@ -1,46 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testsuites>
-  <testsuite name="" tests="26" assertions="48" errors="0" warnings="0" failures="0" skipped="0" time="0.014280">
-    <testsuite name="Project Test Suite" tests="26" assertions="48" errors="0" warnings="0" failures="0" skipped="0" time="0.014280">
-      <testsuite name="App\Card\CardGraphicTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/CardGraphicTest.php" tests="2" assertions="21" errors="0" warnings="0" failures="0" skipped="0" time="0.005006">
-        <testcase name="testIfNameReturnedAsStr" class="App\Card\CardGraphicTest" classname="App.Card.CardGraphicTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/CardGraphicTest.php" line="15" assertions="1" time="0.004489"/>
-        <testcase name="testIfRankReturnedAsInt" class="App\Card\CardGraphicTest" classname="App.Card.CardGraphicTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/CardGraphicTest.php" line="25" assertions="20" time="0.000517"/>
+  <testsuite name="" tests="28" assertions="50" errors="0" warnings="0" failures="0" skipped="0" time="0.021479">
+    <testsuite name="Project Test Suite" tests="28" assertions="50" errors="0" warnings="0" failures="0" skipped="0" time="0.021479">
+      <testsuite name="App\Card\BettingTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/BettingTest.php" tests="2" assertions="2" errors="0" warnings="0" failures="0" skipped="0" time="0.008516">
+        <testcase name="testBetWin" class="App\Card\BettingTest" classname="App.Card.BettingTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/BettingTest.php" line="15" assertions="1" time="0.008314"/>
+        <testcase name="testBetLoss" class="App\Card\BettingTest" classname="App.Card.BettingTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/BettingTest.php" line="28" assertions="1" time="0.000202"/>
       </testsuite>
-      <testsuite name="App\Card\CardHandTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/CardHandTest.php" tests="3" assertions="4" errors="0" warnings="0" failures="0" skipped="0" time="0.001177">
-        <testcase name="testNumberOfCards" class="App\Card\CardHandTest" classname="App.Card.CardHandTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/CardHandTest.php" line="15" assertions="1" time="0.000804"/>
-        <testcase name="testGetValuesReturnTypeString" class="App\Card\CardHandTest" classname="App.Card.CardHandTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/CardHandTest.php" line="32" assertions="1" time="0.000175"/>
-        <testcase name="testGetValuesAndGetSumOfGraphicCardHand" class="App\Card\CardHandTest" classname="App.Card.CardHandTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/CardHandTest.php" line="45" assertions="2" time="0.000199"/>
+      <testsuite name="App\Card\CardGraphicTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/CardGraphicTest.php" tests="2" assertions="21" errors="0" warnings="0" failures="0" skipped="0" time="0.002203">
+        <testcase name="testIfNameReturnedAsStr" class="App\Card\CardGraphicTest" classname="App.Card.CardGraphicTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/CardGraphicTest.php" line="15" assertions="1" time="0.001679"/>
+        <testcase name="testIfRankReturnedAsInt" class="App\Card\CardGraphicTest" classname="App.Card.CardGraphicTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/CardGraphicTest.php" line="25" assertions="20" time="0.000523"/>
       </testsuite>
-      <testsuite name="App\Card\CardHolderTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/CardHolderTest.php" tests="2" assertions="2" errors="0" warnings="0" failures="0" skipped="0" time="0.000601">
-        <testcase name="testGetHolderID" class="App\Card\CardHolderTest" classname="App.Card.CardHolderTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/CardHolderTest.php" line="15" assertions="1" time="0.000437"/>
-        <testcase name="testGetHolderCard" class="App\Card\CardHolderTest" classname="App.Card.CardHolderTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/CardHolderTest.php" line="25" assertions="1" time="0.000163"/>
+      <testsuite name="App\Card\CardHandTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/CardHandTest.php" tests="3" assertions="4" errors="0" warnings="0" failures="0" skipped="0" time="0.001141">
+        <testcase name="testNumberOfCards" class="App\Card\CardHandTest" classname="App.Card.CardHandTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/CardHandTest.php" line="15" assertions="1" time="0.000747"/>
+        <testcase name="testGetValuesReturnTypeString" class="App\Card\CardHandTest" classname="App.Card.CardHandTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/CardHandTest.php" line="32" assertions="1" time="0.000184"/>
+        <testcase name="testGetValuesAndGetSumOfGraphicCardHand" class="App\Card\CardHandTest" classname="App.Card.CardHandTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/CardHandTest.php" line="45" assertions="2" time="0.000211"/>
       </testsuite>
-      <testsuite name="App\Card\CardTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" tests="1" assertions="2" errors="0" warnings="0" failures="0" skipped="0" time="0.001321">
-        <testcase name="testCreateCard" class="App\Card\CardTest" classname="App.Card.CardTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" line="15" assertions="2" time="0.001321"/>
+      <testsuite name="App\Card\CardHolderTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/CardHolderTest.php" tests="2" assertions="2" errors="0" warnings="0" failures="0" skipped="0" time="0.000755">
+        <testcase name="testGetHolderID" class="App\Card\CardHolderTest" classname="App.Card.CardHolderTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/CardHolderTest.php" line="15" assertions="1" time="0.000588"/>
+        <testcase name="testGetHolderCard" class="App\Card\CardHolderTest" classname="App.Card.CardHolderTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/CardHolderTest.php" line="25" assertions="1" time="0.000167"/>
       </testsuite>
-      <testsuite name="App\Card\DeckOfCardsTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/DeckOfCardsTest.php" tests="6" assertions="7" errors="0" warnings="0" failures="0" skipped="0" time="0.002634">
-        <testcase name="testGetDeckSorted" class="App\Card\DeckOfCardsTest" classname="App.Card.DeckOfCardsTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/DeckOfCardsTest.php" line="15" assertions="2" time="0.000835"/>
-        <testcase name="testGetDeckShuffled" class="App\Card\DeckOfCardsTest" classname="App.Card.DeckOfCardsTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/DeckOfCardsTest.php" line="28" assertions="1" time="0.000368"/>
-        <testcase name="testGetGraphicDeck" class="App\Card\DeckOfCardsTest" classname="App.Card.DeckOfCardsTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/DeckOfCardsTest.php" line="40" assertions="1" time="0.000482"/>
-        <testcase name="testDrawReturnString" class="App\Card\DeckOfCardsTest" classname="App.Card.DeckOfCardsTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/DeckOfCardsTest.php" line="51" assertions="1" time="0.000307"/>
-        <testcase name="testDrawGraphicReturnType" class="App\Card\DeckOfCardsTest" classname="App.Card.DeckOfCardsTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/DeckOfCardsTest.php" line="62" assertions="1" time="0.000304"/>
-        <testcase name="testDrawNumberAndGetNrOfCards" class="App\Card\DeckOfCardsTest" classname="App.Card.DeckOfCardsTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/DeckOfCardsTest.php" line="73" assertions="1" time="0.000338"/>
+      <testsuite name="App\Card\CardTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" tests="1" assertions="2" errors="0" warnings="0" failures="0" skipped="0" time="0.001992">
+        <testcase name="testCreateCard" class="App\Card\CardTest" classname="App.Card.CardTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/CardTest.php" line="15" assertions="2" time="0.001992"/>
       </testsuite>
-      <testsuite name="App\Card\GameTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/GameTest.php" tests="2" assertions="2" errors="0" warnings="0" failures="0" skipped="0" time="0.000662">
-        <testcase name="testGetScorePlayer" class="App\Card\GameTest" classname="App.Card.GameTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/GameTest.php" line="15" assertions="1" time="0.000503"/>
-        <testcase name="testGetScoreBankEmpty" class="App\Card\GameTest" classname="App.Card.GameTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/GameTest.php" line="29" assertions="1" time="0.000159"/>
+      <testsuite name="App\Card\DeckOfCardsTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/DeckOfCardsTest.php" tests="6" assertions="7" errors="0" warnings="0" failures="0" skipped="0" time="0.002869">
+        <testcase name="testGetDeckSorted" class="App\Card\DeckOfCardsTest" classname="App.Card.DeckOfCardsTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/DeckOfCardsTest.php" line="15" assertions="2" time="0.000948"/>
+        <testcase name="testGetDeckShuffled" class="App\Card\DeckOfCardsTest" classname="App.Card.DeckOfCardsTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/DeckOfCardsTest.php" line="28" assertions="1" time="0.000399"/>
+        <testcase name="testGetGraphicDeck" class="App\Card\DeckOfCardsTest" classname="App.Card.DeckOfCardsTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/DeckOfCardsTest.php" line="40" assertions="1" time="0.000525"/>
+        <testcase name="testDrawReturnString" class="App\Card\DeckOfCardsTest" classname="App.Card.DeckOfCardsTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/DeckOfCardsTest.php" line="51" assertions="1" time="0.000324"/>
+        <testcase name="testDrawGraphicReturnType" class="App\Card\DeckOfCardsTest" classname="App.Card.DeckOfCardsTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/DeckOfCardsTest.php" line="62" assertions="1" time="0.000321"/>
+        <testcase name="testDrawNumberAndGetNrOfCards" class="App\Card\DeckOfCardsTest" classname="App.Card.DeckOfCardsTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/DeckOfCardsTest.php" line="73" assertions="1" time="0.000352"/>
       </testsuite>
-      <testsuite name="App\Card\PokerSquareTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/PokerSquareTest.php" tests="10" assertions="10" errors="0" warnings="0" failures="0" skipped="0" time="0.002880">
-        <testcase name="testRankToNumber" class="App\Card\PokerSquareTest" classname="App.Card.PokerSquareTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/PokerSquareTest.php" line="15" assertions="1" time="0.000940"/>
-        <testcase name="testIfTwoPairs" class="App\Card\PokerSquareTest" classname="App.Card.PokerSquareTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/PokerSquareTest.php" line="26" assertions="1" time="0.000502"/>
-        <testcase name="testIfThreeOfAKind" class="App\Card\PokerSquareTest" classname="App.Card.PokerSquareTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/PokerSquareTest.php" line="37" assertions="1" time="0.000185"/>
-        <testcase name="testIfStraight" class="App\Card\PokerSquareTest" classname="App.Card.PokerSquareTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/PokerSquareTest.php" line="48" assertions="1" time="0.000180"/>
-        <testcase name="testIfStraightWithAce" class="App\Card\PokerSquareTest" classname="App.Card.PokerSquareTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/PokerSquareTest.php" line="59" assertions="1" time="0.000174"/>
-        <testcase name="testIfFlush" class="App\Card\PokerSquareTest" classname="App.Card.PokerSquareTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/PokerSquareTest.php" line="70" assertions="1" time="0.000175"/>
-        <testcase name="testIfFullHouse" class="App\Card\PokerSquareTest" classname="App.Card.PokerSquareTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/PokerSquareTest.php" line="81" assertions="1" time="0.000179"/>
-        <testcase name="testIfFourOfAKind" class="App\Card\PokerSquareTest" classname="App.Card.PokerSquareTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/PokerSquareTest.php" line="92" assertions="1" time="0.000172"/>
-        <testcase name="testIfStraightFlush" class="App\Card\PokerSquareTest" classname="App.Card.PokerSquareTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/PokerSquareTest.php" line="103" assertions="1" time="0.000178"/>
-        <testcase name="testIfRoyalStraightFlush" class="App\Card\PokerSquareTest" classname="App.Card.PokerSquareTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/PokerSquareTest.php" line="114" assertions="1" time="0.000197"/>
+      <testsuite name="App\Card\GameTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/GameTest.php" tests="2" assertions="2" errors="0" warnings="0" failures="0" skipped="0" time="0.000882">
+        <testcase name="testGetScorePlayer" class="App\Card\GameTest" classname="App.Card.GameTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/GameTest.php" line="15" assertions="1" time="0.000708"/>
+        <testcase name="testGetScoreBankEmpty" class="App\Card\GameTest" classname="App.Card.GameTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/GameTest.php" line="29" assertions="1" time="0.000174"/>
+      </testsuite>
+      <testsuite name="App\Card\PokerSquareTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/PokerSquareTest.php" tests="10" assertions="10" errors="0" warnings="0" failures="0" skipped="0" time="0.003120">
+        <testcase name="testRankToNumber" class="App\Card\PokerSquareTest" classname="App.Card.PokerSquareTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/PokerSquareTest.php" line="15" assertions="1" time="0.001094"/>
+        <testcase name="testIfTwoPairs" class="App\Card\PokerSquareTest" classname="App.Card.PokerSquareTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/PokerSquareTest.php" line="26" assertions="1" time="0.000523"/>
+        <testcase name="testIfThreeOfAKind" class="App\Card\PokerSquareTest" classname="App.Card.PokerSquareTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/PokerSquareTest.php" line="37" assertions="1" time="0.000192"/>
+        <testcase name="testIfStraight" class="App\Card\PokerSquareTest" classname="App.Card.PokerSquareTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/PokerSquareTest.php" line="48" assertions="1" time="0.000188"/>
+        <testcase name="testIfStraightWithAce" class="App\Card\PokerSquareTest" classname="App.Card.PokerSquareTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/PokerSquareTest.php" line="59" assertions="1" time="0.000184"/>
+        <testcase name="testIfFlush" class="App\Card\PokerSquareTest" classname="App.Card.PokerSquareTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/PokerSquareTest.php" line="70" assertions="1" time="0.000190"/>
+        <testcase name="testIfFullHouse" class="App\Card\PokerSquareTest" classname="App.Card.PokerSquareTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/PokerSquareTest.php" line="81" assertions="1" time="0.000190"/>
+        <testcase name="testIfFourOfAKind" class="App\Card\PokerSquareTest" classname="App.Card.PokerSquareTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/PokerSquareTest.php" line="92" assertions="1" time="0.000184"/>
+        <testcase name="testIfStraightFlush" class="App\Card\PokerSquareTest" classname="App.Card.PokerSquareTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/PokerSquareTest.php" line="103" assertions="1" time="0.000188"/>
+        <testcase name="testIfRoyalStraightFlush" class="App\Card\PokerSquareTest" classname="App.Card.PokerSquareTest" file="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/tests/Card/PokerSquareTest.php" line="114" assertions="1" time="0.000186"/>
       </testsuite>
     </testsuite>
   </testsuite>

@@ -650,3 +650,20 @@ background-color: #C3D8CA;
         background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
     }
 }
+
+.result-div {
+    width: 50%;
+    margin: auto;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background-color: #fff;
+    background-image: url("https://www.transparenttextures.com/patterns/bedge-grunge.png");
+    border: 2px ridge #403164;
+
+    button {
+        position: relative;
+        margin: auto;
+    }
+}

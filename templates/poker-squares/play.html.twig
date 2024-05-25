@@ -7,91 +7,15 @@
 <div class="game_div">
 
     {% if counter is same as (-1) %}
-        <div class="bet-form">
-            <form method="post" action="{{ path('poker_bet') }}">
-                <label for="username">Enter your username:</label>
-                <input id="username" type="text" name="username">
 
-                <label for="points">Enter minimum points you think you will catch:</label>
-                <input id="points" type="number" name="points">
-
-                <label for="bet">Enter how much money you want to bet:</label>
-                <input id="bet" type="number" name="bet">
-
-                <input type="submit" name="doit" value="Submit and begin">
-            </form>
-
-            <button class="button-36"><a href="{{ path('poker_no_bet') }}">Skip betting</a></button>
-        </div>
+        {% include 'poker-squares/bet_form.html.twig' %}
 
     {% else %}
-        <div class="row-points">
-            {% for points in all_row_points %}
-                <p>{{ points }}</p>
-            {% endfor %}
-        </div>
 
-        <div class="col-points">
-            {% for points in all_col_points %}
-                <p>{{ points }}</p>
-            {% endfor %}
-        </div>
+        {% include 'poker-squares/game_board.html.twig' %}
 
-        <div class="ps_div">
-            {% for item in game_board %}
-                {% if item[1] is not same as("null") %}
-                    <div class="ps_div_card">
-                        <img src="{{ asset('img/cards/'~ item[1] ~'.png') }}" alt="card" width="67px">
-                    </div>
-                {% else %}
-                    <a href="{{ path('place_card', {id: item[0], card: card}) }}">
-                        <div class="ps_div_card"></div>
-                    </a>
-                {% endif %}
-            {% endfor %}
-        </div>
-
-        {% if counter is same as (-1) %}
-            <div class="current-card">
-                <form class="bet-form" method="post" action="{{ path('poker_bet') }}">
-                    <label for="name">Enter your username:</label>
-                    <input id="name" type="text" name="name">
-
-                    <label for="points">Enter how many points you think you will catch:</label>
-                    <input id="points" type="number" name="points">
-
-                    <label for="bet">Enter how much money you want to bet:</label>
-                    <input id="bet" type="number" name="bet">
-
-                    <input type="submit" name="doit" value="Submit and begin">
-                </form>
-            </div>
-        {% elseif counter is same as (25) %}
-            <div class="current-card">
-                <p class="sum">GAME OVER</p>
-                {% if username %}
-                    <form class="score-form" method="post" action="{{ path('save_score') }}">
-                            <label for="name">Name</label>
-                            <input id="name" type="text" name="name" value="{{ username }}" readonly>
-                
-                            <label for="score">Score</label>
-                            <input id="score" type="number" name="score" value="{{ sum }}" readonly>
-
-                            <input type="submit" name="doit" value="Add">
-                    </form>
-                {% else %}
-                    <form class="score-form" method="post" action="{{ path('save_score') }}">
-                        <label for="name">Name</label>
-                        <input id="name" type="text" name="name">
-
-                        <label for="score">Score</label>
-                        <input id="score" type="number" name="score" value="{{ sum }}" readonly>
-
-                        <input type="submit" name="doit" value="Add">
-                    </form>
-                {% endif %}
-                <button class="button-36" style="bottom:100px"><a href="{{ path('poker_squares') }}">Play again</a></button>
-            </div>
+        {% if counter is same as (25) %}
+            {% include 'poker-squares/game_over.html.twig' %}
         {% else %}
             <div class="current-card">
                 <img src="{{ asset('img/cards/'~ card ~'.png') }}" alt="card" class="card">

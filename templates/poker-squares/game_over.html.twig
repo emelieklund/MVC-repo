@@ -1,0 +1,30 @@
+
+<div class="current-card">
+    <p class="sum">GAME OVER</p>
+    {% if id %}
+        {% for user in users %}
+            {% if user.getId is same as (id) %}
+                <form class="score-form" method="post" action="{{ path('save_score') }}">
+                        <label for="name">Name</label>
+                        <input id="name" type="text" name="name" value="{{ id }}. {{ user.getUsername }}" readonly>
+
+                        <label for="score">Score</label>
+                        <input id="score" type="number" name="score" value="{{ sum }}" readonly>
+
+                        <input type="submit" name="doit" value="Add">
+                </form>
+            {% endif %}
+        {% endfor %}
+    {% else %}
+        <form class="score-form" method="post" action="{{ path('save_score') }}">
+            <label for="name">Name</label>
+            <input id="name" type="text" name="name">
+
+            <label for="score">Score</label>
+            <input id="score" type="number" name="score" value="{{ sum }}" readonly>
+
+            <input type="submit" name="doit" value="Add">
+        </form>
+    {% endif %}
+    <button class="button-36" style="bottom:100px"><a href="{{ path('poker_squares') }}">Play again</a></button>
+</div>

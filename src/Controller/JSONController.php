@@ -51,7 +51,7 @@ class JSONController extends AbstractController
         return $response;
     }
 
-    #[Route("/api/library/books}", name: "library")]
+    #[Route("/api/library/books", name: "library")]
     public function library(LibraryRepository $libraryRepository): Response
     {
         $library = $libraryRepository->findAll();

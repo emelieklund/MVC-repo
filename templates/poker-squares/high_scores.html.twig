@@ -9,11 +9,13 @@
     <tr>
         <th>Name</th>
         <th>Score</th>
+        <th></th>
     </tr>
     {% for score in high_score %}
             <tr>
                 <td>{{ score.getName|e }}</td>
                 <td>{{ score.getScore|e }}</td>
+                <td><a href="{{ path('highscore_delete', {id: score.getId}) }}">Delete</a></td>
             </tr>
         </a>
     {% endfor %}

@@ -7,11 +7,17 @@ namespace App\Card;
  */
 class CardHolder
 {
+    /**
+     * @var int $holderId     Holder ID
+     */
     private $holderId;
 
+    /**
+     * @var string $holderCard     Name of card in holder (or "null")
+     */
     private $holderCard = "null";
 
-    public function __construct($holderId)
+    public function __construct(int $holderId)
     {
         $this->holderId = $holderId;
     }

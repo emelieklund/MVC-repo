@@ -2,6 +2,8 @@
 
 namespace App\Controller;
 
+use App\Card\Betting;
+
 use App\Entity\User;
 use App\Repository\UserRepository;
 use Doctrine\Persistence\ManagerRegistry;
@@ -18,8 +20,7 @@ class UserController extends AbstractController
     #[Route('/proj/users', name: 'users_view')]
     public function viewAllUsers(
         UserRepository $userRepository
-    ): Response
-    {
+    ): Response {
         $users = $userRepository->findAll();
 
         $data = [
@@ -32,8 +33,7 @@ class UserController extends AbstractController
     #[Route('/proj/user/add', name: 'add_user')]
     public function addUser(
         UserRepository $userRepository
-    ): Response
-    {
+    ): Response {
         return $this->render('poker-squares/add_user.html.twig');
     }
 
@@ -58,8 +58,9 @@ class UserController extends AbstractController
         return $this->redirectToRoute('users_view');
     }
 
-    #[Route('/proj/user/bet', name: 'user_bet')]
+    #[Route('/proj/user/bet/{id}', name: 'user_bet')]
     public function userBet(
+        int $id,
         SessionInterface $session,
         Request $request,
         ManagerRegistry $doctrine,
@@ -67,21 +68,36 @@ class UserController extends AbstractController
     ): Response {
         $entityManager = $doctrine->getManager();
 
-        $username = $session->get("username");
-        $points = $session->get("points");
-        $cash = $session->get("cash");
+        $pointsGuessed = $session->get("points_guessed");
+        $bet = $session->get("bet");
+        $score = $session->get("score");
 
-        $user = $userRepository->findIdByUsername($username);
+        $user = $entityManager->getRepository(User::class)->find($id);
 
-        var_dump($user);
+        $betting = new Betting($pointsGuessed, $score);
 
-        //$account = $user->getAccount();
-        $user->setAccount($cash);
+        $profitOrLoss = $betting->pointChecker();
+
+        $account = $user->getAccount();
+
+        if ($profitOrLoss > 1) {
+            $user->setAccount(($profitOrLoss * $bet) - $bet + $account);
+        } else {
+            $user->setAccount($account - ($profitOrLoss * $bet) - $bet); //fixa den här
+        }
 
         $entityManager->persist($user);
 
         $entityManager->flush();
 
-        return $this->redirectToRoute('users_view');
+        $data = [
+            "points_guessed" => $pointsGuessed,
+            "score" => $score,
+            "bet" => $bet,
+            "profit_or_loss" => $profitOrLoss,
+        ];
+
+        return $this->render('poker-squares/result.html.twig', $data);
     }
+
 }

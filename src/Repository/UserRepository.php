@@ -21,12 +21,31 @@ class UserRepository extends ServiceEntityRepository
      *
      * @return array<array> Returns an array of arrays (i.e. a raw data set)
      */
-    public function findIdByUsername(string $username): array
+    public function findUserByUsername(string $username): array
     {
         $conn = $this->getEntityManager()->getConnection();
 
         $sql = '
             SELECT * FROM user AS u
+            WHERE u.username = :username
+        ';
+
+        $resultSet = $conn->executeQuery($sql, ['username' => $username]);
+
+        return $resultSet->fetchAllAssociative();
+    }
+
+    /**
+     * Find user account based on given username.
+     *
+     * @return array<array> Returns an array of arrays (i.e. a raw data set)
+     */
+    public function findAccountByUsername(string $username): array
+    {
+        $conn = $this->getEntityManager()->getConnection();
+
+        $sql = '
+            SELECT account FROM user AS u
             WHERE u.username = :username
         ';
 
@@ -50,13 +69,13 @@ class UserRepository extends ServiceEntityRepository
     //        ;
     //    }
 
-    //    public function findOneBySomeField($value): ?User
-    //    {
-    //        return $this->createQueryBuilder('u')
-    //            ->andWhere('u.exampleField = :val')
-    //            ->setParameter('val', $value)
-    //            ->getQuery()
-    //            ->getOneOrNullResult()
-    //        ;
-    //    }
+    // public function findOneBySomeField($value): ?User
+    // {
+    //     return $this->createQueryBuilder('u')
+    //         ->andWhere('u.exampleField = :val')
+    //         ->setParameter('val', $value)
+    //         ->getQuery()
+    //         ->getOneOrNullResult()
+    //     ;
+    // }
 }

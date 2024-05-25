@@ -7,6 +7,9 @@ namespace App\Card;
  */
 class GameBoard
 {
+    /**
+     * @var array<CardHolder> $gameBoard     Array that keeps all card holders
+     */
     private $gameBoard = [];
 
     public function __construct()
@@ -20,7 +23,7 @@ class GameBoard
     /**
      * Get all items
      *
-     * @return array
+     * @return array<CardHolder>
      */
     public function getObjects(): array
     {
@@ -56,16 +59,16 @@ class GameBoard
     {
         $holderCards = [];
         foreach ($this->gameBoard as $holder) {
-            $holders[] = $holder->getHolderCard();
+            $holderCards[] = $holder->getHolderCard();
         }
 
-        return $holders;
+        return $holderCards;
     }
 
     /**
      * Get both holder id and card name
      *
-     * @return array
+     * @return array<array>
      */
     public function getIdAndCard(): array
     {

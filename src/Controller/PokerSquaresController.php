@@ -13,6 +13,9 @@ use App\Controller\UserController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 
+use App\Entity\User;
+use App\Repository\UserRepository;
+
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -36,13 +39,13 @@ class PokerSquaresController extends AbstractController
     #[Route("/proj/bet", name: "poker_bet", methods: ['POST'])]
     public function postBet(SessionInterface $session, Request $request): Response
     {
-        $username = $request->request->get('username');
-        $points = $request->request->get('points');
-        $cash = $request->request->get('cash');
+        $id = intval($request->request->get('id'));
+        $pointsGuessed = $request->request->get('points');
+        $bet = $request->request->get('bet');
 
-        $session->set("username", $username);
-        $session->set("points", $points);
-        $session->set("cash", $cash);
+        $session->set("id", $id);
+        $session->set("points_guessed", $pointsGuessed);
+        $session->set("bet", $bet);
 
         $counter = 0;
         $session->set("counter", $counter);
@@ -60,8 +63,10 @@ class PokerSquaresController extends AbstractController
     }
 
     #[Route("/proj/play", name: "poker_play")]
-    public function play(SessionInterface $session): Response
-    {
+    public function play(
+        SessionInterface $session,
+        UserRepository $userRepository
+    ): Response {
         // Initialize card deck
         if ($session->has("deck_session")) {
             $deck = $session->get("deck_session");
@@ -94,8 +99,6 @@ class PokerSquaresController extends AbstractController
             array_push($allRowPoints, $pokerSquare->getPoints());
         }
 
-        $sum = array_sum($allColPoints) + array_sum($allRowPoints);
-
         // Draw card from deck
         $card = $deck->drawGraphic();
 
@@ -110,10 +113,10 @@ class PokerSquaresController extends AbstractController
             "game_board" => $gameBoard->getIdAndCard(),
             "all_col_points" => $allColPoints,
             "all_row_points" => $allRowPoints,
-            "sum" => $sum,
+            "sum" => array_sum($allColPoints) + array_sum($allRowPoints),
             "counter" => $session->get("counter"),
-            "username" => $session->get("username"),
-            "cash" => $session->get("cash"),
+            "users" => $userRepository->findAll(),
+            "id" => $session->get("id"),
         ];
 
         return $this->render('poker-squares/play.html.twig', $data);

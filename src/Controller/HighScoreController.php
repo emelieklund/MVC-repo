@@ -18,8 +18,7 @@ class HighScoreController extends AbstractController
     #[Route('/proj/highscore', name: 'highscore_view')]
     public function viewAll(
         HighScoreRepository $highScoreRepository
-    ): Response
-    {
+    ): Response {
         $highScore = $highScoreRepository->findAll();
 
         $data = [
@@ -40,6 +39,8 @@ class HighScoreController extends AbstractController
         $name = $request->request->get('name');
         $score = $request->request->get('score');
 
+        $session->set("score", $score);
+
         $highScore = new Highscore();
         $highScore->setName($name);
         $highScore->setScore($score);
@@ -48,9 +49,31 @@ class HighScoreController extends AbstractController
 
         $entityManager->flush();
 
-        if ($session->has("username")) {
-            return $this->redirectToRoute('user_bet');
+        if ($session->has("id")) {
+            return $this->redirectToRoute('user_bet', ['id' => $session->get("id")]);
         }
+
+        return $this->redirectToRoute('highscore_view');
+    }
+
+    #[Route('/proj/highscore/delete/{id}', name: 'highscore_delete')]
+    public function deleteHighScore(
+        int $id,
+        SessionInterface $session,
+        Request $request,
+        ManagerRegistry $doctrine,
+    ): Response {
+        $entityManager = $doctrine->getManager();
+        $highscore = $entityManager->getRepository(Highscore::class)->find($id);
+
+        if (!$highscore) {
+            throw $this->createNotFoundException(
+                'No highscore found for id '.$id
+            );
+        }
+
+        $entityManager->remove($highscore);
+        $entityManager->flush();
 
         return $this->redirectToRoute('highscore_view');
     }

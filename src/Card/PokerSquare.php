@@ -8,12 +8,12 @@ namespace App\Card;
 class PokerSquare
 {
     /**
-     * @var array $ranks
+     * @var array<int> $ranks
      */
     private $ranks = [];
 
     /**
-     * @var string $suits
+     * @var array<string> $suits
      */
     private $suits = [];
 
@@ -25,15 +25,14 @@ class PokerSquare
     /**
      * Constructor to create a GraphicCard.
      *
-     * @param string $rank The rank of the card.
-     * @param string $suit The suit of the card.
+     * @param array<array> $colOrRow
      */
-    public function __construct($colOrRow)
+    public function __construct(array $colOrRow)
     {
         foreach ($colOrRow as $holder) {
             $card = explode("_of_", $holder[1]);
             $this->ranks[] = $this->rankAsNumber($card[0]);
-            $this->suits[] = $card[1] ?? null;
+            $this->suits[] = $card[1] ?? "null";
         }
         sort($this->ranks);
     }
@@ -239,13 +238,13 @@ class PokerSquare
         } elseif ($this->fullHouse()) {
             return 25;
         } elseif ($this->flush()) {
-            return 20; 
+            return 20;
         } elseif ($this->straight()) {
-            return 15; 
-        }  elseif ($this->threeOfAKind()) {
-            return 10; 
-        }  elseif ($this->twoPairs()) {
-            return 5; 
+            return 15;
+        } elseif ($this->threeOfAKind()) {
+            return 10;
+        } elseif ($this->twoPairs()) {
+            return 5;
         } elseif ($this->onePair()) {
             return 2;
         } else {

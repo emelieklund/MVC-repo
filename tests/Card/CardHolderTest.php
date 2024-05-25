@@ -19,7 +19,7 @@ class CardHolderTest extends TestCase
         $this->assertEquals(4, $holder->getHolderID());
     }
 
-        /**
+    /**
      * Tests convert string rank to int rank
      */
     public function testGetHolderCard(): void
