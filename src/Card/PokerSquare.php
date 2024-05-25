@@ -61,17 +61,6 @@ class PokerSquare
     }
 
     /**
-     * Converts rank from string to int
-     *
-     * @return array<int>
-     */
-    public function getRanks(): array
-    {
-        sort($this->ranks);
-        return $this->ranks;
-    }
-
-    /**
      * Check if pair
      *
      * @return bool
