@@ -35,4 +35,16 @@ class BettingTest extends TestCase
         $this->assertEquals(0.6, $betting->pointChecker());
     }
 
+    /**
+     * Tests convert string rank to int rank
+     */
+    public function testBetLossPointsGuessedOver240(): void
+    {
+        $pointsGuessed = 250;
+        $pointsReceived = 80;
+
+        $betting = new Betting($pointsGuessed, $pointsReceived);
+
+        $this->assertEquals(0.05, $betting->pointChecker());
+    }
 }

@@ -23,7 +23,7 @@ class PokerHandTest extends TestCase
     }
 
     /**
-     * Tests if poker hand makes a two pairs
+     * Tests if poker hand makes two pairs
      */
     public function testIfTwoPairs(): void
     {
@@ -33,6 +33,20 @@ class PokerHandTest extends TestCase
 
         $this->assertTrue($pokerHand->twoPairs());
     }
+
+    /**
+     * Tests if poker hand NOT makes two pairs
+     */
+    public function testIfTwoPairsFalse(): void
+    {
+        //$col = [[1, "2_of_hearts"], [6, "2_of_spades"], [11, "4_of_hearts"], [16, "5_of_clubs"], [21, "6_of_hearts"]];
+        $ranks = [2, 2, 4, 5, 6];
+        $suits = ["hearts", "spades", "hearts", "clubs", "hearts"];
+        $pokerHand = new PokerHand($ranks, $suits);
+
+        $this->assertFalse($pokerHand->twoPairs());
+    }
+
 
     /**
      * Tests if poker hand makes a three of a kind
@@ -46,6 +60,18 @@ class PokerHandTest extends TestCase
         $this->assertTrue($pokerHand->threeOfAKind());
     }
 
+        /**
+     * Tests if poker hand NOT makes a three of a kind
+     */
+    public function testIfThreeOfAKindFalse(): void
+    {
+        $ranks = [2, 2, 3, 4, 6];
+        $suits = ["hearts", "spades", "hearts", "clubs", "hearts"];
+        $pokerHand = new PokerHand($ranks, $suits);
+
+        $this->assertFalse($pokerHand->threeOfAKind());
+    }
+
     /**
      * Tests if poker hand makes a straight
      */
@@ -56,6 +82,18 @@ class PokerHandTest extends TestCase
         $pokerHand = new PokerHand($ranks, $suits);
 
         $this->assertTrue($pokerHand->straight());
+    }
+
+    /**
+     * Tests if poker hand NOT makes a straight
+     */
+    public function testIfStraightFalse(): void
+    {
+        $ranks = [2, 3, 5, 6, 7];
+        $suits = ["hearts", "spades", "hearts", "clubs", "hearts"];        
+        $pokerHand = new PokerHand($ranks, $suits);
+
+        $this->assertFalse($pokerHand->straight());
     }
 
     /**
