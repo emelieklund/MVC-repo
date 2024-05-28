@@ -497,7 +497,15 @@ background-color: #C3D8CA;
 
 .current-card {
     height: auto;
-    margin: 80px 0 0 100px;
+    margin: 50px 0 0 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    position: relative;
+
+    button {
+        position: relative;
+    }
 }
 
 .button-36 {
@@ -521,7 +529,7 @@ background-color: #C3D8CA;
     -webkit-user-select: none;
     touch-action: manipulation;
     position: absolute;
-    margin: 70px 0 0 10px;
+    margin: 10px 0 0 10px;
 
     a {
         text-decoration: none;
@@ -568,15 +576,15 @@ background-color: #C3D8CA;
 }
 
 .sum {
-    margin: 50px 0 0 10px;
+    margin: 20px 0 0 10px;
     font-family: "Roboto Slab", serif;
     font-size: 1.7em;
 }
 
 .score-form {
     width: 150px;
-    margin: 20px 0 0 10px;
-    position: absolute;
+    margin: 20px 0 10px 10px;
+    position: relative;
 
     button {
         background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
@@ -626,6 +634,10 @@ background-color: #C3D8CA;
         box-shadow: rgba(80, 63, 205, 0.5) 0 1px 30px;
         transition-duration: .1s;
     }
+
+    input[type=submit] {
+        background-image: linear-gradient(92.88deg, #455EB5 9.16%, #5643CC 43.89%, #673FD7 64.72%);
+    }
 }
 
 .bet-form {
@@ -666,4 +678,16 @@ background-color: #C3D8CA;
         position: relative;
         margin: auto;
     }
+}
+
+.ct-animate-blink {
+    animation: blink 1s infinite;
+    animation-fill-mode: both;
+    color: red;
+}
+
+@keyframes blink {
+    0% { opacity: 0 }
+    50% { opacity: 1 }
+    100% { opacity: 0 }
 }

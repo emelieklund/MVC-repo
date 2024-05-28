@@ -1,13 +1,25 @@
 <div class="row-points">
-    {% for points in all_row_points %}
-        <p>{{ points }}</p>
-    {% endfor %}
+    {% if clue is same as "clue" %}
+        {% for hand in row_hands %}
+            <p class="ct-animate-blink" style="color:rgb(186, 22, 22)">{{ hand }}</p>
+        {% endfor %}
+    {% else %}
+        {% for points in all_row_points %}
+            <p>{{ points }}</p>
+        {% endfor %}
+    {% endif %}
 </div>
 
 <div class="col-points">
-    {% for points in all_col_points %}
-        <p>{{ points }}</p>
-    {% endfor %}
+    {% if clue is same as "clue" %}
+        {% for hand in col_hands %}
+            <p class="ct-animate-blink" style="color:rgb(186, 22, 22)">{{ hand }}</p>
+        {% endfor %}
+    {% else %}
+        {% for points in all_col_points %}
+            <p>{{ points }}</p>
+        {% endfor %}
+    {% endif %}
 </div>
 
 <div class="ps_div">

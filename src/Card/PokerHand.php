@@ -87,8 +87,6 @@ class PokerHand
      */
     public function straight(): bool
     {
-        $count = 0;
-
         // Changes value on ace from 1 to 14
         if ($this->ranks === [1, 10, 11, 12, 13]) {
             $this->ranks = [10, 11, 12, 13, 14];

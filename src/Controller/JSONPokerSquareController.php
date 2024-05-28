@@ -81,4 +81,21 @@ class JSONPokerSquareController extends AbstractController
 
         return $response;
     }
+
+    #[Route("/proj/api/users/one", name: "json_one_user", format: 'json', methods: ['POST'])]
+    public function jsonOneUser(
+        UserRepository $userRepository,
+        Request $request
+    ): Response
+    {
+        $username = $request->request->get('user');
+        $user = $userRepository->findUserByUsername($username);
+
+        $response = $this->json($user);
+        $response->setEncodingOptions(
+            $response->getEncodingOptions() | JSON_PRETTY_PRINT
+        );
+
+        return $response;
+    }
 }

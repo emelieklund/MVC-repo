@@ -3,11 +3,11 @@
 {% block title %}Poker squares JSON routes{% endblock %}
 
 {% block body %}
-    <h1>Poker squares JSON routes</h1>
+    <h1>Poker Squares JSON routes</h1>
 
     <div class="poker-api">
         <h2>Highscore</h2>
-        <p>High score list.</p>
+        <p>List of all the highscores.</p>
         <a href="{{ path('json_highscore') }}" target="_blank"><button class="button">High score</button></a>
     </div>
 
@@ -27,6 +27,16 @@
         <h2>Users</h2>
         <p>Shows information about users.</p>
         <a href="{{ path('json_users') }}" target="_blank"><button class="button">Users</button></a>
+    </div>
+
+    <div class="poker-api">
+        <h2>One user</h2>
+        <p>Search for a username and show information about the user.</p>
+        <form method="post" action="{{ path('json_one_user') }}" target="_blank">
+            <label for="user">Enter a username:</label>
+            <input type="text" id="user" name="user">
+            <input type="submit" name="do_it" value="Search for user" class="button">
+        </form>
     </div>
 
 {% endblock %}

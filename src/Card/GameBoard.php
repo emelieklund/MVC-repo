@@ -165,4 +165,25 @@ class GameBoard
 
         return true;
     }
+
+    /**
+     * Returns true if column/row has four placed cards
+     *
+     * @return bool
+     */
+    public function ifFourCards(array $colOrRow): bool
+    {
+        $testCol = [];
+        foreach ($colOrRow as $holder) {
+            if ($holder[1] === "null") {
+                $testCol[] = $holder[1];
+            }
+        }
+
+        if (count($testCol) === 1) {
+            return true;
+        }
+
+        return false;
+    }
 }

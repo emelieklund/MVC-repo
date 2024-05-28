@@ -78,7 +78,7 @@ class JSONDeckController extends AbstractController
         return $response;
     }
 
-    #[Route("/api/deck/draw/get_nr}", name: "get_nr", methods: ['POST'])]
+    #[Route("/api/deck/draw/get_nr", name: "get_nr", methods: ['POST'])]
     public function jsonGetNumber(Request $request): Response
     {
         $num = $request->request->get('num');

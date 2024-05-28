@@ -76,11 +76,16 @@ class UserController extends AbstractController
         $profitOrLoss = $betting->pointChecker();
 
         $account = $user->getAccount();
+        $recentScore = $user->getScore();
 
         if ($profitOrLoss > 1) {
             $user->setAccount(($profitOrLoss * $bet) - $bet + $account);
         } else {
-            $user->setAccount($account - ($profitOrLoss * $bet)); //fixa den här
+            $user->setAccount($account - ($profitOrLoss * $bet));
+        }
+
+        if ($score > $recentScore) {
+            $user->setScore($score);
         }
 
         $entityManager->persist($user);
@@ -97,4 +102,23 @@ class UserController extends AbstractController
         return $this->render('poker-squares/result.html.twig', $data);
     }
 
+    #[Route('/proj/user/delete/{id}', name: 'user_delete')]
+    public function deleteUser(
+        int $id,
+        ManagerRegistry $doctrine,
+    ): Response {
+        $entityManager = $doctrine->getManager();
+        $user = $entityManager->getRepository(User::class)->find($id);
+
+        if (!$user) {
+            throw $this->createNotFoundException(
+                'No user found for id '.$id
+            );
+        }
+
+        $entityManager->remove($user);
+        $entityManager->flush();
+
+        return $this->redirectToRoute('users_view');
+    }
 }

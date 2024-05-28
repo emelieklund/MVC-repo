@@ -6,6 +6,31 @@
 
 <h1>About database</h1>
 
-<p>About database</p>
+<p>Jag valde att göra två tabeller </p>
+<h2>User</h2>
 
+<p>
+    I tabellen User sparas användarprofiler som består av id, username och account.
+</p>
+
+<h2>Highscore</h2>
+
+<p>I tabellen Highscore finns alla highscores som sparas efter en spelomgång, och dessa består av id, name och score.</p>
+
+<img src="{{ asset('img/poker.drawio.png') }}" alt="Database ER diagram" width="60%">
+
+<p>
+    Det finns egentligen ingen relation mellan databaserna, då name i Highscore inte nödvändigtvis måste vara en User.
+    Man kan välja att spela utan att använda sitt användarnamn och istället fylla i ett namn efteråt, och därför
+    är ju inte alla name i Highscore username från User. Jag valde att använda SQLite.
+</p>
+<p>
+    Det finns flera trevliga fördelar med ORM. Jag tycker framför allt att det sparar en mycket tid.
+    När man skapar en ny tabell så behöver man inte skriva all kod för tabellen själv, utan den genereras 
+    automatiskt. Det minskar också risken för eventuella felskrivningar/buggar. ORM ger också möjligheten för
+    personer som inte har så mycket erfarenhet av SQL att jobba med databaser.
+    Jag har ju inte jobbat så mycket med ORM än, men om jag får gissa så tror jag att man ganska snart börjar
+    känna sig begränsad när man vill göra lite mer avancerade saker i databasen. Då kanske man behöver använda
+    SQL lite smått. 
+</p>
 {% endblock %}

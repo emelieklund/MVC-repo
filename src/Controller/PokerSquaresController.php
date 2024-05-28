@@ -8,6 +8,8 @@ use App\Card\CardGraphic;
 use App\Card\DeckOfCards;
 use App\Card\GameBoard;
 use App\Card\PokerSquare;
+use App\Card\Clue;
+
 use App\Controller\UserController;
 
 use Symfony\Component\HttpFoundation\Request;
@@ -75,11 +77,10 @@ class PokerSquaresController extends AbstractController
         }
 
         $counter = $session->get("counter");
+        $gameBoard = $session->get("game_board");
 
         $allColPoints = [];
         $allRowPoints = [];
-
-        $gameBoard = $session->get("game_board");
 
         foreach ($gameBoard->columns() as $col) {
             $pokerSquare = new PokerSquare($col);
@@ -100,7 +101,12 @@ class PokerSquaresController extends AbstractController
         }
 
         // Draw card from deck
-        $card = $deck->drawGraphic();
+        if ($session->get("clue") !== "clue") {
+            $card = $deck->drawGraphic();
+            $session->set("card", $card);
+        } else {
+            $card = $session->get("card");
+        }
 
         // Save to session
         $session->set("deck_session", $deck);
@@ -108,8 +114,6 @@ class PokerSquaresController extends AbstractController
 
         $data = [
             "card" => $card->getImageName(),
-            "holders" => $gameBoard->getHolderIds(),
-            "holder_cards" => $gameBoard->getHolderCards(),
             "game_board" => $gameBoard->getIdAndCard(),
             "all_col_points" => $allColPoints,
             "all_row_points" => $allRowPoints,
@@ -117,6 +121,9 @@ class PokerSquaresController extends AbstractController
             "counter" => $session->get("counter"),
             "users" => $userRepository->findAll(),
             "id" => $session->get("id"),
+            "clue" => $session->get("clue"),
+            "col_hands" => $session->get("clue_colhands"),
+            "row_hands" => $session->get("clue_rowhands"),
         ];
 
         return $this->render('poker-squares/play.html.twig', $data);
@@ -125,17 +132,6 @@ class PokerSquaresController extends AbstractController
     #[Route("/proj/place/{id}/{card}", name: "place_card")]
     public function placeCard(int $id, string $card, SessionInterface $session): Response
     {
-        // Counter that keeps track on what round it is
-        if ($session->has("counter")) {
-            $counter = $session->get("counter");
-        } else {
-            $counter = 0;
-        }
-
-        $counter += 1;
-
-        $session->set("counter", $counter);
-
         $gameBoard = $session->get("game_board");
 
         foreach ($gameBoard->getObjects() as $holder) {
@@ -143,8 +139,51 @@ class PokerSquaresController extends AbstractController
                 $holder->setHolderCard($card);
             }
         }
-
+        $counter = $session->get("counter");
+        $session->set("counter", $counter += 1);
         $session->set("game_board", $gameBoard);
+        $session->set("clue", "clue_passed");
+
+        return $this->redirectToRoute('poker_play');
+    }
+
+    #[Route("/proj/play/clue", name: "clue")]
+    public function clue(SessionInterface $session): Response
+    {
+        $gameBoard = $session->get("game_board");
+
+        $card = $session->get("card")->getImageName();
+
+        $colHands = [];
+        $rowHands = [];
+
+        foreach ($gameBoard->columns() as $col) {
+            if ($gameBoard->ifFourCards($col)) {
+                $clue = new Clue($col, $card);
+                $colHands[] = $clue->getClue();
+            } else {
+                $colHands[] = 0;
+            }
+        }
+
+        foreach ($gameBoard->rows() as $row) {
+            if ($gameBoard->ifFourCards($row)) {
+                $clue = new Clue($row, $card);
+                $rowHands[] = $clue->getClue();
+            } else {
+                $rowHands[] = 0;
+            }
+        }
+
+        $session->set("clue", "clue");
+        $session->set("clue_colhands", $colHands);
+        $session->set("clue_rowhands", $rowHands);
+
+        $data = [
+            "card" => $card,
+            "col_hands" => $colHands,
+            "row_hands" => $rowHands,
+        ];
 
         return $this->redirectToRoute('poker_play');
     }

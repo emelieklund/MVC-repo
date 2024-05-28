@@ -20,7 +20,8 @@
             <div class="current-card">
                 <img src="{{ asset('img/cards/'~ card ~'.png') }}" alt="card" class="card">
                 <p class="sum">Sum: {{ sum }}</p>
-                <button class="button-36"><a href="{{ path('poker_squares') }}">Start over</a></button>
+                <a href="{{ path('clue') }}"><button class="button-36">Give me a clue</button></a>
+                <a href="{{ path('poker_squares') }}"><button class="button-36">Start over</button></a>
             </div>
         {% endif %}
     {% endif %}

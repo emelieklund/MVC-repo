@@ -19,6 +19,9 @@ class User
     #[ORM\Column]
     private ?int $account = null;
 
+    #[ORM\Column(nullable: true)]
+    private ?int $score = null;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -44,6 +47,18 @@ class User
     public function setAccount(int $account): static
     {
         $this->account = $account;
+
+        return $this;
+    }
+
+    public function getScore(): ?int
+    {
+        return $this->score;
+    }
+
+    public function setScore(?int $score): static
+    {
+        $this->score = $score;
 
         return $this;
     }

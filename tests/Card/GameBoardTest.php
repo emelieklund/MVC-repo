@@ -153,7 +153,6 @@ class GameBoardTest extends TestCase
         $this->assertTrue($gameBoard->ifFull($rows[1]));
     }
 
-
     /**
      * Tests ifFull() method for GameBoard when not full.
      */
@@ -164,5 +163,27 @@ class GameBoardTest extends TestCase
         $rows = $gameBoard->rows();
 
         $this->assertFalse($gameBoard->ifFull($rows[1]));
+    }
+
+    /**
+     * Tests ifFull() method for GameBoard when full.
+     */
+    public function testGameBoardIfFourTrue(): void
+    {
+        $gameBoard = new GameBoard();
+
+        $objects = $gameBoard->getObjects();
+
+        $cards = ["ace_of_diamonds", "2_of_clubs", "null", "10_of_hearts", "8_of_diamonds"];
+
+        for ($i = 0; $i < 5; $i++) {
+            $objects[$i]->setHolderCard($cards[$i]);
+        }
+
+        $rows = $gameBoard->rows();
+
+        $testRow = $rows[0];
+
+        $this->assertTrue($gameBoard->ifFourCards($testRow));
     }
 }

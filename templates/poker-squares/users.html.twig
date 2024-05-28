@@ -13,12 +13,14 @@
         <th>User ID</th>
         <th>Username</th>
         <th>Account</th>
+        <th>Highest score</th>
     </tr>
     {% for user in users %}
             <tr>
                 <td>{{ user.getId|e }}</td>
                 <td>{{ user.getUsername|e }}</td>
                 <td>{{ user.getAccount|e }}</td>
+                <td>{{ user.getScore|e }}</td>
             </tr>
         </a>
     {% endfor %}
