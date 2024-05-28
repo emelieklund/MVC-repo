@@ -14,7 +14,6 @@ class PokerHandTest extends TestCase
      */
     public function testIfOnePair(): void
     {
-        //$col = [[1, "2_of_hearts"], [6, "2_of_spades"], [11, "4_of_hearts"], [16, "5_of_clubs"], [21, "6_of_hearts"]];
         $ranks = [2, 2, 4, 5, 6];
         $suits = ["hearts", "spades", "hearts", "clubs", "hearts"];
         $pokerHand = new PokerHand($ranks, $suits);
@@ -39,7 +38,6 @@ class PokerHandTest extends TestCase
      */
     public function testIfTwoPairsFalse(): void
     {
-        //$col = [[1, "2_of_hearts"], [6, "2_of_spades"], [11, "4_of_hearts"], [16, "5_of_clubs"], [21, "6_of_hearts"]];
         $ranks = [2, 2, 4, 5, 6];
         $suits = ["hearts", "spades", "hearts", "clubs", "hearts"];
         $pokerHand = new PokerHand($ranks, $suits);

@@ -18,8 +18,13 @@
             {% include 'poker-squares/game_over.html.twig' %}
         {% else %}
             <div class="current-card">
-                <img src="{{ asset('img/cards/'~ card ~'.png') }}" alt="card" class="card">
                 <p class="sum">Sum: {{ sum }}</p>
+                <img src="{{ asset('img/cards/'~ card ~'.png') }}" alt="card" class="card">
+                {% if new_card is same as ("used") %}
+                    <a href="{{ path('new_card') }}"><button class="button-36" style="opacity:0.5" disabled>Give me a new card</button></a>
+                {% else %}
+                    <a href="{{ path('new_card') }}"><button class="button-36">Give me a new card</button></a>
+                {% endif %}
                 <a href="{{ path('clue') }}"><button class="button-36">Give me a clue</button></a>
                 <a href="{{ path('poker_squares') }}"><button class="button-36">Start over</button></a>
             </div>

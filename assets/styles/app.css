@@ -497,7 +497,7 @@ background-color: #C3D8CA;
 
 .current-card {
     height: auto;
-    margin: 50px 0 0 100px;
+    margin: 20px 0 0 100px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
