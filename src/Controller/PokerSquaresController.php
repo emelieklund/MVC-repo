@@ -30,11 +30,8 @@ class PokerSquaresController extends AbstractController
         $session->clear();
 
         $gameBoard = new GameBoard();
-        $session->set("game_board", $gameBoard);
-        $session->set("new_card", "not_used");
 
         $counter = -1;
-        $session->set("counter", $counter);
 
         if ($session->has("deck_session")) {
             $deck = $session->get("deck_session");
@@ -44,8 +41,11 @@ class PokerSquaresController extends AbstractController
 
         $card = $deck->drawGraphic();
 
-        $session->set("card", $card);
+        $session->set("game_board", $gameBoard);
         $session->set("deck_session", $deck);
+        $session->set("counter", $counter);
+        $session->set("card", $card);
+        $session->set("new_card", "not_used");
 
         return $this->redirectToRoute('poker_play');
     }
@@ -57,11 +57,11 @@ class PokerSquaresController extends AbstractController
         $pointsGuessed = $request->request->get('points');
         $bet = $request->request->get('bet');
 
+        $counter = 0;
+
         $session->set("id", $id);
         $session->set("points_guessed", $pointsGuessed);
         $session->set("bet", $bet);
-
-        $counter = 0;
         $session->set("counter", $counter);
 
         return $this->redirectToRoute('poker_play');
@@ -71,6 +71,7 @@ class PokerSquaresController extends AbstractController
     public function noBet(SessionInterface $session): Response
     {
         $counter = 0;
+
         $session->set("counter", $counter);
 
         return $this->redirectToRoute('poker_play');
@@ -161,7 +162,6 @@ class PokerSquaresController extends AbstractController
     public function clue(SessionInterface $session): Response
     {
         $gameBoard = $session->get("game_board");
-
         $currentCard = $session->get("card")->getImageName();
 
         $colHands = [];
@@ -195,8 +195,6 @@ class PokerSquaresController extends AbstractController
     #[Route("/proj/new", name: "new_card")]
     public function newCard(SessionInterface $session): Response
     {
-        $newCard = $session->set("new_card", "used");
-
         if ($session->has("deck_session")) {
             $deck = $session->get("deck_session");
         } else {
@@ -205,6 +203,7 @@ class PokerSquaresController extends AbstractController
 
         $card = $deck->drawGraphic();
 
+        $session->set("new_card", "used");
         $session->set("card", $card);
 
         return $this->redirectToRoute('poker_play');
