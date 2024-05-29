@@ -27,11 +27,11 @@ class JSONPokerSquareController extends AbstractController
     }
 
     #[Route("/proj/api/highscore", name: "json_highscore", format: 'json')]
-    public function jsonHighscore(HighScoreRepository $highscoreRepository): Response
+    public function jsonHighScore(HighScoreRepository $highScoreRepository): Response
     {
-        $highscore = $highscoreRepository->findAll();
+        $highScore = $highScoreRepository->findAll();
 
-        $response = $this->json($highscore);
+        $response = $this->json($highScore);
         $response->setEncodingOptions(
             $response->getEncodingOptions() | JSON_PRETTY_PRINT
         );

@@ -74,13 +74,10 @@ class UserController extends AbstractController
         $score = $session->get("score");
 
         $user = $entityManager->getRepository(User::class)->find($id);
-
         $betting = new Betting($pointsGuessed, $score);
-
         $profitOrLoss = $betting->pointChecker();
-
         $account = $user->getAccount();
-        $recentScore = $user->getScore();
+        $currentScore = $user->getScore();
 
         if ($score >= $pointsGuessed) {
             $user->setAccount(($profitOrLoss * $bet) - $bet + $account);
@@ -88,7 +85,7 @@ class UserController extends AbstractController
             $user->setAccount($account - ($profitOrLoss * $bet));
         }
 
-        if ($score > $recentScore) {
+        if ($score > $currentScore) {
             $user->setScore($score);
         }
 

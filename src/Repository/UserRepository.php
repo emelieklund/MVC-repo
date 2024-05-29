@@ -16,24 +16,24 @@ class UserRepository extends ServiceEntityRepository
         parent::__construct($registry, User::class);
     }
 
-    // /**
-    //  * Find user based on given username.
-    //  *
-    //  * @return array<array> Returns an array of arrays (i.e. a raw data set)
-    //  */
-    // public function findUserByUsername(string $username): array
-    // {
-    //     $conn = $this->getEntityManager()->getConnection();
+    /**
+     * Find user based on given username.
+     *
+     * @return array<array> Returns an array of arrays (i.e. a raw data set)
+     */
+    public function findUserByUsername(string $username): array
+    {
+        $conn = $this->getEntityManager()->getConnection();
 
-    //     $sql = '
-    //         SELECT * FROM user AS u
-    //         WHERE u.username = :username
-    //     ';
+        $sql = '
+            SELECT * FROM user AS u
+            WHERE u.username = :username
+        ';
 
-    //     $resultSet = $conn->executeQuery($sql, ['username' => $username]);
+        $resultSet = $conn->executeQuery($sql, ['username' => $username]);
 
-    //     return $resultSet->fetchAllAssociative();
-    // }
+        return $resultSet->fetchAllAssociative();
+    }
 
     // /**
     //  * Find user account based on given username.
