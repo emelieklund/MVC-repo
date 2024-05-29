@@ -6,6 +6,8 @@
 
 <h1>About Poker Squares</h1>
 
+<a href="{{ path('about_database') }}"><p>About database</p></a>
+
 <p>
     Poker Squares is a solitaire game where the player should try and get poker hands in every column and row in a 5x5 grid.
     You can see all different poker hands down below and the points they are providing.
@@ -13,7 +15,8 @@
 <p>
     If you create a user, you can make a bet before playing by filling in a form. You guess how many points you think you will receive (at least)
     and how much money you want to bet. Further down on this page, you can see an approximate graph over points guessed and the percentage profit/loss
-    it will provide. The higher the points you guess, the higher the profit and the lower the loss.
+    it will provide. The higher the points you guess, the higher the profit and the lower the loss. If you guess under 20 points, your profit
+    will be 0 since it's basically impossible to get that few points.
 </p>
 <p>
     During the game, you can click the "Give me a clue"-button if you need some inspiration. It works only on rows/columns with four saved cards,
@@ -74,7 +77,5 @@
 <h3>Approximate graph over profit/loss (%) vs points guessed</h3>
 
 <iframe width="600" height="371" seamless frameborder="0" scrolling="no" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vQPkdGmqQBHsu8DzeomElWGJIdAxA0czujVUiROfPTS8YwM-6zdtvHI29DjorZO_E-RMB0BkNIb0_sn/pubchart?oid=830820963&amp;format=interactive"></iframe>
-
-<a href="{{ path('about_database') }}"><p>About database</p></a>
 
 {% endblock %}

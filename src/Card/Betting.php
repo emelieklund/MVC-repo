@@ -50,7 +50,7 @@ class Betting
      */
     public function playerWins(): float
     {
-        $profit = 0;
+        $profit = 1;
 
         if ($this->pointsGuessed > 20) {
             $profit = 1 + (0.4 * $this->pointsGuessed / 100);

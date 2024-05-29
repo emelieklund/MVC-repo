@@ -6,6 +6,10 @@ use App\Card\Betting;
 
 use App\Entity\User;
 use App\Repository\UserRepository;
+
+use App\Entity\Highscore;
+use App\Repository\HighscoreRepository;
+
 use Doctrine\Persistence\ManagerRegistry;
 
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -78,7 +82,7 @@ class UserController extends AbstractController
         $account = $user->getAccount();
         $recentScore = $user->getScore();
 
-        if ($profitOrLoss > 1) {
+        if ($score >= $pointsGuessed) {
             $user->setAccount(($profitOrLoss * $bet) - $bet + $account);
         } else {
             $user->setAccount($account - ($profitOrLoss * $bet));
@@ -120,5 +124,29 @@ class UserController extends AbstractController
         $entityManager->flush();
 
         return $this->redirectToRoute('users_view');
+    }
+
+    #[Route('/proj/user/reset', name: 'reset')]
+    public function resetDatabase(
+        UserRepository $userRepository,
+        HighScoreRepository $highScoreRepository,
+        ManagerRegistry $doctrine
+    ): Response {
+        $users = $userRepository->findAll();
+        $highScores = $highScoreRepository->findAll();
+
+        $entityManager = $doctrine->getManager();
+
+        foreach ($users as $user) {
+            $entityManager->remove($user);
+        }
+
+        foreach ($highScores as $highScore) {
+            $entityManager->remove($highScore);
+        }
+
+        $entityManager->flush();
+
+        return $this->redirectToRoute('about_database');
     }
 }

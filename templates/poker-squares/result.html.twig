@@ -6,7 +6,7 @@
 
 <div class="result-div">
 
-    {% if profit_or_loss > 1 %}
+    {% if score >= points_guessed %}
         <h2 style="color:green">Congratulations, you won!</h2>
     {% else %}
         <h2 style="color:red">You lost, better luck next time!</h2>
@@ -15,7 +15,7 @@
     <p>Points guessed: {{ points_guessed }}</p>
     <p>Score: {{ score }}</p>
     <p>You betted: {{ bet }}</p>
-    {% if profit_or_loss > 1 %}
+    {% if score >= points_guessed %}
         <p>Your profit: {{ profit_or_loss * bet - bet }}</p>
     {% else %}
         <p>Your loss: {{ profit_or_loss * bet }}</p>

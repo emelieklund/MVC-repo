@@ -6,7 +6,10 @@
 
 <h1>About database</h1>
 
-<p>Jag valde att göra två tabeller </p>
+<a href="{{ path('reset') }}">NOLLSTÄLL DATABAS</a>
+
+<p>Jag har skapat två tabeller relaterade till Poker Squares, User och Highscore. Jag valde att fortsätta jobba med SQLite.</p>
+
 <h3>User</h3>
 
 <p>
@@ -24,7 +27,7 @@
 <p>
     Det finns egentligen ingen relation mellan databaserna, då name i Highscore inte nödvändigtvis måste vara en User.
     Man kan välja att spela utan att använda sitt användarnamn och istället fylla i ett namn efteråt, och därför
-    är ju inte alla name i Highscore username från User. Jag valde att använda SQLite.
+    är inte alla name i Highscore username från User.
 </p>
 <p>
     Det finns flera trevliga fördelar med ORM. Jag tycker framför allt att det sparar en mycket tid.
@@ -33,6 +36,15 @@
     personer som inte har så mycket erfarenhet av SQL att jobba med databaser.
     Jag har ju inte jobbat så mycket med ORM än, men om jag får gissa så tror jag att man ganska snart börjar
     känna sig begränsad när man vill göra lite mer avancerade saker i databasen. Då kanske man behöver använda
-    SQL lite smått. 
+    SQL. I databas-kursen gjorde vi ju betydligt mer avancerade SQL-statements jämfört med hur vi har
+    använt ORM i den här kursen. Det vi har gjort med ORM nu har ju varit ganska grundläggande, och jag hade velat
+    veta hur avancerat man kan göra det med ORM. Går det t ex att skriva lagrade procedurer och är det i så fall
+    lättare eller svårare att göra med ORM jämfört med SQL? 
 </p>
+<p>
+    Min sammanfattning här är att det känns smidigare att använda ORM i
+    första stadiet när man skapar en databas, men att jag hade behövt ha lite mer kunskap för att veta om det är
+    lika användbart även när det blir mer avancerat.
+</p>
+
 {% endblock %}
