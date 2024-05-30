@@ -15,8 +15,11 @@
         {% include 'poker-squares/game_board.html.twig' %}
 
         {% if counter is same as (25) %}
+
             {% include 'poker-squares/game_over.html.twig' %}
+
         {% else %}
+
             <div class="current-card">
                 <p class="sum">Sum: {{ sum }}</p>
                 <img src="{{ asset('img/cards/'~ card ~'.png') }}" alt="card" class="card">
@@ -32,6 +35,7 @@
                 {% endif %}
                 <a href="{{ path('poker_squares') }}"><button class="button-36">Start over</button></a>
             </div>
+
         {% endif %}
     {% endif %}
 

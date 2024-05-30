@@ -109,7 +109,7 @@
 
     <article class="phpdocumentor-element -class">
         <h2 class="phpdocumentor-content__title">
-    Betting
+    PokerSquares
 
     
             <div class="phpdocumentor-element__package">
@@ -128,13 +128,13 @@
 </div>
 
         <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Card/Betting.php"><a href="files/src-card-betting.html"><abbr title="src/Card/Betting.php">Betting.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Card/PokerSquares.php"><a href="files/src-card-pokersquares.html"><abbr title="src/Card/PokerSquares.php">PokerSquares.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">8</span>
 
     </aside>
 
-            <p class="phpdocumentor-summary">Class for betting</p>
+            <p class="phpdocumentor-summary">Class for Poker Square game</p>
 
 
 
@@ -143,7 +143,7 @@
 
 <h3 id="toc">
     Table of Contents
-    <a href="classes/App-Card-Betting.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/App-Card-PokerSquares.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
 
 </h3>
 
@@ -157,57 +157,70 @@
 
 <h4 id="toc-properties">
     Properties
-    <a href="classes/App-Card-Betting.html#toc-properties" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/App-Card-PokerSquares.html#toc-properties" class="headerlink"><i class="fas fa-link"></i></a>
 
 </h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a href="classes/App-Card-Betting.html#property_pointsGuessed">$pointsGuessed</a>
+    <a href="classes/App-Card-PokerSquares.html#property_points">$points</a>
     <span>
                         &nbsp;: int            </span>
 </dt>
 
             <dt class="phpdocumentor-table-of-contents__entry -property -private">
-    <a href="classes/App-Card-Betting.html#property_pointsReceived">$pointsReceived</a>
+    <a href="classes/App-Card-PokerSquares.html#property_ranks">$ranks</a>
     <span>
-                        &nbsp;: int            </span>
+                        &nbsp;: array&lt;string|int, int&gt;            </span>
+</dt>
+
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/App-Card-PokerSquares.html#property_suits">$suits</a>
+    <span>
+                        &nbsp;: array&lt;string|int, string&gt;            </span>
 </dt>
 
     </dl>
 
 <h4 id="toc-methods">
     Methods
-    <a href="classes/App-Card-Betting.html#toc-methods" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/App-Card-PokerSquares.html#toc-methods" class="headerlink"><i class="fas fa-link"></i></a>
 
 </h4>
 <dl class="phpdocumentor-table-of-contents">
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-Card-Betting.html#method___construct">__construct()</a>
+    <a href="classes/App-Card-PokerSquares.html#method___construct">__construct()</a>
     <span>
                                 &nbsp;: mixed    </span>
 </dt>
-<dd>Constructor to create a Bet</dd>
+<dd>Constructor to create a PokerSquare.</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-Card-Betting.html#method_playerLooses">playerLooses()</a>
+    <a href="classes/App-Card-PokerSquares.html#method_getPoints">getPoints()</a>
     <span>
-                                &nbsp;: float    </span>
+                                &nbsp;: int    </span>
 </dt>
-<dd>Calculates loss if player looses. If player guessed under 20 points, player will loose 100 % of bet.</dd>
+<dd>Get points of column</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-Card-Betting.html#method_playerWins">playerWins()</a>
+    <a href="classes/App-Card-PokerSquares.html#method_rankAsNumber">rankAsNumber()</a>
     <span>
-                                &nbsp;: float    </span>
+                                &nbsp;: int    </span>
 </dt>
-<dd>Calculates profit if player wins. If player guessed under 20 points, profit will be 0.</dd>
+<dd>Converts rank from string to int</dd>
 
             <dt class="phpdocumentor-table-of-contents__entry -method -public">
-    <a href="classes/App-Card-Betting.html#method_pointChecker">pointChecker()</a>
+    <a href="classes/App-Card-PokerSquares.html#method_setPoints">setPoints()</a>
     <span>
-                                &nbsp;: float    </span>
+                                &nbsp;: void    </span>
 </dt>
-<dd>Checks if guessed points are less, same as or higher than points received.</dd>
+<dd>Set points to column</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/App-Card-PokerSquares.html#method_whichPokerHand">whichPokerHand()</a>
+    <span>
+                                &nbsp;: int    </span>
+</dt>
+<dd>Checks which poker hand</dd>
 
     </dl>
 
@@ -220,7 +233,7 @@
     <section class="phpdocumentor-properties">
         <h3 class="phpdocumentor-elements__header" id="properties">
             Properties
-            <a href="classes/App-Card-Betting.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/App-Card-PokerSquares.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
 
         </h3>
                     <article
@@ -230,17 +243,17 @@
             -private
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="property_pointsGuessed">
-        $pointsGuessed
-        <a href="classes/App-Card-Betting.html#property_pointsGuessed" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="property_points">
+        $points
+        <a href="classes/App-Card-PokerSquares.html#property_points" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Card/Betting.php"><a href="files/src-card-betting.html"><abbr title="src/Card/Betting.php">Betting.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Card/PokerSquares.php"><a href="files/src-card-pokersquares.html"><abbr title="src/Card/PokerSquares.php">PokerSquares.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">13</span>
+    <span class="phpdocumentor-element-found-in__line">23</span>
 
     </aside>
 
@@ -248,13 +261,11 @@
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
         <span class="phpdocumentor-signature__type">int</span>
-    <span class="phpdocumentor-signature__name">$pointsGuessed</span>
+    <span class="phpdocumentor-signature__name">$points</span>
      = <span class="phpdocumentor-signature__default-value">0</span></code>
 
     
-        <section class="phpdocumentor-description"><p>Points that player guessed</p>
-</section>
-
+    
     
 
 </article>
@@ -265,15 +276,48 @@
             -private
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="property_pointsReceived">
-        $pointsReceived
-        <a href="classes/App-Card-Betting.html#property_pointsReceived" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="property_ranks">
+        $ranks
+        <a href="classes/App-Card-PokerSquares.html#property_ranks" class="headerlink"><i class="fas fa-link"></i></a>
 
         <span class="phpdocumentor-element__modifiers">
                                 </span>
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Card/Betting.php"><a href="files/src-card-betting.html"><abbr title="src/Card/Betting.php">Betting.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Card/PokerSquares.php"><a href="files/src-card-pokersquares.html"><abbr title="src/Card/PokerSquares.php">PokerSquares.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">13</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, int&gt;</span>
+    <span class="phpdocumentor-signature__name">$ranks</span>
+     = <span class="phpdocumentor-signature__default-value">[]</span></code>
+
+    
+    
+    
+
+</article>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_suits">
+        $suits
+        <a href="classes/App-Card-PokerSquares.html#property_suits" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Card/PokerSquares.php"><a href="files/src-card-pokersquares.html"><abbr title="src/Card/PokerSquares.php">PokerSquares.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">18</span>
 
@@ -282,14 +326,12 @@
     
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">private</span>
-        <span class="phpdocumentor-signature__type">int</span>
-    <span class="phpdocumentor-signature__name">$pointsReceived</span>
-     = <span class="phpdocumentor-signature__default-value">0</span></code>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, string&gt;</span>
+    <span class="phpdocumentor-signature__name">$suits</span>
+     = <span class="phpdocumentor-signature__default-value">[]</span></code>
 
     
-        <section class="phpdocumentor-description"><p>Points that player received</p>
-</section>
-
+    
     
 
 </article>
@@ -298,7 +340,7 @@
             <section class="phpdocumentor-methods">
         <h3 class="phpdocumentor-elements__header" id="methods">
             Methods
-            <a href="classes/App-Card-Betting.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+            <a href="classes/App-Card-PokerSquares.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
 
         </h3>
                     <article
@@ -309,21 +351,21 @@
 >
     <h4 class="phpdocumentor-element__name" id="method___construct">
         __construct()
-        <a href="classes/App-Card-Betting.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
+        <a href="classes/App-Card-PokerSquares.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Card/Betting.php"><a href="files/src-card-betting.html"><abbr title="src/Card/Betting.php">Betting.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Card/PokerSquares.php"><a href="files/src-card-pokersquares.html"><abbr title="src/Card/PokerSquares.php">PokerSquares.php</abbr></a></abbr>
     :
-    <span class="phpdocumentor-element-found-in__line">26</span>
+    <span class="phpdocumentor-element-found-in__line">30</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Constructor to create a Bet</p>
+        <p class="phpdocumentor-summary">Constructor to create a PokerSquare.</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$pointsGuessed</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">int&nbsp;</span><span class="phpdocumentor-signature__argument__name">$pointsReceived</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
+                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$colOrRow</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -331,15 +373,8 @@
         <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
     <dl class="phpdocumentor-argument-list">
                     <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$pointsGuessed</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
-                            </dt>
-            <dd class="phpdocumentor-argument-list__definition">
-                
-            </dd>
-                    <dt class="phpdocumentor-argument-list__entry">
-                <span class="phpdocumentor-signature__argument__name">$pointsReceived</span>
-                : <span class="phpdocumentor-signature__argument__return-type">int</span>
+                <span class="phpdocumentor-signature__argument__name">$colOrRow</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
                             </dt>
             <dd class="phpdocumentor-argument-list__definition">
                 
@@ -356,23 +391,137 @@
             -public
                                                         "
 >
-    <h4 class="phpdocumentor-element__name" id="method_playerLooses">
-        playerLooses()
-        <a href="classes/App-Card-Betting.html#method_playerLooses" class="headerlink"><i class="fas fa-link"></i></a>
+    <h4 class="phpdocumentor-element__name" id="method_getPoints">
+        getPoints()
+        <a href="classes/App-Card-PokerSquares.html#method_getPoints" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
     <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Card/Betting.php"><a href="files/src-card-betting.html"><abbr title="src/Card/Betting.php">Betting.php</abbr></a></abbr>
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Card/PokerSquares.php"><a href="files/src-card-pokersquares.html"><abbr title="src/Card/PokerSquares.php">PokerSquares.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">109</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Get points of column</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getPoints</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">int</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_rankAsNumber">
+        rankAsNumber()
+        <a href="classes/App-Card-PokerSquares.html#method_rankAsNumber" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Card/PokerSquares.php"><a href="files/src-card-pokersquares.html"><abbr title="src/Card/PokerSquares.php">PokerSquares.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">45</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Converts rank from string to int</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">rankAsNumber</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$imageName</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$imageName</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
+
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">int</span>
+            </section>
+
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_setPoints">
+        setPoints()
+        <a href="classes/App-Card-PokerSquares.html#method_setPoints" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Card/PokerSquares.php"><a href="files/src-card-pokersquares.html"><abbr title="src/Card/PokerSquares.php">PokerSquares.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">99</span>
+
+    </aside>
+
+        <p class="phpdocumentor-summary">Set points to column</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">setPoints</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">void</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_whichPokerHand">
+        whichPokerHand()
+        <a href="classes/App-Card-PokerSquares.html#method_whichPokerHand" class="headerlink"><i class="fas fa-link"></i></a>
+
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Card/PokerSquares.php"><a href="files/src-card-pokersquares.html"><abbr title="src/Card/PokerSquares.php">PokerSquares.php</abbr></a></abbr>
     :
     <span class="phpdocumentor-element-found-in__line">67</span>
 
     </aside>
 
-        <p class="phpdocumentor-summary">Calculates loss if player looses. If player guessed under 20 points, player will loose 100 % of bet.</p>
+        <p class="phpdocumentor-summary">Checks which poker hand</p>
 
     <code class="phpdocumentor-code phpdocumentor-signature ">
     <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">playerLooses</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">float</span></code>
+                    <span class="phpdocumentor-signature__name">whichPokerHand</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
 
     <div class="phpdocumentor-label-line">
         </div>
@@ -382,79 +531,7 @@
 
             <section>
         <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">float</span>
-            </section>
-
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_playerWins">
-        playerWins()
-        <a href="classes/App-Card-Betting.html#method_playerWins" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Card/Betting.php"><a href="files/src-card-betting.html"><abbr title="src/Card/Betting.php">Betting.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">51</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Calculates profit if player wins. If player guessed under 20 points, profit will be 0.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">playerWins</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">float</span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-    
-    
-
-            <section>
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">float</span>
-            </section>
-
-</article>
-                    <article
-        class="phpdocumentor-element
-            -method
-            -public
-                                                        "
->
-    <h4 class="phpdocumentor-element__name" id="method_pointChecker">
-        pointChecker()
-        <a href="classes/App-Card-Betting.html#method_pointChecker" class="headerlink"><i class="fas fa-link"></i></a>
-
-    </h4>
-    <aside class="phpdocumentor-element-found-in">
-    <abbr class="phpdocumentor-element-found-in__file" title="src/Card/Betting.php"><a href="files/src-card-betting.html"><abbr title="src/Card/Betting.php">Betting.php</abbr></a></abbr>
-    :
-    <span class="phpdocumentor-element-found-in__line">37</span>
-
-    </aside>
-
-        <p class="phpdocumentor-summary">Checks if guessed points are less, same as or higher than points received.</p>
-
-    <code class="phpdocumentor-code phpdocumentor-signature ">
-    <span class="phpdocumentor-signature__visibility">public</span>
-                    <span class="phpdocumentor-signature__name">pointChecker</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">float</span></code>
-
-    <div class="phpdocumentor-label-line">
-        </div>
-    
-    
-    
-
-            <section>
-        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
-        <span class="phpdocumentor-signature__response_type">float</span>
+        <span class="phpdocumentor-signature__response_type">int</span>
             </section>
 
 </article>
@@ -464,7 +541,7 @@
     <div class="phpdocumentor-modal-bg" data-exit-button></div>
     <div class="phpdocumentor-modal-container">
         <div class="phpdocumentor-modal-content">
-            <pre style="max-height: 500px; overflow-y: scroll" data-src="files/src/Card/Betting.php.txt" class="language-php line-numbers linkable-line-numbers"></pre>
+            <pre style="max-height: 500px; overflow-y: scroll" data-src="files/src/Card/PokerSquares.php.txt" class="language-php line-numbers linkable-line-numbers"></pre>
         </div>
         <button data-exit-button class="phpdocumentor-modal__close">&times;</button>
     </div>
@@ -563,26 +640,28 @@
             <li class="phpdocumentor-on-this-page-section__title">Table Of Contents</li>
             <li>
                 <ul class="phpdocumentor-list -clean">
-                                                            <li><a href="classes/App-Card-Betting.html#toc-properties">Properties</a></li>
-                                                            <li><a href="classes/App-Card-Betting.html#toc-methods">Methods</a></li>
+                                                            <li><a href="classes/App-Card-PokerSquares.html#toc-properties">Properties</a></li>
+                                                            <li><a href="classes/App-Card-PokerSquares.html#toc-methods">Methods</a></li>
                                     </ul>
             </li>
             
                             <li class="phpdocumentor-on-this-page-section__title">Properties</li>
                 <li>
                     <ul class="phpdocumentor-list -clean">
-                                                    <li><a href="classes/App-Card-Betting.html#property_pointsGuessed">$pointsGuessed<a href="classes/App-Card-Betting.html"></li>
-                                                    <li><a href="classes/App-Card-Betting.html#property_pointsReceived">$pointsReceived<a href="classes/App-Card-Betting.html"></li>
+                                                    <li><a href="classes/App-Card-PokerSquares.html#property_points">$points<a href="classes/App-Card-PokerSquares.html"></li>
+                                                    <li><a href="classes/App-Card-PokerSquares.html#property_ranks">$ranks<a href="classes/App-Card-PokerSquares.html"></li>
+                                                    <li><a href="classes/App-Card-PokerSquares.html#property_suits">$suits<a href="classes/App-Card-PokerSquares.html"></li>
                                             </ul>
                 </li>
             
                         <li class="phpdocumentor-on-this-page-section__title">Methods</li>
             <li>
                 <ul class="phpdocumentor-list -clean">
-                                            <li><a href="classes/App-Card-Betting.html#method___construct">__construct()</a></li>
-                                            <li><a href="classes/App-Card-Betting.html#method_playerLooses">playerLooses()</a></li>
-                                            <li><a href="classes/App-Card-Betting.html#method_playerWins">playerWins()</a></li>
-                                            <li><a href="classes/App-Card-Betting.html#method_pointChecker">pointChecker()</a></li>
+                                            <li><a href="classes/App-Card-PokerSquares.html#method___construct">__construct()</a></li>
+                                            <li><a href="classes/App-Card-PokerSquares.html#method_getPoints">getPoints()</a></li>
+                                            <li><a href="classes/App-Card-PokerSquares.html#method_rankAsNumber">rankAsNumber()</a></li>
+                                            <li><a href="classes/App-Card-PokerSquares.html#method_setPoints">setPoints()</a></li>
+                                            <li><a href="classes/App-Card-PokerSquares.html#method_whichPokerHand">whichPokerHand()</a></li>
                                     </ul>
             </li>
                     </ul>
@@ -602,7 +681,7 @@
     </section>
 </section>
         </div>
-        <a href="classes/App-Card-Betting.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="classes/App-Card-PokerSquares.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 

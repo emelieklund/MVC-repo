@@ -8,7 +8,7 @@ namespace App\Card;
 class Betting
 {
     /**
-     * @var int $pointsGuessed     Points that player guessed
+     * @var int $pointsGuessed      Points that player guessed
      */
     private $pointsGuessed = 0;
 
@@ -20,8 +20,8 @@ class Betting
     /**
      * Constructor to create a Bet
      *
-     * @param int $pointsGuessed The points player entered
-     * @param int $pointsReceived The points player received
+     * @param int $pointsGuessed
+     * @param int $pointsReceived
      */
     public function __construct(int $pointsGuessed, int $pointsReceived)
     {
@@ -30,7 +30,7 @@ class Betting
     }
 
     /**
-     * Checks if guessed points is same or greater than points received
+     * Checks if guessed points are less, same as or higher than points received.
      *
      * @return float
      */

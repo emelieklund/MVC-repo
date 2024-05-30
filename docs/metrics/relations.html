@@ -49,7 +49,7 @@
 <div class="page">
     <div class="content content-first">
         <div class="report-details">
-            Created at 2024-05-28 11:05:28        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
+            Created at 2024-05-30 20:54:33        , with PHPMetrics v2.8.2 (<a href="https://twitter.com/Halleck45">Jean-François Lépine</a>).
         </div>
 
         
@@ -337,7 +337,7 @@
         "relations": []
     },
     {
-        "name": "\\App\\Card\\PokerSquare",
+        "name": "\\App\\Card\\PokerSquares",
         "size": 3000,
         "relations": []
     },
@@ -372,7 +372,8 @@
             "\\Doctrine\\Persistence\\ManagerRegistry",
             "\\App\\Entity\\User",
             "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
-            "\\App\\Card\\Betting"
+            "\\App\\Card\\Betting",
+            "\\App\\Repository\\HighscoreRepository"
         ]
     },
     {
@@ -432,7 +433,7 @@
             "\\App\\Card\\DeckOfCards",
             "\\Symfony\\Component\\HttpFoundation\\Request",
             "\\App\\Repository\\UserRepository",
-            "\\App\\Card\\PokerSquare",
+            "\\App\\Card\\PokerSquares",
             "\\App\\Card\\Clue"
         ]
     },
@@ -478,18 +479,6 @@
         ]
     },
     {
-        "name": "\\App\\Controller\\JSONPokerSquareController",
-        "size": 3000,
-        "relations": [
-            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
-            "\\Symfony\\Component\\HttpFoundation\\Response",
-            "\\App\\Repository\\HighscoreRepository",
-            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
-            "\\App\\Repository\\UserRepository",
-            "\\Symfony\\Component\\HttpFoundation\\Request"
-        ]
-    },
-    {
         "name": "\\App\\Controller\\LibraryController",
         "size": 3000,
         "relations": [
@@ -499,6 +488,18 @@
             "\\Symfony\\Component\\HttpFoundation\\Request",
             "\\Doctrine\\Persistence\\ManagerRegistry",
             "\\App\\Entity\\Library"
+        ]
+    },
+    {
+        "name": "\\App\\Controller\\JSONPokerSquaresController",
+        "size": 3000,
+        "relations": [
+            "\\Symfony\\Bundle\\FrameworkBundle\\Controller\\AbstractController",
+            "\\Symfony\\Component\\HttpFoundation\\Response",
+            "\\App\\Repository\\HighscoreRepository",
+            "\\Symfony\\Component\\HttpFoundation\\Session\\SessionInterface",
+            "\\App\\Repository\\UserRepository",
+            "\\Symfony\\Component\\HttpFoundation\\Request"
         ]
     },
     {

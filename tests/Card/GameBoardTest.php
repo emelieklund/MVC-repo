@@ -9,6 +9,9 @@ use PHPUnit\Framework\TestCase;
  */
 class GameBoardTest extends TestCase
 {
+    /**
+     * @var array<string> $drawHand     A randomized hand with 25 cards, to be tested with.
+     */
     private $drawHand = [
         "5_of_spades",
         "3_of_spades",

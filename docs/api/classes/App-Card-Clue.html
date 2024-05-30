@@ -61,7 +61,7 @@
 </h4>
     <ul class="phpdocumentor-list">
                     <li>
-                <a href="namespaces/app-card.html" class="-active">Card</a>
+                <a href="namespaces/app-card.html" class="">Card</a>
                 
             </li>
                     <li>
@@ -104,44 +104,240 @@
                                 <section>
                                         <ul class="phpdocumentor-breadcrumbs">
             <li class="phpdocumentor-breadcrumb"><a href="namespaces/app.html">App</a></li>
+            <li class="phpdocumentor-breadcrumb"><a href="namespaces/app-card.html">Card</a></li>
     </ul>
 
-    <article class="phpdocumentor-element -namespace">
-        <h2 class="phpdocumentor-content__title">Card</h2>
+    <article class="phpdocumentor-element -class">
+        <h2 class="phpdocumentor-content__title">
+    Clue
 
-        
+    
+            <div class="phpdocumentor-element__package">
+            in package
+            <ul class="phpdocumentor-breadcrumbs">
+                                    <li class="phpdocumentor-breadcrumb"><a href="packages/Application.html">Application</a></li>
+                            </ul>
+        </div>
+    
+    
+    </h2>
+
+<div class="phpdocumentor-label-line">
+
+
+</div>
+
+        <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Card/Clue.php"><a href="files/src-card-clue.html"><abbr title="src/Card/Clue.php">Clue.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">8</span>
+
+    </aside>
+
+            <p class="phpdocumentor-summary">Clue class</p>
+
+
+
+
+
+
 <h3 id="toc">
     Table of Contents
-    <a href="namespaces/app-card.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
+    <a href="classes/App-Card-Clue.html#toc" class="headerlink"><i class="fas fa-link"></i></a>
 
 </h3>
 
 
 
 
-    <h4 id="toc-classes">
-        Classes
-        <a href="namespaces/app-card.html#toc-classes" class="headerlink"><i class="fas fa-link"></i></a>
+
+
+
+
+
+<h4 id="toc-properties">
+    Properties
+    <a href="classes/App-Card-Clue.html#toc-properties" class="headerlink"><i class="fas fa-link"></i></a>
+
+</h4>
+<dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -property -private">
+    <a href="classes/App-Card-Clue.html#property_testColOrRow">$testColOrRow</a>
+    <span>
+                        &nbsp;: array&lt;string|int, <a href="classes/App-Card-CardHolder.html"><abbr title="\App\Card\CardHolder">CardHolder</abbr></a>&gt;            </span>
+</dt>
+
+    </dl>
+
+<h4 id="toc-methods">
+    Methods
+    <a href="classes/App-Card-Clue.html#toc-methods" class="headerlink"><i class="fas fa-link"></i></a>
+
+</h4>
+<dl class="phpdocumentor-table-of-contents">
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/App-Card-Clue.html#method___construct">__construct()</a>
+    <span>
+                                &nbsp;: mixed    </span>
+</dt>
+<dd>Constructor to create a Clue. Adds all four objects from colOrRow and the current card that hasn&#039;t been placed yet.</dd>
+
+            <dt class="phpdocumentor-table-of-contents__entry -method -public">
+    <a href="classes/App-Card-Clue.html#method_getClue">getClue()</a>
+    <span>
+                                &nbsp;: int    </span>
+</dt>
+<dd>Get clue by creating a theoretical poker hand.</dd>
+
+    </dl>
+
+
+
+
+        
+
+        
+    <section class="phpdocumentor-properties">
+        <h3 class="phpdocumentor-elements__header" id="properties">
+            Properties
+            <a href="classes/App-Card-Clue.html#properties" class="headerlink"><i class="fas fa-link"></i></a>
+
+        </h3>
+                    <article
+        class="
+            phpdocumentor-element
+            -property
+            -private
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="property_testColOrRow">
+        $testColOrRow
+        <a href="classes/App-Card-Clue.html#property_testColOrRow" class="headerlink"><i class="fas fa-link"></i></a>
+
+        <span class="phpdocumentor-element__modifiers">
+                                </span>
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Card/Clue.php"><a href="files/src-card-clue.html"><abbr title="src/Card/Clue.php">Clue.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">13</span>
+
+    </aside>
+
+    
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">private</span>
+        <span class="phpdocumentor-signature__type">array&lt;string|int, <a href="classes/App-Card-CardHolder.html"><abbr title="\App\Card\CardHolder">CardHolder</abbr></a>&gt;</span>
+    <span class="phpdocumentor-signature__name">$testColOrRow</span>
+     = <span class="phpdocumentor-signature__default-value">[]</span></code>
+
+    
+        <section class="phpdocumentor-description"><p>Array that keeps all card holders</p>
+</section>
+
+    
+
+</article>
+            </section>
+
+            <section class="phpdocumentor-methods">
+        <h3 class="phpdocumentor-elements__header" id="methods">
+            Methods
+            <a href="classes/App-Card-Clue.html#methods" class="headerlink"><i class="fas fa-link"></i></a>
+
+        </h3>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method___construct">
+        __construct()
+        <a href="classes/App-Card-Clue.html#method___construct" class="headerlink"><i class="fas fa-link"></i></a>
 
     </h4>
-    <dl class="phpdocumentor-table-of-contents">
-                    <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Card-Betting.html"><abbr title="\App\Card\Betting">Betting</abbr></a></dt><dd>Class for betting</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Card-Card.html"><abbr title="\App\Card\Card">Card</abbr></a></dt><dd>Class for a card, containing two properties, one constructor and one method.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Card-CardGraphic.html"><abbr title="\App\Card\CardGraphic">CardGraphic</abbr></a></dt><dd>Class for a graphic card, extending original Card class. Contains one method.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Card-CardHand.html"><abbr title="\App\Card\CardHand">CardHand</abbr></a></dt><dd>Class for a card hand, containing one property and three methods.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Card-CardHolder.html"><abbr title="\App\Card\CardHolder">CardHolder</abbr></a></dt><dd>Class for card holder</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Card-Clue.html"><abbr title="\App\Card\Clue">Clue</abbr></a></dt><dd>Clue class</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Card-DeckOfCards.html"><abbr title="\App\Card\DeckOfCards">DeckOfCards</abbr></a></dt><dd>Class for a card deck, containing two properties and some methods.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Card-Game.html"><abbr title="\App\Card\Game">Game</abbr></a></dt><dd>Class for a card, containing two properties, one constructor and one method.</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Card-GameBoard.html"><abbr title="\App\Card\GameBoard">GameBoard</abbr></a></dt><dd>Class for card holder</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Card-PokerHand.html"><abbr title="\App\Card\PokerHand">PokerHand</abbr></a></dt><dd>Class for Poker hand</dd>            <dt class="phpdocumentor-table-of-contents__entry -class"><a href="classes/App-Card-PokerSquares.html"><abbr title="\App\Card\PokerSquares">PokerSquares</abbr></a></dt><dd>Class for Poker Square game</dd>    </dl>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Card/Clue.php"><a href="files/src-card-clue.html"><abbr title="src/Card/Clue.php">Clue.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">21</span>
 
+    </aside>
 
+        <p class="phpdocumentor-summary">Constructor to create a Clue. Adds all four objects from colOrRow and the current card that hasn&#039;t been placed yet.</p>
 
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">__construct</span><span>(</span><span class="phpdocumentor-signature__argument"><span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;&nbsp;</span><span class="phpdocumentor-signature__argument__name">$colOrRow</span></span><span class="phpdocumentor-signature__argument"><span>, </span><span class="phpdocumentor-signature__argument__return-type">string&nbsp;</span><span class="phpdocumentor-signature__argument__name">$currentCard</span></span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">mixed</span></code>
 
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+        <h5 class="phpdocumentor-argument-list__heading">Parameters</h5>
+    <dl class="phpdocumentor-argument-list">
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$colOrRow</span>
+                : <span class="phpdocumentor-signature__argument__return-type">array&lt;string|int, mixed&gt;</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+                    <dt class="phpdocumentor-argument-list__entry">
+                <span class="phpdocumentor-signature__argument__name">$currentCard</span>
+                : <span class="phpdocumentor-signature__argument__return-type">string</span>
+                            </dt>
+            <dd class="phpdocumentor-argument-list__definition">
+                
+            </dd>
+            </dl>
 
+    
 
+    
+</article>
+                    <article
+        class="phpdocumentor-element
+            -method
+            -public
+                                                        "
+>
+    <h4 class="phpdocumentor-element__name" id="method_getClue">
+        getClue()
+        <a href="classes/App-Card-Clue.html#method_getClue" class="headerlink"><i class="fas fa-link"></i></a>
 
+    </h4>
+    <aside class="phpdocumentor-element-found-in">
+    <abbr class="phpdocumentor-element-found-in__file" title="src/Card/Clue.php"><a href="files/src-card-clue.html"><abbr title="src/Card/Clue.php">Clue.php</abbr></a></abbr>
+    :
+    <span class="phpdocumentor-element-found-in__line">36</span>
 
-        
+    </aside>
 
-        
+        <p class="phpdocumentor-summary">Get clue by creating a theoretical poker hand.</p>
+
+    <code class="phpdocumentor-code phpdocumentor-signature ">
+    <span class="phpdocumentor-signature__visibility">public</span>
+                    <span class="phpdocumentor-signature__name">getClue</span><span>(</span><span>)</span><span> : </span><span class="phpdocumentor-signature__response_type">int</span></code>
+
+    <div class="phpdocumentor-label-line">
+        </div>
+    
+    
+    
+
+            <section>
+        <h5 class="phpdocumentor-return-value__heading">Return values</h5>
+        <span class="phpdocumentor-signature__response_type">int</span>
+            </section>
+
+</article>
+            </section>
+
         <div class="phpdocumentor-modal" id="source-view">
     <div class="phpdocumentor-modal-bg" data-exit-button></div>
     <div class="phpdocumentor-modal-container">
         <div class="phpdocumentor-modal-content">
-            <pre style="max-height: 500px; overflow-y: scroll" data-src="" class="language-php line-numbers linkable-line-numbers"></pre>
+            <pre style="max-height: 500px; overflow-y: scroll" data-src="files/src/Card/Clue.php.txt" class="language-php line-numbers linkable-line-numbers"></pre>
         </div>
         <button data-exit-button class="phpdocumentor-modal__close">&times;</button>
     </div>
@@ -232,7 +428,7 @@
     </article>
                                 </section>
                 <section class="phpdocumentor-on-this-page__sidebar">
-                            
+                                
     <section class="phpdocumentor-on-this-page__content">
         <strong class="phpdocumentor-on-this-page__title">On this page</strong>
 
@@ -240,11 +436,25 @@
             <li class="phpdocumentor-on-this-page-section__title">Table Of Contents</li>
             <li>
                 <ul class="phpdocumentor-list -clean">
-                                                                                                    <li><a href="namespaces/app-card.html#toc-classes">Classes</a></li>
-                                                                                                                    </ul>
+                                                            <li><a href="classes/App-Card-Clue.html#toc-properties">Properties</a></li>
+                                                            <li><a href="classes/App-Card-Clue.html#toc-methods">Methods</a></li>
+                                    </ul>
             </li>
-
             
+                            <li class="phpdocumentor-on-this-page-section__title">Properties</li>
+                <li>
+                    <ul class="phpdocumentor-list -clean">
+                                                    <li><a href="classes/App-Card-Clue.html#property_testColOrRow">$testColOrRow<a href="classes/App-Card-Clue.html"></li>
+                                            </ul>
+                </li>
+            
+                        <li class="phpdocumentor-on-this-page-section__title">Methods</li>
+            <li>
+                <ul class="phpdocumentor-list -clean">
+                                            <li><a href="classes/App-Card-Clue.html#method___construct">__construct()</a></li>
+                                            <li><a href="classes/App-Card-Clue.html#method_getClue">getClue()</a></li>
+                                    </ul>
+            </li>
                     </ul>
     </section>
 
@@ -262,7 +472,7 @@
     </section>
 </section>
         </div>
-        <a href="namespaces/app-card.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
+        <a href="classes/App-Card-Clue.html#top" class="phpdocumentor-back-to-top"><i class="fas fa-chevron-circle-up"></i></a>
 
     </main>
 

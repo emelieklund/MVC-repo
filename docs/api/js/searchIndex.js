@@ -13,12 +13,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Card\\Betting\u003A\u003ApointChecker\u0028\u0029",
             "name": "pointChecker",
-            "summary": "Checks\u0020if\u0020guessed\u0020points\u0020is\u0020same\u0020or\u0020greater\u0020than\u0020points\u0020received",
+            "summary": "Checks\u0020if\u0020guessed\u0020points\u0020are\u0020less,\u0020same\u0020as\u0020or\u0020higher\u0020than\u0020points\u0020received.",
             "url": "classes/App-Card-Betting.html#method_pointChecker"
         },                {
             "fqsen": "\\App\\Card\\Betting\u003A\u003AplayerWins\u0028\u0029",
             "name": "playerWins",
-            "summary": "Calculates\u0020profit\u0020if\u0020player\u0020wins",
+            "summary": "Calculates\u0020profit\u0020if\u0020player\u0020wins.\u0020If\u0020player\u0020guessed\u0020under\u002020\u0020points,\u0020profit\u0020will\u0020be\u00200.",
             "url": "classes/App-Card-Betting.html#method_playerWins"
         },                {
             "fqsen": "\\App\\Card\\Betting\u003A\u003AplayerLooses\u0028\u0029",
@@ -165,6 +165,26 @@ Search.appendIndex(
             "name": "holderCard",
             "summary": "",
             "url": "classes/App-Card-CardHolder.html#property_holderCard"
+        },                {
+            "fqsen": "\\App\\Card\\Clue",
+            "name": "Clue",
+            "summary": "Clue\u0020class",
+            "url": "classes/App-Card-Clue.html"
+        },                {
+            "fqsen": "\\App\\Card\\Clue\u003A\u003A__construct\u0028\u0029",
+            "name": "__construct",
+            "summary": "Constructor\u0020to\u0020create\u0020a\u0020Clue.\u0020Adds\u0020all\u0020four\u0020objects\u0020from\u0020colOrRow\u0020and\u0020the\u0020current\u0020card\u0020that\u0020hasn\u0027t\u0020been\u0020placed\u0020yet.",
+            "url": "classes/App-Card-Clue.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Card\\Clue\u003A\u003AgetClue\u0028\u0029",
+            "name": "getClue",
+            "summary": "Get\u0020clue\u0020by\u0020creating\u0020a\u0020theoretical\u0020poker\u0020hand.",
+            "url": "classes/App-Card-Clue.html#method_getClue"
+        },                {
+            "fqsen": "\\App\\Card\\Clue\u003A\u003A\u0024testColOrRow",
+            "name": "testColOrRow",
+            "summary": "",
+            "url": "classes/App-Card-Clue.html#property_testColOrRow"
         },                {
             "fqsen": "\\App\\Card\\DeckOfCards",
             "name": "DeckOfCards",
@@ -333,12 +353,12 @@ Search.appendIndex(
         },                {
             "fqsen": "\\App\\Card\\PokerHand\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "Constructor\u0020to\u0020create\u0020a\u0020GraphicCard.",
+            "summary": "Constructor\u0020to\u0020create\u0020a\u0020PokerHand.",
             "url": "classes/App-Card-PokerHand.html#method___construct"
         },                {
             "fqsen": "\\App\\Card\\PokerHand\u003A\u003AonePair\u0028\u0029",
             "name": "onePair",
-            "summary": "Check\u0020if\u0020pair",
+            "summary": "Check\u0020if\u0020one\u0020pair",
             "url": "classes/App-Card-PokerHand.html#method_onePair"
         },                {
             "fqsen": "\\App\\Card\\PokerHand\u003A\u003AtwoPairs\u0028\u0029",
@@ -391,50 +411,50 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Card-PokerHand.html#property_suits"
         },                {
-            "fqsen": "\\App\\Card\\PokerSquare",
-            "name": "PokerSquare",
+            "fqsen": "\\App\\Card\\PokerSquares",
+            "name": "PokerSquares",
             "summary": "Class\u0020for\u0020Poker\u0020Square\u0020game",
-            "url": "classes/App-Card-PokerSquare.html"
+            "url": "classes/App-Card-PokerSquares.html"
         },                {
-            "fqsen": "\\App\\Card\\PokerSquare\u003A\u003A__construct\u0028\u0029",
+            "fqsen": "\\App\\Card\\PokerSquares\u003A\u003A__construct\u0028\u0029",
             "name": "__construct",
-            "summary": "Constructor\u0020to\u0020create\u0020a\u0020GraphicCard.",
-            "url": "classes/App-Card-PokerSquare.html#method___construct"
+            "summary": "Constructor\u0020to\u0020create\u0020a\u0020PokerSquare.",
+            "url": "classes/App-Card-PokerSquares.html#method___construct"
         },                {
-            "fqsen": "\\App\\Card\\PokerSquare\u003A\u003ArankAsNumber\u0028\u0029",
+            "fqsen": "\\App\\Card\\PokerSquares\u003A\u003ArankAsNumber\u0028\u0029",
             "name": "rankAsNumber",
             "summary": "Converts\u0020rank\u0020from\u0020string\u0020to\u0020int",
-            "url": "classes/App-Card-PokerSquare.html#method_rankAsNumber"
+            "url": "classes/App-Card-PokerSquares.html#method_rankAsNumber"
         },                {
-            "fqsen": "\\App\\Card\\PokerSquare\u003A\u003AwhichPokerHand\u0028\u0029",
+            "fqsen": "\\App\\Card\\PokerSquares\u003A\u003AwhichPokerHand\u0028\u0029",
             "name": "whichPokerHand",
             "summary": "Checks\u0020which\u0020poker\u0020hand",
-            "url": "classes/App-Card-PokerSquare.html#method_whichPokerHand"
+            "url": "classes/App-Card-PokerSquares.html#method_whichPokerHand"
         },                {
-            "fqsen": "\\App\\Card\\PokerSquare\u003A\u003AsetPoints\u0028\u0029",
+            "fqsen": "\\App\\Card\\PokerSquares\u003A\u003AsetPoints\u0028\u0029",
             "name": "setPoints",
             "summary": "Set\u0020points\u0020to\u0020column",
-            "url": "classes/App-Card-PokerSquare.html#method_setPoints"
+            "url": "classes/App-Card-PokerSquares.html#method_setPoints"
         },                {
-            "fqsen": "\\App\\Card\\PokerSquare\u003A\u003AgetPoints\u0028\u0029",
+            "fqsen": "\\App\\Card\\PokerSquares\u003A\u003AgetPoints\u0028\u0029",
             "name": "getPoints",
             "summary": "Get\u0020points\u0020of\u0020column",
-            "url": "classes/App-Card-PokerSquare.html#method_getPoints"
+            "url": "classes/App-Card-PokerSquares.html#method_getPoints"
         },                {
-            "fqsen": "\\App\\Card\\PokerSquare\u003A\u003A\u0024ranks",
+            "fqsen": "\\App\\Card\\PokerSquares\u003A\u003A\u0024ranks",
             "name": "ranks",
             "summary": "",
-            "url": "classes/App-Card-PokerSquare.html#property_ranks"
+            "url": "classes/App-Card-PokerSquares.html#property_ranks"
         },                {
-            "fqsen": "\\App\\Card\\PokerSquare\u003A\u003A\u0024suits",
+            "fqsen": "\\App\\Card\\PokerSquares\u003A\u003A\u0024suits",
             "name": "suits",
             "summary": "",
-            "url": "classes/App-Card-PokerSquare.html#property_suits"
+            "url": "classes/App-Card-PokerSquares.html#property_suits"
         },                {
-            "fqsen": "\\App\\Card\\PokerSquare\u003A\u003A\u0024points",
+            "fqsen": "\\App\\Card\\PokerSquares\u003A\u003A\u0024points",
             "name": "points",
             "summary": "",
-            "url": "classes/App-Card-PokerSquare.html#property_points"
+            "url": "classes/App-Card-PokerSquares.html#property_points"
         },                {
             "fqsen": "\\App\\Controller\\CardGameController",
             "name": "CardGameController",
@@ -596,40 +616,40 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-JSONDeckController.html#method_currentScore"
         },                {
-            "fqsen": "\\App\\Controller\\JSONPokerSquareController",
-            "name": "JSONPokerSquareController",
+            "fqsen": "\\App\\Controller\\JSONPokerSquaresController",
+            "name": "JSONPokerSquaresController",
             "summary": "",
-            "url": "classes/App-Controller-JSONPokerSquareController.html"
+            "url": "classes/App-Controller-JSONPokerSquaresController.html"
         },                {
-            "fqsen": "\\App\\Controller\\JSONPokerSquareController\u003A\u003ApokerRoutes\u0028\u0029",
+            "fqsen": "\\App\\Controller\\JSONPokerSquaresController\u003A\u003ApokerRoutes\u0028\u0029",
             "name": "pokerRoutes",
             "summary": "",
-            "url": "classes/App-Controller-JSONPokerSquareController.html#method_pokerRoutes"
+            "url": "classes/App-Controller-JSONPokerSquaresController.html#method_pokerRoutes"
         },                {
-            "fqsen": "\\App\\Controller\\JSONPokerSquareController\u003A\u003AjsonHighscore\u0028\u0029",
-            "name": "jsonHighscore",
+            "fqsen": "\\App\\Controller\\JSONPokerSquaresController\u003A\u003AjsonHighScore\u0028\u0029",
+            "name": "jsonHighScore",
             "summary": "",
-            "url": "classes/App-Controller-JSONPokerSquareController.html#method_jsonHighscore"
+            "url": "classes/App-Controller-JSONPokerSquaresController.html#method_jsonHighScore"
         },                {
-            "fqsen": "\\App\\Controller\\JSONPokerSquareController\u003A\u003AjsonColumns\u0028\u0029",
+            "fqsen": "\\App\\Controller\\JSONPokerSquaresController\u003A\u003AjsonColumns\u0028\u0029",
             "name": "jsonColumns",
             "summary": "",
-            "url": "classes/App-Controller-JSONPokerSquareController.html#method_jsonColumns"
+            "url": "classes/App-Controller-JSONPokerSquaresController.html#method_jsonColumns"
         },                {
-            "fqsen": "\\App\\Controller\\JSONPokerSquareController\u003A\u003AjsonRows\u0028\u0029",
+            "fqsen": "\\App\\Controller\\JSONPokerSquaresController\u003A\u003AjsonRows\u0028\u0029",
             "name": "jsonRows",
             "summary": "",
-            "url": "classes/App-Controller-JSONPokerSquareController.html#method_jsonRows"
+            "url": "classes/App-Controller-JSONPokerSquaresController.html#method_jsonRows"
         },                {
-            "fqsen": "\\App\\Controller\\JSONPokerSquareController\u003A\u003AjsonUsers\u0028\u0029",
+            "fqsen": "\\App\\Controller\\JSONPokerSquaresController\u003A\u003AjsonUsers\u0028\u0029",
             "name": "jsonUsers",
             "summary": "",
-            "url": "classes/App-Controller-JSONPokerSquareController.html#method_jsonUsers"
+            "url": "classes/App-Controller-JSONPokerSquaresController.html#method_jsonUsers"
         },                {
-            "fqsen": "\\App\\Controller\\JSONPokerSquareController\u003A\u003AjsonOneUser\u0028\u0029",
+            "fqsen": "\\App\\Controller\\JSONPokerSquaresController\u003A\u003AjsonOneUser\u0028\u0029",
             "name": "jsonOneUser",
             "summary": "",
-            "url": "classes/App-Controller-JSONPokerSquareController.html#method_jsonOneUser"
+            "url": "classes/App-Controller-JSONPokerSquaresController.html#method_jsonOneUser"
         },                {
             "fqsen": "\\App\\Controller\\LibraryController",
             "name": "LibraryController",
@@ -751,10 +771,10 @@ Search.appendIndex(
             "summary": "",
             "url": "classes/App-Controller-PokerSquaresController.html#method_newCard"
         },                {
-            "fqsen": "\\App\\Controller\\PokerSquaresController\u003A\u003AaboutPokerSquare\u0028\u0029",
-            "name": "aboutPokerSquare",
+            "fqsen": "\\App\\Controller\\PokerSquaresController\u003A\u003AaboutPokerSquares\u0028\u0029",
+            "name": "aboutPokerSquares",
             "summary": "",
-            "url": "classes/App-Controller-PokerSquaresController.html#method_aboutPokerSquare"
+            "url": "classes/App-Controller-PokerSquaresController.html#method_aboutPokerSquares"
         },                {
             "fqsen": "\\App\\Controller\\PokerSquaresController\u003A\u003AaboutDatabase\u0028\u0029",
             "name": "aboutDatabase",
@@ -1015,6 +1035,11 @@ Search.appendIndex(
             "name": "__construct",
             "summary": "",
             "url": "classes/App-Repository-UserRepository.html#method___construct"
+        },                {
+            "fqsen": "\\App\\Repository\\UserRepository\u003A\u003AfindUserByUsername\u0028\u0029",
+            "name": "findUserByUsername",
+            "summary": "Find\u0020user\u0020based\u0020on\u0020given\u0020username.",
+            "url": "classes/App-Repository-UserRepository.html#method_findUserByUsername"
         },                {
             "fqsen": "\\",
             "name": "\\",

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1717067968">
-  <project timestamp="1717067968">
+<coverage generated="1717102420">
+  <project timestamp="1717102420">
     <file name="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/src/Card/Betting.php">
       <class name="App\Card\Betting" namespace="global">
         <metrics complexity="8" methods="4" coveredmethods="4" conditionals="0" coveredconditionals="0" statements="15" coveredstatements="15" elements="19" coveredelements="19"/>
@@ -1091,7 +1091,7 @@
       </class>
       <line num="14" type="method" name="__construct" visibility="public" complexity="1" crap="2" count="0"/>
       <line num="16" type="stmt" count="0"/>
-      <metrics loc="44" ncloc="18" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
+      <metrics loc="19" ncloc="16" classes="1" methods="1" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="1" coveredstatements="0" elements="2" coveredelements="0"/>
     </file>
     <file name="/Users/emelieeklund/dbwebb-kurser/mvc/me/report/src/Repository/LibraryRepository.php">
       <class name="App\Repository\LibraryRepository" namespace="global">
@@ -1121,6 +1121,6 @@
       <line num="35" type="stmt" count="0"/>
       <metrics loc="38" ncloc="30" classes="1" methods="2" coveredmethods="0" conditionals="0" coveredconditionals="0" statements="6" coveredstatements="0" elements="8" coveredelements="0"/>
     </file>
-    <metrics files="29" loc="2703" ncloc="2266" classes="28" methods="145" coveredmethods="56" conditionals="0" coveredconditionals="0" statements="801" coveredstatements="251" elements="946" coveredelements="307"/>
+    <metrics files="29" loc="2678" ncloc="2264" classes="28" methods="145" coveredmethods="56" conditionals="0" coveredconditionals="0" statements="801" coveredstatements="251" elements="946" coveredelements="307"/>
   </project>
 </coverage>
