@@ -5,7 +5,7 @@ namespace App\Card;
 /**
  * Class for Poker Square game
  */
-class PokerSquare
+class PokerSquares
 {
     /**
      * @var array<int> $ranks
@@ -23,9 +23,9 @@ class PokerSquare
     private $points = 0;
 
     /**
-     * Constructor to create a GraphicCard.
+     * Constructor to create a PokerSquare.
      *
-     * @param array<array> $colOrRow
+     * @param array<mixed> $colOrRow
      */
     public function __construct(array $colOrRow)
     {
@@ -52,9 +52,8 @@ class PokerSquare
             if (str_starts_with($imageName, $ranks[$i])) {
                 $rank = $numbers[$i];
                 break;
-            } else {
-                $rank = intval($imageName);
             }
+            $rank = intval($imageName);
         }
 
         return $rank;
@@ -87,9 +86,9 @@ class PokerSquare
             return 5;
         } elseif ($pokerHand->onePair()) {
             return 2;
-        } else {
-            return 0;
         }
+
+        return 0;
     }
 
     /**

@@ -7,7 +7,7 @@ use PHPUnit\Framework\TestCase;
 /**
  * Test cases for class DeckOfCards.
  */
-class PokerSquareTest extends TestCase
+class PokerSquaresTest extends TestCase
 {
     /**
      * Tests convert string rank to int rank
@@ -15,9 +15,9 @@ class PokerSquareTest extends TestCase
     public function testRankAsNumber(): void
     {
         $column = [[1, "2_of_hearts"], [6, "3_of_hearts"], [11, "4_of_hearts"], [16, "5_of_hearts"], [21, "6_of_hearts"]];
-        $pokerSquare = new PokerSquare($column);
+        $pokerSquares = new PokerSquares($column);
 
-        $this->assertEquals(13, $pokerSquare->rankAsNumber("king"));
+        $this->assertEquals(13, $pokerSquares->rankAsNumber("king"));
     }
 
     /**
@@ -26,9 +26,9 @@ class PokerSquareTest extends TestCase
     public function testWhichPokerHandNoPokerHand(): void
     {
         $column = [[1, "ace_of_hearts"], [6, "2_of_clubs"], [11, "8_of_diamonds"], [16, "10_of_hearts"], [21, "king_of_spades"]];
-        $pokerSquare = new PokerSquare($column);
+        $pokerSquares = new PokerSquares($column);
 
-        $this->assertEquals($pokerSquare->whichPokerHand(), 0);
+        $this->assertEquals($pokerSquares->whichPokerHand(), 0);
     }
 
     /**
@@ -37,9 +37,9 @@ class PokerSquareTest extends TestCase
     public function testWhichPokerHandOnePair(): void
     {
         $column = [[1, "ace_of_hearts"], [6, "ace_of_spades"], [11, "jack_of_hearts"], [16, "queen_of_hearts"], [21, "king_of_hearts"]];
-        $pokerSquare = new PokerSquare($column);
+        $pokerSquares = new PokerSquares($column);
 
-        $this->assertEquals($pokerSquare->whichPokerHand(), 2);
+        $this->assertEquals($pokerSquares->whichPokerHand(), 2);
     }
 
     /**
@@ -48,9 +48,9 @@ class PokerSquareTest extends TestCase
     public function testWhichPokerHandTwoPairs(): void
     {
         $column = [[1, "ace_of_hearts"], [6, "ace_of_spades"], [11, "jack_of_hearts"], [16, "jack_of_spades"], [21, "king_of_hearts"]];
-        $pokerSquare = new PokerSquare($column);
+        $pokerSquares = new PokerSquares($column);
 
-        $this->assertEquals($pokerSquare->whichPokerHand(), 5);
+        $this->assertEquals($pokerSquares->whichPokerHand(), 5);
     }
 
     /**
@@ -59,9 +59,9 @@ class PokerSquareTest extends TestCase
     public function testWhichPokerHandThreeOfAKind(): void
     {
         $column = [[1, "ace_of_hearts"], [6, "ace_of_spades"], [11, "ace_of_diamonds"], [16, "jack_of_spades"], [21, "king_of_hearts"]];
-        $pokerSquare = new PokerSquare($column);
+        $pokerSquares = new PokerSquares($column);
 
-        $this->assertEquals($pokerSquare->whichPokerHand(), 10);
+        $this->assertEquals($pokerSquares->whichPokerHand(), 10);
     }
 
     /**
@@ -70,11 +70,11 @@ class PokerSquareTest extends TestCase
     public function testWhichPokerHandStraight(): void
     {
         $column = [[1, "2_of_hearts"], [6, "3_of_spades"], [11, "4_of_clubs"], [16, "5_of_hearts"], [21, "6_of_diamonds"]];
-        $pokerSquare = new PokerSquare($column);
+        $pokerSquares = new PokerSquares($column);
 
-        $pokerSquare->setPoints();
+        $pokerSquares->setPoints();
 
-        $this->assertEquals($pokerSquare->getPoints(), 15);
+        $this->assertEquals($pokerSquares->getPoints(), 15);
     }
 
     /**
@@ -83,9 +83,9 @@ class PokerSquareTest extends TestCase
     public function testWhichPokerHandFlush(): void
     {
         $column = [[1, "ace_of_hearts"], [6, "2_of_hearts"], [11, "5_of_hearts"], [16, "8_of_hearts"], [21, "king_of_hearts"]];
-        $pokerSquare = new PokerSquare($column);
+        $pokerSquares = new PokerSquares($column);
 
-        $this->assertEquals($pokerSquare->whichPokerHand(), 20);
+        $this->assertEquals($pokerSquares->whichPokerHand(), 20);
     }
 
     /**
@@ -94,9 +94,9 @@ class PokerSquareTest extends TestCase
     public function testWhichPokerHandFullHouse(): void
     {
         $column = [[1, "ace_of_hearts"], [6, "ace_of_spades"], [11, "8_of_spades"], [16, "8_of_hearts"], [21, "8_of_clubs"]];
-        $pokerSquare = new PokerSquare($column);
+        $pokerSquares = new PokerSquares($column);
 
-        $this->assertEquals($pokerSquare->whichPokerHand(), 25);
+        $this->assertEquals($pokerSquares->whichPokerHand(), 25);
     }
 
     /**
@@ -105,9 +105,9 @@ class PokerSquareTest extends TestCase
     public function testWhichPokerHandFourOfAKind(): void
     {
         $column = [[1, "ace_of_hearts"], [6, "ace_of_spades"], [11, "ace_of_clubs"], [16, "ace_of_diamonds"], [21, "8_of_clubs"]];
-        $pokerSquare = new PokerSquare($column);
+        $pokerSquares = new PokerSquares($column);
 
-        $this->assertEquals($pokerSquare->whichPokerHand(), 50);
+        $this->assertEquals($pokerSquares->whichPokerHand(), 50);
     }
 
     /**
@@ -116,9 +116,9 @@ class PokerSquareTest extends TestCase
     public function testWhichPokerHandStraightFlush(): void
     {
         $column = [[1, "3_of_spades"], [6, "4_of_spades"], [11, "5_of_spades"], [16, "6_of_spades"], [21, "7_of_spades"]];
-        $pokerSquare = new PokerSquare($column);
+        $pokerSquares = new PokerSquares($column);
 
-        $this->assertEquals($pokerSquare->whichPokerHand(), 75);
+        $this->assertEquals($pokerSquares->whichPokerHand(), 75);
     }
 
     /**
@@ -127,9 +127,9 @@ class PokerSquareTest extends TestCase
     public function testWhichPokerHandRoyalStraightFlush(): void
     {
         $column = [[1, "ace_of_hearts"], [6, "10_of_hearts"], [11, "jack_of_hearts"], [16, "queen_of_hearts"], [21, "king_of_hearts"]];
-        $pokerSquare = new PokerSquare($column);
+        $pokerSquares = new PokerSquares($column);
 
-        $this->assertEquals($pokerSquare->whichPokerHand(), 100);
+        $this->assertEquals($pokerSquares->whichPokerHand(), 100);
     }
 
 }

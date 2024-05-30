@@ -19,7 +19,7 @@ class UserRepository extends ServiceEntityRepository
     /**
      * Find user based on given username.
      *
-     * @return array<array> Returns an array of arrays (i.e. a raw data set)
+     * @return array<mixed> Returns an array of arrays (i.e. a raw data set)
      */
     public function findUserByUsername(string $username): array
     {
@@ -34,23 +34,4 @@ class UserRepository extends ServiceEntityRepository
 
         return $resultSet->fetchAllAssociative();
     }
-
-    // /**
-    //  * Find user account based on given username.
-    //  *
-    //  * @return array<array> Returns an array of arrays (i.e. a raw data set)
-    //  */
-    // public function findAccountByUsername(string $username): array
-    // {
-    //     $conn = $this->getEntityManager()->getConnection();
-
-    //     $sql = '
-    //         SELECT account FROM user AS u
-    //         WHERE u.username = :username
-    //     ';
-
-    //     $resultSet = $conn->executeQuery($sql, ['username' => $username]);
-
-    //     return $resultSet->fetchAllAssociative();
-    // }
 }

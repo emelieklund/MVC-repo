@@ -64,7 +64,6 @@ class UserController extends AbstractController
     public function userBet(
         int $id,
         SessionInterface $session,
-        Request $request,
         ManagerRegistry $doctrine
     ): Response {
         $entityManager = $doctrine->getManager();

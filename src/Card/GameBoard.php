@@ -72,7 +72,7 @@ class GameBoard
     /**
      * Get both holder id and card name
      *
-     * @return array<array>
+     * @return array<mixed>
      */
     public function getIdAndCard(): array
     {
@@ -87,7 +87,7 @@ class GameBoard
     /**
      * Get all columns
      *
-     * @return array<array>
+     * @return array<mixed>
      */
     public function columns(): array
     {
@@ -120,7 +120,7 @@ class GameBoard
     /**
      * Get all rows
      *
-     * @return array<array>
+     * @return array<mixed>
      */
     public function rows(): array
     {
@@ -134,13 +134,13 @@ class GameBoard
         foreach ($this->gameBoard as $holder) {
             if ($holder->getHolderId() < 6) {
                 $row1[] = [$holder->getHolderId(), $holder->getHolderCard()];
-            } elseif ($holder->getHolderId() >= 6 && $holder->getHolderId() < 11) {
+            } elseif ($holder->getHolderId() > 5 && $holder->getHolderId() < 11) {
                 $row2[] = [$holder->getHolderId(), $holder->getHolderCard()];
-            } elseif ($holder->getHolderId() >= 11 && $holder->getHolderId() < 16) {
+            } elseif ($holder->getHolderId() > 10 && $holder->getHolderId() < 16) {
                 $row3[] = [$holder->getHolderId(), $holder->getHolderCard()];
-            } elseif ($holder->getHolderId() >= 16 && $holder->getHolderId() < 21) {
+            } elseif ($holder->getHolderId() > 15 && $holder->getHolderId() < 21) {
                 $row4[] = [$holder->getHolderId(), $holder->getHolderCard()];
-            } elseif ($holder->getHolderId() >= 21) {
+            } elseif ($holder->getHolderId() > 20) {
                 $row5[] = [$holder->getHolderId(), $holder->getHolderCard()];
             }
         }

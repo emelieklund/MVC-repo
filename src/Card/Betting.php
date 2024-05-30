@@ -23,7 +23,7 @@ class Betting
      * @param int $pointsGuessed The points player entered
      * @param int $pointsReceived The points player received
      */
-    public function __construct($pointsGuessed, $pointsReceived)
+    public function __construct(int $pointsGuessed, int $pointsReceived)
     {
         $this->pointsGuessed = $pointsGuessed;
         $this->pointsReceived = $pointsReceived;
@@ -44,7 +44,7 @@ class Betting
     }
 
     /**
-     * Calculates profit if player wins
+     * Calculates profit if player wins. If player guessed under 20 points, profit will be 0.
      *
      * @return float
      */
@@ -67,6 +67,7 @@ class Betting
     public function playerLooses(): float
     {
         $loss = 1;
+
         if ($this->pointsGuessed > 240) {
             $loss = 0.05;
         } elseif ($this->pointsGuessed > 20) {

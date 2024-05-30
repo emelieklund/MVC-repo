@@ -8,13 +8,15 @@ namespace App\Card;
 class Clue
 {
     /**
-     * @var array<CardHolder> $gameBoard     Array that keeps all card holders
+     * @var array<CardHolder> $testColOrRow     Array that keeps all card holders
      */
     private $testColOrRow = [];
 
     /**
-     * Constructor to create a GameBoard.
+     * Constructor to create a Clue. Adds all four objects from colOrRow and the current card that hasn't been placed yet.
      *
+     * @param array<mixed> $colOrRow
+     * @param string $currentCard
      */
     public function __construct(array $colOrRow, string $currentCard)
     {
@@ -27,15 +29,15 @@ class Clue
     }
 
     /**
-     * Get clue
+     * Get clue by creating a theoretical poker hand.
      *
-     * @return int<CardHolder>
+     * @return int
      */
     public function getClue(): int
     {
-        $pokerSquare = new PokerSquare($this->testColOrRow);
+        $pokerSquares = new PokerSquares($this->testColOrRow);
 
-        $pokerHand = $pokerSquare->whichPokerHand();
+        $pokerHand = $pokerSquares->whichPokerHand();
 
         return $pokerHand;
     }

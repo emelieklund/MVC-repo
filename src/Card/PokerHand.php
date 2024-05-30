@@ -18,9 +18,10 @@ class PokerHand
     private $suits = [];
 
     /**
-     * Constructor to create a GraphicCard.
+     * Constructor to create a PokerHand.
      *
-     * @param array<array> $colOrRow
+     * @param array<int> $ranks
+     * @param array<string> $suits
      */
     public function __construct(array $ranks, array $suits)
     {
@@ -30,7 +31,7 @@ class PokerHand
     }
 
     /**
-     * Check if pair
+     * Check if one pair
      *
      * @return bool
      */

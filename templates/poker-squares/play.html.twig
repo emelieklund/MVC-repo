@@ -25,7 +25,11 @@
                 {% else %}
                     <a href="{{ path('new_card') }}"><button class="button-36">Give me a new card</button></a>
                 {% endif %}
-                <a href="{{ path('clue') }}"><button class="button-36">Give me a clue</button></a>
+                {% if clue_counter is not same as (0) %}
+                    <a href="{{ path('clue') }}"><button class="button-36">Give me a clue ({{ clue_counter }})</button></a>
+                {% else %}
+                    <a href="{{ path('clue') }}"><button class="button-36" style="opacity:0.5" disabled>Give me a clue ({{ clue_counter }})</button></a>
+                {% endif %}
                 <a href="{{ path('poker_squares') }}"><button class="button-36">Start over</button></a>
             </div>
         {% endif %}

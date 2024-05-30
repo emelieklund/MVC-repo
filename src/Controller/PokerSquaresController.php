@@ -7,7 +7,7 @@ use App\Card\CardHand;
 use App\Card\CardGraphic;
 use App\Card\DeckOfCards;
 use App\Card\GameBoard;
-use App\Card\PokerSquare;
+use App\Card\PokerSquares;
 use App\Card\Clue;
 
 use App\Controller\UserController;
@@ -32,18 +32,15 @@ class PokerSquaresController extends AbstractController
         $gameBoard = new GameBoard();
 
         $counter = -1;
+        $clueCounter = 3;
 
-        if ($session->has("deck_session")) {
-            $deck = $session->get("deck_session");
-        } else {
-            $deck = new DeckOfCards();
-        }
-
+        $deck = new DeckOfCards();
         $card = $deck->drawGraphic();
 
         $session->set("game_board", $gameBoard);
         $session->set("deck_session", $deck);
         $session->set("counter", $counter);
+        $session->set("clue_counter", $clueCounter);
         $session->set("card", $card);
         $session->set("new_card", "not_used");
 
@@ -82,28 +79,27 @@ class PokerSquaresController extends AbstractController
         SessionInterface $session,
         UserRepository $userRepository
     ): Response {
-        $counter = $session->get("counter");
         $gameBoard = $session->get("game_board");
 
         $allColPoints = [];
         $allRowPoints = [];
 
         foreach ($gameBoard->columns() as $col) {
-            $pokerSquare = new PokerSquare($col);
+            $pokerSquares = new PokerSquares($col);
 
             if ($gameBoard->ifFull($col)) {
-                $pokerSquare->setPoints();
+                $pokerSquares->setPoints();
             }
-            array_push($allColPoints, $pokerSquare->getPoints());
+            array_push($allColPoints, $pokerSquares->getPoints());
         }
 
         foreach ($gameBoard->rows() as $row) {
-            $pokerSquare = new PokerSquare($row);
+            $pokerSquares = new PokerSquares($row);
 
             if ($gameBoard->ifFull($row)) {
-                $pokerSquare->setPoints();
+                $pokerSquares->setPoints();
             }
-            array_push($allRowPoints, $pokerSquare->getPoints());
+            array_push($allRowPoints, $pokerSquares->getPoints());
         }
 
         $card = $session->get("card");
@@ -120,6 +116,7 @@ class PokerSquaresController extends AbstractController
             "users" => $userRepository->findAll(),
             "id" => $session->get("id"),
             "clue" => $session->get("clue"),
+            "clue_counter" => $session->get("clue_counter"),
             "col_hands" => $session->get("clue_colhands"),
             "row_hands" => $session->get("clue_rowhands"),
             "new_card" => $session->get("new_card"),
@@ -139,12 +136,7 @@ class PokerSquaresController extends AbstractController
             }
         }
 
-        if ($session->has("deck_session")) {
-            $deck = $session->get("deck_session");
-        } else {
-            $deck = new DeckOfCards();
-        }
-
+        $deck = $session->get("deck_session");
         $card = $deck->drawGraphic();
 
         $counter = $session->get("counter");
@@ -185,7 +177,10 @@ class PokerSquaresController extends AbstractController
             }
         }
 
+        $clueCounter = $session->get("clue_counter");
+
         $session->set("clue", "clue");
+        $session->set("clue_counter", $clueCounter -= 1);
         $session->set("clue_colhands", $colHands);
         $session->set("clue_rowhands", $rowHands);
 
@@ -195,12 +190,7 @@ class PokerSquaresController extends AbstractController
     #[Route("/proj/new", name: "new_card")]
     public function newCard(SessionInterface $session): Response
     {
-        if ($session->has("deck_session")) {
-            $deck = $session->get("deck_session");
-        } else {
-            $deck = new DeckOfCards();
-        }
-
+        $deck = $session->get("deck_session");
         $card = $deck->drawGraphic();
 
         $session->set("new_card", "used");
@@ -210,7 +200,7 @@ class PokerSquaresController extends AbstractController
     }
 
     #[Route("/proj/about", name: "about_ps")]
-    public function aboutPokerSquare(): Response
+    public function aboutPokerSquares(): Response
     {
         return $this->render('poker-squares/about.html.twig');
     }

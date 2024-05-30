@@ -58,15 +58,15 @@ class HighScoreController extends AbstractController
 
     #[Route('/proj/highscore/delete/{id}', name: 'highscore_delete')]
     public function deleteHighScore(
-        int $id,
+        int $highScoreId,
         ManagerRegistry $doctrine,
     ): Response {
         $entityManager = $doctrine->getManager();
-        $highscore = $entityManager->getRepository(Highscore::class)->find($id);
+        $highscore = $entityManager->getRepository(Highscore::class)->find($highScoreId);
 
         if (!$highscore) {
             throw $this->createNotFoundException(
-                'No highscore found for id '.$id
+                'No highscore found for id '.$highScoreId
             );
         }
 
